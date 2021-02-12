@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" [routerLink]="['/']">
+
             <b>GPS Trails</b>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -10,7 +11,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Explore</a>
+                    <a class="nav-link active" aria-current="page" href="#" [routerLink]="['search']">
+                        Explore
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Map</a>
@@ -18,9 +21,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Create Trail</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Feedback</a>
+                </li>
             </ul>
             <div class="d-flex ml-auto">
-                <button class="btn ml-2 btn-success" type="submit">Sign Up</button>
+                <a [routerLink]="['register']">
+                    <button class="btn ml-2 btn-success" type="submit">Sign Up</button>
+                </a>
                 <a [routerLink]="['login']">
                     <button class="btn ml-2 btn-outline-primary" type="submit">
                         Log In

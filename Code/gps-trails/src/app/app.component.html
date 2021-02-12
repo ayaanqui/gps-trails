@@ -1,6 +1,17 @@
-<app-navbar>
-</app-navbar>
-<div class="container">
-
+<div class="container-fluid">
+  <app-navbar>
+  </app-navbar>
   <router-outlet></router-outlet>
+
+
+  <!--
+    Adding a component to the main app 
+    
+    Once you have created a component ./{component_name}/{component_name}.componnent.ts 
+    will contain an object inside the @Component annotation. This object will contain a field named "selector"
+    this is the name of the component.
+    To use this component, simply create a tag with the name of the selector. <app-{component_name}></app-{component_name}>
+  -->
+
+
 </div>
