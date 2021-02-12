@@ -6,17 +6,28 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './account/login/login.component';
+
+
+
+const appRoutes: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'login', component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
