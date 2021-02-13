@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container-fluid container">
         <a class="navbar-brand" [routerLink]="['/']">
-
             <b>GPS Trails</b>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -24,10 +23,10 @@
             </ul>
             <div class="d-flex ml-auto">
                 <a [routerLink]="['register']">
-                    <button class="btn ml-2 btn-success" type="submit">Sign Up</button>
+                    <button class="btn btn-sm ml-2 btn-primary" type="submit">Sign Up</button>
                 </a>
                 <a [routerLink]="['login']">
-                    <button class="btn ml-2 btn-outline-primary" type="submit">
+                    <button class="btn btn-sm ml-2 btn-outline-primary" type="submit">
                         Log In
                     </button>
                 </a>
