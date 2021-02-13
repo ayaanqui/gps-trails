@@ -1,46 +1,59 @@
-<form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+<div class="login-container">
+    <div class="mb-3">
+        <div class="card-body">
+            <div class="card-title mb-5">
+                <h3 class="text-center">Sign Up</h3>
+            </div>
+            <div class="card-text">
+
+                <div class="kpx_form">
+                    <div class="d-flex flex-row align-items-center kpx_socialButtons">
+                        <a href="#" class="btn kpx_btn-facebook" data-toggle="tooltip" data-placement="top"
+                            title="Facebook">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a>
+
+                        <a href="#" class="btn kpx_btn-twitter" data-toggle="tooltip" data-placement="top"
+                            title="Twitter">
+                            <i class="fa fa-twitter fa-2x"></i>
+                        </a>
+
+                        <a href="#" class="btn kpx_btn-google-plus" data-toggle="tooltip" data-placement="top"
+                            title="Google Plus">
+                            <i class="fa fa-google-plus fa-2x"></i>
+                        </a>
+                    </div>
+
+                    <div class="kpx_formOr">
+                        <div class="kpx_hrOr"></div>
+                        <span class="kpx_spanOr">or</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ex. name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Fullname</label>
+                    <input type="fullname" class="form-control" id="fullname" placeholder="Ex. John Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input class="form-control" id="password" placeholder="Password" type="password">
+                </div>
+
+                <div class="mt-4 d-flex flex-row align-items-center">
+                    <button class="btn btn-primary mr-3">Create Account</button>
+                    <div class="form-check ml-3">
+                        <input class="form-check-input" type="checkbox" value="" id="remeberme-check" checked>
+                        <label class="form-check-label" for="remeberme-check">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+</div>
