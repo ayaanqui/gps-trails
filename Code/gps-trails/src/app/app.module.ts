@@ -5,18 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './home/home.component';
+import { ExploreComponent } from './explore/explore.component';
 
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'search', component: SearchbarComponent },
+  { path: 'explore', component: ExploreComponent },
   { path: 'register', component: RegisterComponent }
 ]
 
@@ -24,10 +24,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    SearchbarComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    ExploreComponent,
   ],
   imports: [
     BrowserModule,
