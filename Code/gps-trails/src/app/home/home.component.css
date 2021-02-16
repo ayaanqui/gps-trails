@@ -7,7 +7,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: calc(100vh - 56px);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -15,7 +14,7 @@
 
 .hero-search .container {
   max-width: 800px;
-  padding: 30px 20px;
+  padding: 6em 20px 9em 20px;
 }
 
 .hero-search .hero-title {
@@ -47,4 +46,17 @@
 
   transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
+}
+
+.search-results {
+  background-color: transparent;
+  margin: -4em 0 3em 0;
+}
+
+.search-results .container {
+  background-color: #fff;
+  border-radius: 8px;
+  min-height: 400px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
 }
