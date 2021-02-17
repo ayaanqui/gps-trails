@@ -10,7 +10,7 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ExploreComponent } from './explore/explore.component';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 const appRoutes: Routes = [
@@ -33,7 +33,10 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA20UeixMkDC7IrTlSrtgPRrzdLacn30RM'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
