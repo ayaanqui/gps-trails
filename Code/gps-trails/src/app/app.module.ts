@@ -10,6 +10,7 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ExploreComponent } from './explore/explore.component';
+import { TrailBriefComponent } from './trail-brief/trail-brief.component';
 
 
 
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     ExploreComponent,
+    TrailBriefComponent,
   ],
   imports: [
     BrowserModule,
