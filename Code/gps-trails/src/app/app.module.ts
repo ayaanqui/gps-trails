@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA20UeixMkDC7IrTlSrtgPRrzdLacn30RM'
+      apiKey: 'AIzaSyBiGAsSAOdImXha7tc52eJQ63X_KqnHyTQ'
     })
   ],
   providers: [],
