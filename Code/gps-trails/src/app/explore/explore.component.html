@@ -1,5 +1,48 @@
-<div class="container">
-    <agm-map [latitude]="lat" [longitude]="lng">
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 
-    </agm-map>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary my-3 my-sm-0" type="submit" style="width:130px; height: 38px">Country</button>
+                    </li>
+                    <li class="nav-item" class="listoption" style="margin-left: 20px;">
+                        <button class="btn btn-outline-primary my-3 my-sm-0" type="submit" style="width:130px; height: 38px;">Rating</button>
+                    </li>
+                    <li class="nav-item" class="listoption" style="margin-left: 20px;">
+                        <button class="btn btn-outline-primary my-3 my-sm-0" type="submit" style="width:130px; height: 38px">Range</button>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-left: 100px;">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <agm-map [latitude]="lat" [longitude]="lng">
+
+        </agm-map>
+    </div>
 </div>
