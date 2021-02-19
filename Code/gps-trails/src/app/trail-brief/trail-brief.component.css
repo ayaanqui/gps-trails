@@ -4,15 +4,12 @@
   cursor: pointer;
   display: block;
   padding: 10px;
-
-  transition: 0.3s all ease-in-out;
-  -webkit-transition: 0.3s all ease-in-out;
 }
 
 .trail-brief-view:hover,
 .trail-brief-view:focus,
 .trail-brief-view:active {
-  background-color: #eee;
+  background-color: rgb(238, 238, 238);
 }
 
 .trail-brief-view .trail-container {
@@ -44,4 +41,62 @@
 
 .trail-content .trail-name {
   margin-bottom: 10px;
+}
+
+.trail-content .trail-description {
+  height: 4.2em;
+  overflow: hidden;
+  position: relative;
+}
+
+.trail-description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 20px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.9) 100%
+  );
+}
+
+.trail-brief-view:hover .trail-description::after,
+.trail-brief-view:focus .trail-description::after,
+.trail-brief-view:active .trail-description::after {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(238, 238, 238, 0.9) 100%
+  );
+}
+
+.trail-content .trail-info {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-direction: row;
+
+  margin-top: 5px;
+  padding: 10px 0px;
+}
+
+.trail-info .options {
+  margin-right: 15px;
+}
+
+.trail-info .options:last-child {
+  margin-right: 0px !important;
+}
+
+.trail-info .ratings-bar {
+  color: #ffb400;
+  display: flex;
+}
+
+.ratings-bar > i {
+  margin-right: 3px;
 }
