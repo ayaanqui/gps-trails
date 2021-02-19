@@ -12,16 +12,29 @@ export class TrailBriefComponent implements OnInit {
   @Input() views: string = "";
   @Input() ratingsAvg: string = "";
   
+  starElement = (icon: string): string => `<i class="fa ${icon}"></i>\n`;
+
   getStars: Function = () => {
     let stars = "";
     const ratings: number = parseFloat(this.ratingsAvg);
-    const leftovers: number = 5-ratings;
+    let leftovers: number = 5-ratings;
 
-    for (let i = 0; i < ratings; i++)
-      stars += '<i class="fa fa-star"></i>\n';
+    let r = ratings;
 
-    for (let i = 0; i < leftovers-1; i++)
-      stars += '<i class="fa fa-star-o"></i>\n';
+    for (let i = 0; i < Math.floor(ratings); i++) {
+      stars += this.starElement("fa-star");
+      r -= 1;
+    }
+
+    // Add half star if r is not 0
+    if (r > 0) {
+      stars += this.starElement("fa-star-half-o");
+      leftovers--;
+    }
+
+    // Add left over empty stars
+    for (let i = 0; i < leftovers; i++)
+      stars += this.starElement("fa-star-o");
     return stars;
   };
 
