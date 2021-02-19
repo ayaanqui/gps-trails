@@ -11,6 +11,8 @@
         <app-trail-brief *ngFor="let trail of trails"
             name={{trail.name}}
             description={{trail.description}}
+            views={{trail.views}}
+            ratingsAvg={{trail.ratingsAvg}}
         ></app-trail-brief>
     </div>
 </div>
