@@ -6,3 +6,8 @@ agm-map{
 .image-parent {
     max-width: 40px;
   }
+
+  #map{
+      width:100%;
+      height:500px;
+  }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import * as mapboxgl from 'mapbox-gl';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-explore',
@@ -7,12 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExploreComponent implements OnInit {
 
+  map?: mapboxgl.Map;
+  style = 'mapbox://styles/mapbox/streets-v11';
   lat: number = 51.678418;
   lng: number = 7.809007;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.map = new mapboxgl.Map({
+
+      accessToken: environment.mapbox.accessToken,
+
+      container: 'map',
+
+      style: this.style,
+
+      zoom: 13,
+
+      center: [this.lng, this.lat]
+
+    });
+    // Add map controls
+    this.map.addControl(new mapboxgl.NavigationControl());
   }
 
   parklist: { id: number, parkname: string, imgurl: string, parkDesc: string }[] = [
