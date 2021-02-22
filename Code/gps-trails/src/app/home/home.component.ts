@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {data} from './trails.json';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  trails: Array<any>;
 
-  constructor() { }
+  constructor() { 
+    this.trails = data;
+  }
 
   ngOnInit(): void {
   }
