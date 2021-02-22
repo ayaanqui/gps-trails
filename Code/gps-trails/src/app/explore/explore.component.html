@@ -1,4 +1,4 @@
-<div class="container" style="overflow: hidden;">
+<div class="container mt-3">
     <div class="row">
 
     </div>
@@ -12,7 +12,7 @@
             </agm-map>
         -->
         </div>
-        <div class="col-md-4" style="overflow: auto;">
+        <div class="col-md-4">
 
             <div class="row">
                 <form class="form-inline" style="width: 100%;">
@@ -22,35 +22,19 @@
             </div>
             <br />
             <div class="row">
-                <h6 class="text-muted">Recommeded Parks
+                <h6 class="text-muted">Recommeded Parks</h6>
+                <div *ngFor="let park of parklist">
 
-                </h6>
-                <ul *ngFor="let park of parklist" class="list-group">
+                    <app-trail-brief 
+                        name={{park.parkname}} 
+                        description={{park.parkDesc}} 
+                        views={{park.views}} 
+                        image={{park.imgurl}}
+                        ratingsAvg={{park.ratingsAvg}}
+                        sm="true"
+                    ></app-trail-brief>
 
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-mid-7">
-                                <div class="row">
-                                    <p>{{park.parkname}}</p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p>
-                                            <small style="color:grey;">{{park.parkDesc}}</small>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img src={{park.imgurl}} style="width: 100px;height: 100px;">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                </ul>
+                </div>
             </div>
 
 
