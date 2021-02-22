@@ -41,21 +41,17 @@ export class ExploreComponent implements OnInit {
 
   }
 
-  parklist: {
-    id: number, parkname: string, imgurl: string, parkDesc: string,
-    lat1: number, lng1: number
-  }[] = [
-      {
-        "id": 0, parkname: "Yosemite National Park",
-        imgurl: "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg"
-        , parkDesc: "Beautiful destination in the world attracts speople all round the world", lat1: 37.8651, lng1: 119.5383
-      },
-      { "id": 1, parkname: "Bay area national", imgurl: "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg", parkDesc: "Located in the Silicon valley of United States..", lat1: 12.44, lng1: 34.23 },
-      { "id": 2, parkname: "Arizona reserves", imgurl: "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg", parkDesc: "Beautiful destination in the world attracts speople all round the world", lat1: 12.44, lng1: 34.23 },
-      { "id": 3, parkname: "Carmel by Sea", imgurl: "https://news.harvard.edu/wp-content/uploads/2019/09/leo-serrat_unsplash-1-1600x900.jpg", parkDesc: "Beautiful destination in the world attracts speople all round the world", lat1: 12.44, lng1: 34.23 },
 
-
-    ];
+  parklist: { id: number, parkname: string, imgurl: string, parkDesc: string, views: number, ratingsAvg: number, lat1: number, lng1: number }[] = [
+    {
+      "id": 0, parkname: "Yosemite National Park",
+      imgurl: "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg"
+      , parkDesc: "Beautiful destination in the world attracts speople all round the world", views: 1750, ratingsAvg: 4, lat1: 37.8651, lng1: 119.5383
+    },
+    { "id": 1, parkname: "Bay area national", imgurl: "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg", parkDesc: "Located in the Silicon valley of United States..", views: 100130, ratingsAvg: 5, lat1: 37.8651, lng1: 119.5383 },
+    { "id": 2, parkname: "Arizona reserves", imgurl: "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg", parkDesc: "Beautiful destination in the world attracts speople all round the world", views: 37583, ratingsAvg: 4.5, lat1: 37.8651, lng1: 119.5383 },
+    { "id": 3, parkname: "Carmel by Sea", imgurl: "https://news.harvard.edu/wp-content/uploads/2019/09/leo-serrat_unsplash-1-1600x900.jpg", parkDesc: "Beautiful destination in the world attracts speople all round the world", views: 96363, ratingsAvg: 4.5, lat1: 37.8651, lng1: 119.5383 },
+  ];
 
   clickedItem(data: {
     id: number, parkname: string, imgurl: string, parkDesc: string,
