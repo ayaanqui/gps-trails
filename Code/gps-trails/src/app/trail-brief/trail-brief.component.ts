@@ -11,6 +11,8 @@ export class TrailBriefComponent implements OnInit {
   @Input() description: string = "";
   @Input() views: string = "";
   @Input() ratingsAvg: string = "";
+  @Input() image: string = "";
+  @Input() sm: string = "";
   
   starElement = (icon: string): string => `<i class="fa ${icon}"></i>\n`;
 
