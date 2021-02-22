@@ -10,7 +10,12 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ExploreComponent } from './explore/explore.component';
+<<<<<<< HEAD
+import { TrailBriefComponent } from './trail-brief/trail-brief.component';
 
+=======
+import { AgmCoreModule } from '@agm/core';
+>>>>>>> 1315ac2186c13c65d4c5cd8598e64bc725442c2a
 
 
 const appRoutes: Routes = [
@@ -28,12 +33,16 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     ExploreComponent,
+    TrailBriefComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBiGAsSAOdImXha7tc52eJQ63X_KqnHyTQ'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

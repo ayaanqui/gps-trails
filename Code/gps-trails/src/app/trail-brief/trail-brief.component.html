@@ -1,0 +1,23 @@
+<div class="trail-brief-view">
+    <div class="trail-container d-flex">
+        <div class="trail-image">
+            <div class="no-image"></div>
+            <!-- <img src="https://cdn-assets.alltrails.com/uploads/photo/image/22953605/extra_large_7eb0886fcd08e8df464e27db7a8c82b5.jpg"> -->
+        </div>
+
+        <div class="trail-content">
+            <div class="trail-name"><h4>{{ name }}</h4></div>
+            <div class="trail-description">
+                <p>{{ description }}</p>
+            </div>
+
+            <div class="trail-info">
+                <div class="ratings-bar options" [innerHTML]=getStars()></div>
+                <div class="views-bar options">
+                    <i class="fa fa-eye mr-1"></i>
+                    <span>{{ views }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
