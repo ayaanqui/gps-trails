@@ -10,16 +10,8 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ExploreComponent } from './explore/explore.component';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { TrailBriefComponent } from './trail-brief/trail-brief.component';
-
-=======
 import { AgmCoreModule } from '@agm/core';
->>>>>>> 1315ac2186c13c65d4c5cd8598e64bc725442c2a
-=======
-import { AgmCoreModule } from '@agm/core';
->>>>>>> 1315ac2186c13c65d4c5cd8598e64bc725442c2a
 
 
 const appRoutes: Routes = [
