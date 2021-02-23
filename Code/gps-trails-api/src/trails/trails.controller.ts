@@ -6,10 +6,14 @@ import { data } from "./trails.json";
 export class TrailsController {
     
     trails: Array<Trail> = new Array<Trail>();
+    nameToTrailMap: Map<string, Trail> = new Map<string, Trail>();
 
     constructor() {
-        data.forEach((trail, i) => {
-            this.trails.push(new Trail(i, trail.name, trail.image, trail.description));
+        data.forEach((t, i) => {
+            let trailOb = new Trail(i, t.name, t.image, t.description);
+            
+            this.trails.push(trailOb);
+            this.nameToTrailMap.set(trailOb.name, trailOb);
         });
     }
 
