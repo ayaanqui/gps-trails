@@ -17,7 +17,7 @@ const httpOptions = {
 export class HomeComponent implements OnInit {
   trails: any;
   searchList: any;
-  searchresult: string = "wefew";
+  searchresult: string = "";
 
   constructor(private detailService: DetailServiceClass, private http: HttpClient) {
     this.trails = data;
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('http://localhost:3000/trails/').subscribe(res => {
       this.trails = res;
+      this.searchList = res;
       this.detailService.parklist = this.trails;
     });
   }
