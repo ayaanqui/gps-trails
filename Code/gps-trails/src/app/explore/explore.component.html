@@ -5,10 +5,10 @@
         </div>
         
         <div class="results-trail">
-            <h6 class="text-muted pl-3 pr-3">Recommeded Parks</h6>
+            <h6 class="text-muted pl-3 pr-3">Recommeded Parks {{namesel}}</h6>
             <div *ngFor="let trail of trails">
                 <app-trail-brief name={{trail.name}} description={{trail.description}} views={{trail.views}} image={{trail.image}}
-                    ratingsAvg={{trail.ratingsAvg}} sm="true"></app-trail-brief>
+                    ratingsAvg={{trail.ratingsAvg}} sm="true" (click)="clickedItem(trail)"></app-trail-brief>
             </div>
         </div>
     </div>
