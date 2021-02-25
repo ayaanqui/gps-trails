@@ -26,13 +26,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('http://localhost:3000/trails/').subscribe(res => {
       this.trails = res;
+      this.detailService.parklist = this.trails;
     });
   }
 
   searchThis() {
-
     this.searchList = this.detailService.parklist.filter(
-      item => item.parkname.toLowerCase().startsWith(this.searchresult.toLowerCase())
+      item => item.name.toLowerCase().includes(this.searchresult.toLowerCase())
     );
   }
 

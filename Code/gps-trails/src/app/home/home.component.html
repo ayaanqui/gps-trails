@@ -3,24 +3,18 @@
         <h1 class="hero-title">Find Your Trail</h1>
         <input class="form-control form-control-lg search-input" autofocus type="search" placeholder="Search for places to explore..."
             aria-label="Search" [(ngModel)]="searchresult" (input)="searchThis()">
-        <ul *ngFor="let park of searchList" class="list-group">
-            <a [routerLink]="['park']">
-                <p class="list-group-item" (click)="goToTrials(park)">
-                    {{park.parkname}}
-                </p>
-            </a>
-        </ul>
     </div>
 </div>
 
 <div class="search-results">
     <div class="container">
-        <app-trail-brief *ngFor="let trail of trails"
+        <app-trail-brief *ngFor="let trail of searchList" [routerLink]="['park']"
             name={{trail.name}}
             image={{trail.image}}
             description={{trail.description}}
             views={{trail.views}}
             ratingsAvg={{trail.ratingsAvg}}
+            (click)="goToTrials(trail)"
         ></app-trail-brief>
     </div>
 </div>
