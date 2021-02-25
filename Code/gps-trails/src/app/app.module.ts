@@ -15,6 +15,7 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { DetailledViewComponent } from './detailled-view/detailled-view.component';
 import { DetailServiceClass } from './home/details.service';
+import { AddtrailComponent } from './addtrail/addtrail.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     ExploreComponent,
     TrailBriefComponent,
     DetailledViewComponent,
+    AddtrailComponent,
   ],
   imports: [
     BrowserModule,

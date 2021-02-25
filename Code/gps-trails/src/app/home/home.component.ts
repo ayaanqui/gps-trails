@@ -6,30 +6,15 @@ import { DetailServiceClass } from './details.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [DetailServiceClass]
+  providers: []
 })
 export class HomeComponent implements OnInit {
   trails: Array<any>;
 
-  parklist: {
-    id: number, parkname: string, imgurl: string, parkDesc: string,
-    lat1: number, lng1: number
-  }[] = [
 
-    ];
-  searchList: {
-    id: number, parkname: string, imgurl: string, parkDesc: string,
-    lat1: number, lng1: number
-  }[] = [{
-    "id": 0, parkname: "",
-    imgurl: ""
-    , parkDesc: "", lat1: 0.0, lng1: 0.0
-  }];
-
+  searchList: any;
   searchresult: string = "wefew";
-
   constructor(private detailService: DetailServiceClass) {
-    this.parklist = detailService.parklist;
     this.trails = data;
   }
 
@@ -37,18 +22,16 @@ export class HomeComponent implements OnInit {
   }
 
   searchThis() {
-    this.searchList = this.parklist.filter(
+
+    this.searchList = this.detailService.parklist.filter(
       item => item.parkname.toLowerCase().startsWith(this.searchresult.toLowerCase())
     );
-
-
   }
 
-  goToTrials(e: {
-    id: number, parkname: string, imgurl: string, parkDesc: string,
-    lat1: number, lng1: number
-  }) {
-    this.detailService.emitItemSelected(this.searchresult);
+  goToTrials(e: any) {
+    this.detailService.selectedString = e.parkname;
+
+    //this.detailService.emitItemSelected("Yosemite park");
   }
 
 }
