@@ -5,7 +5,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{selectedParkItem.imgurl}}" alt="First slide">
+                <img class="d-block w-100" src="{{selectedParkItem.image}}" alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="https://cdn-assets.alltrails.com/uploads/photo/image/11451253/large_311be19de223cd59c37f6c33e9a2004d.jpg"
@@ -16,18 +16,18 @@
                     alt="Third slide">
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
 
     <br />
-    <h4>Best of {{selectedParkItem.parkname}}</h4>
+    <h4>Best of {{selectedParkItem.name}}</h4>
     <div class="stars">
         <form action="">
             <input class="star star-5" id="star-5" type="radio" name="star" />
@@ -42,7 +42,7 @@
             <label class="star star-1" for="star-1"></label>
         </form>
     </div>
-    <p>Looking for a great trail in {{selectedParkItem.parkname}}?. AllTrails has 118 great hiking trails, trail running trails,
+    <p> {{selectedParkItem.description}}. <br/> Looking for a great trail in {{selectedParkItem.name}}?. GPS Trails has 118 great hiking trails, trail running trails,
         views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos
         from hikers, campers, and nature lovers like you. Ready...
         <a>show more</a>
