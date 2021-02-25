@@ -24,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'explore', component: ExploreComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'park', component: DetailledViewComponent },
+  { path: 'addtrail', component: AddtrailComponent },
 ]
 
 @NgModule({

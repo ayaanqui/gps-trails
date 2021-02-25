@@ -5,8 +5,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://cdn-assets.alltrails.com/uploads/photo/image/16300412/extra_large_bbcae69a7265e2bd56e66c8c76b2f3b0.jpg"
-                    alt="First slide">
+                <img class="d-block w-100" src="{{selectedParkItem.imgurl}}" alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="https://cdn-assets.alltrails.com/uploads/photo/image/11451253/large_311be19de223cd59c37f6c33e9a2004d.jpg"
@@ -28,7 +27,7 @@
     </div>
 
     <br />
-    <h4>Best of {{searchresult}}</h4>
+    <h4>Best of {{selectedParkItem.parkname}}</h4>
     <div class="stars">
         <form action="">
             <input class="star star-5" id="star-5" type="radio" name="star" />
@@ -43,9 +42,9 @@
             <label class="star star-1" for="star-1"></label>
         </form>
     </div>
-    <p>Looking for a great trail in Joshua Tree National Park, California? AllTrails has 118 great hiking trails, trail running
-        trails, views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and
-        photos from hikers, campers, and nature lovers like you. Ready...
+    <p>Looking for a great trail in {{selectedParkItem.parkname}}?. AllTrails has 118 great hiking trails, trail running trails,
+        views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos
+        from hikers, campers, and nature lovers like you. Ready...
         <a>show more</a>
     </p>
 

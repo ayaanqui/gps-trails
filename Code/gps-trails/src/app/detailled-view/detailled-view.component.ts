@@ -21,28 +21,28 @@ export class DetailledViewComponent implements OnInit {
   searchresult: string = "Yos";
   constructor(private detailService: DetailServiceClass) {
 
-    console.log("value is", this.detailService.selectedString);
-    this.searchresult = this.detailService.selectedString;
-
+    this.selectedParkItem = this.detailService.selectedString;
+    this.searchresult = this.selectedParkItem.parkname;
   }
 
   ngOnInit() {
 
-    this.searchresult = this.detailService.selectedString;
+    this.selectedParkItem = this.detailService.selectedString;
+    this.searchresult = this.selectedParkItem.parkname;
 
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
       container: 'map',
       style: this.style,
-      zoom: 13,
-      center: [this.lng, this.lat]
+      zoom: 8,
+      center: [this.selectedParkItem.lng1, this.selectedParkItem.lat1]
 
     });
     // Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
 
     var marker = new mapboxgl.Marker()
-      .setLngLat([51.678418, 7.809007])
+      .setLngLat([this.selectedParkItem.lng1, this.selectedParkItem.lat1])
       .addTo(this.map);
   }
 

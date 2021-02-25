@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToTrials(e: any) {
-    this.detailService.selectedString = e.parkname;
+    this.detailService.selectedString = e;
 
     //this.detailService.emitItemSelected("Yosemite park");
   }
