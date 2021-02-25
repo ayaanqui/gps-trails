@@ -1,60 +1,18 @@
-<div class="container" style="overflow: hidden;">
-    <div class="row">
-
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-
-            <div id='map'></div>
-            <!--
-            <agm-map [latitude]="lat" [longitude]="lng">
-
-            </agm-map>
-        -->
+<div class="explore-container">
+    <div class="sidebar">
+        <div class="search-trails">
+            <input type="search" name="search" id="search" placeholder="Search for trails...">
         </div>
-        <div class="col-md-4" style="overflow: auto;">
-
-            <div class="row">
-                <form class="form-inline" style="width: 100%;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+        
+        <div class="results-trail">
+            <h6 class="text-muted pl-3 pr-3">Recommeded Parks</h6>
+            <div *ngFor="let trail of trails">
+                <app-trail-brief name={{trail.name}} description={{trail.description}} views={{trail.views}} image={{trail.image}}
+                    ratingsAvg={{trail.ratingsAvg}} sm="true"></app-trail-brief>
             </div>
-            <br />
-            <div class="row">
-                <h6 class="text-muted">Recommeded Parks
-
-                </h6>
-                <ul *ngFor="let park of parklist" class="list-group">
-
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-mid-7">
-                                <div class="row">
-                                    <p>{{park.parkname}}</p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p>
-                                            <small style="color:grey;">{{park.parkDesc}}</small>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img src={{park.imgurl}} style="width: 100px;height: 100px;">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-            </div>
-
-
         </div>
-
     </div>
+
+    <!-- Mapbox map component -->
+    <div id="map" class="map-lg"></div>
 </div>
