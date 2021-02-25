@@ -12,13 +12,17 @@ import { HomeComponent } from './home/home.component';
 import { ExploreComponent } from './explore/explore.component';
 import { TrailBriefComponent } from './trail-brief/trail-brief.component';
 import { AgmCoreModule } from '@agm/core';
+import { FormsModule } from '@angular/forms';
+import { DetailledViewComponent } from './detailled-view/detailled-view.component';
+import { DetailServiceClass } from './home/details.service';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'park', component: DetailledViewComponent },
 ]
 
 @NgModule({
@@ -30,17 +34,19 @@ const appRoutes: Routes = [
     HomeComponent,
     ExploreComponent,
     TrailBriefComponent,
+    DetailledViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBiGAsSAOdImXha7tc52eJQ63X_KqnHyTQ'
     })
   ],
-  providers: [],
+  providers: [DetailServiceClass],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
