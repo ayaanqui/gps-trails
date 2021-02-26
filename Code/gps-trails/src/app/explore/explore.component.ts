@@ -31,13 +31,13 @@ export class ExploreComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 13,
-      center: [this.lng, this.lat]
+      center: [-119.5383, 37.8651]
     });
     // Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
 
     var marker = new mapboxgl.Marker()
-      .setLngLat([51.678418, 7.809007])
+      .setLngLat([-119.5383, 37.8651])
       .addTo(this.map);
   }
 
@@ -55,7 +55,7 @@ export class ExploreComponent implements OnInit {
 
       zoom: 8,
 
-      center: [e.lon, e.lat]
+      center: [-119.5383, 37.8651]
 
     });
     // Add map controls
