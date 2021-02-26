@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddtrailComponent implements OnInit {
 
+  email: string = "";
+  name: string = "";
+  parkname: string = ""
+  trailname: string = "";
+  experience: string = "";
+
+  responsemessage: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+
+
 
 }

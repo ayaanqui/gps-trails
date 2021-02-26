@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
 
   searchList: any;
-  searchresult: string = "wefew";
+  searchresult: string = "";
   constructor(private detailService: DetailServiceClass) {
     this.trails = data;
   }
