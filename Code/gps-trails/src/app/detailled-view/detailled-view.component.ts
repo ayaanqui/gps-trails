@@ -35,14 +35,14 @@ export class DetailledViewComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 8,
-      center: [this.selectedParkItem.lng1, this.selectedParkItem.lat1]
+      center: [-119.5383, this.selectedParkItem.lat1]
 
     });
     // Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
 
     var marker = new mapboxgl.Marker()
-      .setLngLat([this.selectedParkItem.lng1, this.selectedParkItem.lat1])
+      .setLngLat([-119.5383, this.selectedParkItem.lat1])
       .addTo(this.map);
   }
 
