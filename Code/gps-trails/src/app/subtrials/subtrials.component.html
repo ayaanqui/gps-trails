@@ -17,10 +17,14 @@
             <hr />
 
             <div class="row">
-                <div class="col-md-4">Difficulty:{{selectedSubTrialFromDetailsComponent.difficulty}}</div>
-                <div class="col-md-4">Route-Type:{{selectedSubTrialFromDetailsComponent.routetype}}</div>
-                <div class="col-md-4">Route-Type:{{selectedSubTrialFromDetailsComponent.elevationgain}}</div>
+                <div class="col-md-4">
+                    <strong>Difficulty:</strong> {{selectedSubTrialFromDetailsComponent.difficulty}}</div>
+                <div class="col-md-4">
+                    <strong>Route-Type:</strong> {{selectedSubTrialFromDetailsComponent.routetype}}</div>
+                <div class="col-md-4">
+                    <strong>Elevation Gain:</strong> {{selectedSubTrialFromDetailsComponent.elevationgain}} ft</div>
             </div>
+
 
             <div class="stars">
                 <form action="">
@@ -37,6 +41,29 @@
                 </form>
             </div>
 
+
+            <div class="row">
+                <div class="row">
+                    <h5>Reviews</h5>
+                </div>
+                <div class="row">
+                    <div *ngFor="let reviewlistitem of selectedSubTrialFromDetailsComponent.reviews" class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{reviewlistitem.name}}</h5>
+                                <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">{{reviewlistitem.reviewOfTrail}}.</p>
+                            <small>Donec id elit non mi porta.</small>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </div>
 
         <div class="col-md-5">
@@ -44,9 +71,9 @@
                 <img src="https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg"
                     alt=".." class="image-fluid" height="300px" width="500px" />
             </div>
-
+            <br />
             <div class="row">
-                <div class="map"></div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
