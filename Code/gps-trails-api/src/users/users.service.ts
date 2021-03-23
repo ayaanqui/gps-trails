@@ -31,6 +31,7 @@ export class UsersService {
   }
 
   findOne(username: string): Promise<User> {
+    
     return this.usersRepository.findOne(username);
   }
 

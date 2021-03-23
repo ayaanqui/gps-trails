@@ -14,15 +14,16 @@ import { UsersService } from './users/users.service';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Blue420Sky',
+      password: 'password',
       database: 'NestJSUserDB',
       entities: [User],
       synchronize: true,
     }),
     UsersModule,
     UsersService,
-    TypeOrmModule.forFeature([User],),
+    TypeOrmModule.forFeature([User], )
   ],
+  providers: [UsersService],
   controllers: [AppController, TrailsController, UsersController],
 })
-export class AppModule {}
+export class AppModule { }

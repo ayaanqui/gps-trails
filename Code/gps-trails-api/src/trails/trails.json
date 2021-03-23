@@ -1,39 +1,241 @@
 {
     "data": [
         {
-            "name": "Yosemite National Park", 
-            "image": "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg", 
-            "description": "Yosemite National Park is in California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoia trees, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome."
+            "name": "Yosemite National Park",
+            "image": "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg",
+            "description": "Yosemite National Park is in California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoia trees, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome.",
+            "latitude": 33.8688,
+            "longitude": 151.2093,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "routetype": "loop",
+                    "elevationgain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Upper Yoesmite Falls Trail",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 2712,
+                    "length": 7.6,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "time": 4,
+                    "difficulty": "hard",
+                    "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vernal Park",
+                    "reviewsTrial": 2.5,
+                    "noOfReview": 1279,
+                    "length": 4,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 5,
+                    "difficulty": "medium",
+                    "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
+                    "route-type": "out & back",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         },
-
         {
-            "name": "Bay area national", 
-            "image": "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg", 
-            "description": "Located in the Silicon valley of United States.."
+            "name": "Acadia",
+            "image": "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg",
+            "description": "Located in the Silicon valley of United States..",
+            "latitude": 44.376789,
+            "longitude": -68.255569,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         },
-
         {
-            "name": "Arizona reserves",
-            "image": "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg", 
-            "description": "A large reservoir formed by Theodore Roosevelt Dam on the Salt River in Arizona as part of the Salt River Project."
+            "name": "American Samoa",
+            "image": "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg",
+            "description": "A large reservoir formed by Theodore Roosevelt Dam on the Salt River in Arizona as part of the Salt River Project.",
+            "latitude": 14.25,
+            "longitude": 170.68,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         },
-
         {
-            "name": "Springbrook Nature Center", 
-            "image": "", 
-            "description": "Springbrook Nature Center is a 1.6 mile lightly trafficked loop trail located near Itasca, Illinois that features beautiful wild flowers and is good for all skill levels."
+            "name": "Badlands",
+            "image": "https://www.chicagotribune.com/resizer/e-WgIn8EDK5omWyu1F6tJs2GNBo=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/BXPILZSONRBPJIQ3J6X4QICDNM.jpg",
+            "description": "Springbrook Nature Center is a 1.6 mile lightly trafficked loop trail located near Itasca, Illinois that features beautiful wild flowers and is good for all skill levels.",
+            "latitude": 51.418758,
+            "longitude": -112.616333,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         },
-
         {
-            "name": "Mount LeConte", 
-            "image": "", 
-            "description": "Mount LeConte via Rainbow Falls Trail is a 13 mile heavily trafficked out and back trail located near Gatlinburg, Tennessee that features a waterfall. The trail is only recommended for very experienced adventurers and is primarily used for hiking and nature trips."
+            "name": "Big Bend",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Canyon%2C_Rio_Grande%2C_Texas.jpeg",
+            "description": "Mount LeConte via Rainbow Falls Trail is a 13 mile heavily trafficked out and back trail located near Gatlinburg, Tennessee that features a waterfall. The trail is only recommended for very experienced adventurers and is primarily used for hiking and nature trips.",
+            "latitude": 29.2498,
+            "longitude": 103.2502,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         },
-
         {
-            "name": "Folding Mountain Hike", 
-            "image": "", 
-            "description": "Folding Mountain Hike is a 9.2 mile moderately trafficked out and back trail located near Yellowhead County, Alberta, Canada that features beautiful wild flowers and is rated as difficult. The trail offers a number of activity options and is best used from April until October. Dogs are also able to use this trail but must be kept on leash."
+            "name": "Biscayne",
+            "image": "https://www.nps.gov/bisc/planyourvisit/images/BISC-UW-250711-2_1.jpg?maxwidth=650&autorotate=false",
+            "description": "Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangrove forest, the Bay, the Keys, and coral reefs. Threatened animals include the West Indian manatee, American crocodile, various sea turtles, and peregrine falcon.",
+            "latitude": 25.65,
+            "longitude": 80.08,
+            "parkarea": 234234,
+            "contact": "2093720200",
+            "subtrails": [
+                {
+                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 3244,
+                    "length": 8.8,
+                    "time": 5,
+                    "difficulty": "hard",
+                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
