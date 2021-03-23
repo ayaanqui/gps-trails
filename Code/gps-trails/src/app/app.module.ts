@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './account/login/login.component';
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailledViewComponent } from './detailled-view/detailled-view.component';
 import { DetailServiceClass } from './home/details.service';
 import { AddtrailComponent } from './addtrail/addtrail.component';
+import { SubtrialsComponent } from './subtrials/subtrials.component';
 
 
 const appRoutes: Routes = [
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'park', component: DetailledViewComponent },
   { path: 'addtrail', component: AddtrailComponent },
+  { path: "subtrial", component: SubtrialsComponent }
 ]
 
 @NgModule({
@@ -38,11 +41,13 @@ const appRoutes: Routes = [
     TrailBriefComponent,
     DetailledViewComponent,
     AddtrailComponent,
+    SubtrialsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({

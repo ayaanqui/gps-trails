@@ -1,4 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable()
 export class DetailServiceClass {
@@ -6,28 +9,37 @@ export class DetailServiceClass {
     @Output() detailComponentEmitter = new EventEmitter<string>();
 
     selectedString: any;
+
+
+    selectedSubTrail: any;
+
+    constructor(private httpClient: HttpClient) {
+
+    }
     emitItemSelected(stringselected: string) {
         this.detailComponentEmitter.emit(stringselected);
     }
 
     parklist: {
-        id: number, parkname: string, imgurl: string, parkDesc: string,
-        lat1: number, lng1: number
+        id: number, name: string, image: string, description: string,
+        ratingsAvg: number, views: number, lat: number, lon: number
+    }[] = [];
 
-    }[] = [
-            {
-                "id": 0,
-                parkname: "Yosemite National Park",
-                imgurl: "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg",
-                parkDesc: "Beautiful destination in the world attracts speople all round the world",
-                lat1: 37.8651,
-                lng1: -119.5383,
+    createMessage(message: any): Observable<Object> {
 
-            },
-            { "id": 1, parkname: "Acadia", imgurl: "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg", parkDesc: "Located in the Silicon valley of United States..", lat1: 68.2733, lng1: 44.3386 },
-            { "id": 2, parkname: "Arches", imgurl: "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg", parkDesc: "Beautiful destination in the world attracts speople all round the world", lat1: 38.7331, lng1: 109.5925 },
-            { "id": 3, parkname: "Badlands", imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BadlandsView3.jpg/400px-BadlandsView3.jpg", parkDesc: "Beautiful destination in the world attracts speople", lat1: 43.8554, lng1: -102.3397 },
 
-        ];
+        console.log(message.emailId);
+        return this.httpClient.post('http://localhost:3000/users/postNewUser', {
+            id: 23,
+            username: message.emailId,
+            password: message.password,
+            firstName: message.fullName,
+            lastName: message.fullName,
+            addedReviews: "#242",
+            addedTrails: "32432"
+        });
+
+    }
+
 
 }
