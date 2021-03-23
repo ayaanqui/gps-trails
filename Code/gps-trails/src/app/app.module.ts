@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailledViewComponent } from './detailled-view/detailled-view.component';
 import { DetailServiceClass } from './home/details.service';
 import { AddtrailComponent } from './addtrail/addtrail.component';
+import { SubtrialsComponent } from './subtrials/subtrials.component';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'park', component: DetailledViewComponent },
   { path: 'addtrail', component: AddtrailComponent },
+  { path: "subtrial", component: SubtrialsComponent }
 ]
 
 @NgModule({
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
     TrailBriefComponent,
     DetailledViewComponent,
     AddtrailComponent,
+    SubtrialsComponent,
   ],
   imports: [
     BrowserModule,

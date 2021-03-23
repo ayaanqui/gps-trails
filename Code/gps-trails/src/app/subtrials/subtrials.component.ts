@@ -4,36 +4,28 @@ import * as mapboxgl from 'mapbox-gl';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-detailled-view',
-  templateUrl: './detailled-view.component.html',
-  styleUrls: ['./detailled-view.component.css'],
-  providers: []
+  selector: 'app-subtrials',
+  templateUrl: './subtrials.component.html',
+  styleUrls: ['./subtrials.component.css']
 })
-export class DetailledViewComponent implements OnInit {
+export class SubtrialsComponent implements OnInit {
+
+  selectedSubTrialFromDetailsComponent: any;
+
 
   map?: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat: number = 51.678418;
   lng: number = 7.809007;
 
-  selectedParkItem: any;
-
-  searchresult: string = "Yos";
-  subtrialsList: any;
 
   constructor(private detailService: DetailServiceClass) {
+    this.selectedSubTrialFromDetailsComponent = this.detailService.selectedSubTrail;
 
-    this.selectedParkItem = this.detailService.selectedString;
-    this.searchresult = this.selectedParkItem.parkname;
-    this.subtrialsList = this.selectedParkItem.subtrails;
   }
 
-  ngOnInit() {
-
-    this.selectedParkItem = this.detailService.selectedString;
-    this.searchresult = this.selectedParkItem.parkname;
-    this.subtrialsList = this.detailService.selectedString.subtrails;
-
+  ngOnInit(): void {
+    this.selectedSubTrialFromDetailsComponent = this.detailService.selectedSubTrail;
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
       container: 'map',
@@ -50,9 +42,5 @@ export class DetailledViewComponent implements OnInit {
       .addTo(this.map);
   }
 
-
-  goToSubTrials(trail: any) {
-    this.detailService.selectedSubTrail = trail;
-  }
 
 }

@@ -55,7 +55,7 @@ export class ExploreComponent implements OnInit {
 
       zoom: 8,
 
-      center: [-119.5383, 37.8651]
+      center: [-19.5383, 37.8651]
 
     });
     // Add map controls

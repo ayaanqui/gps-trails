@@ -42,7 +42,8 @@
             <label class="star star-1" for="star-1"></label>
         </form>
     </div>
-    <p> {{selectedParkItem.description}}. <br/> Looking for a great trail in {{selectedParkItem.name}}?. GPS Trails has 118 great hiking trails, trail running trails,
+    <p> {{selectedParkItem.description}}.
+        <br/> Looking for a great trail in {{selectedParkItem.name}}?. GPS Trails has 118 great hiking trails, trail running trails,
         views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos
         from hikers, campers, and nature lovers like you. Ready...
         <a>show more</a>
@@ -68,22 +69,64 @@
         <div class="col-md-6">
             <p>
                 <strong>Park area : </strong>
-                789,745 acres
+                {{selectedParkItem.parkarea}} acres
             </p>
         </div>
         <div class="col-md-6">
             <p>
                 <strong>Contact: </strong>
-                760-367-5500
+                {{selectedParkItem.contact}}
             </p>
         </div>
 
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $('#rateMe3').mdbRate();
-        });
-    </script>
+    <div class="row">
+        <h3>List of Trials</h3>
+        <div *ngFor="let subtrailitem of subtrialsList" (click)="goToSubTrials(subtrailitem)" [routerLink]="['../subtrial']">
+            <ul class=" list-group ">
+                <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
+                    <div class="flex-column ">
+                        <strong style="color:black; ">{{subtrailitem.name}}</strong>
+                        <p style="width: 470px; ">
+                            <small>{{subtrailitem.description}}</small>
+                        </p>
+                        <span class="badge badge-info badge-pill "> {{subtrailitem.noOfReview}} review</span>
+                    </div>
+                    <div class="image-parent ">
+                        <img src="{{subtrailitem.image}} " class="img-fluid " alt="quixote " style="width: 200px;height:160px; ">
+                    </div>
+                </a>
+
+            </ul>
+        </div>
+        <!--
+            <div class="row ">
+                <div class="col-md-12 ">
+                    <div class="media ">
+                        <div class="media-left ">
+                            <a href="# ">
+                                <img class="media-object " src="{{subtrailitem.image}} " alt="... " style="width: 100px;height:
+            100px; ">
+                            </a>
+                        </div>
+                        <div class="media-body " style="padding: 6px; ">
+                            <h4 class="media-heading ">{{subtrailitem.name}}</h4>
+                            <p>{{subtrailitem.description}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+           -->
+    </div>
+
+
 
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#rateMe3').mdbRate();
+    });
+</script>

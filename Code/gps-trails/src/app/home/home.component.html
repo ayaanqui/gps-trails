@@ -8,13 +8,59 @@
 
 <div class="search-results">
     <div class="container">
-        <app-trail-brief *ngFor="let trail of searchList" [routerLink]="['park']"
-            name={{trail.name}}
-            image={{trail.image}}
-            description={{trail.description}}
-            views={{trail.views}}
-            ratingsAvg={{trail.ratingsAvg}}
-            (click)="goToTrials(trail)"
-        ></app-trail-brief>
+        <app-trail-brief *ngFor="let trail of searchList" [routerLink]="['park']" name={{trail.name}} image={{trail.image}} description={{trail.description}}
+            views={{trail.views}} ratingsAvg={{trail.ratingsAvg}} (click)="goToTrials(trail)"></app-trail-brief>
     </div>
 </div>
+
+<footer class="bg-light text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">GPS Trails</h5>
+
+                <p>
+                    GPS Trails helps to make your trials more organized and memorble by providing you the most optimal trails to walk and being
+                    you adventures.!
+                </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Contacts us</h5>
+
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-dark">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Twitch</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Whatsapp</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgb(0, 0, 0); color: floralwhite">
+        © 2020 Copyright:GPS Trials.com
+        <a class="text-dark" href="" style="color:floralwhite">gpstrials.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
