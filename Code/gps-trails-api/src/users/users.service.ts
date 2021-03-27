@@ -20,16 +20,18 @@ export class UsersService {
     };
 }
 
-  findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+  async findAll(): Promise<User[]> {
+    return await this.usersRepository.find();
   }
 
-  findOne(username: string): Promise<User> {
-    
-    return this.usersRepository.findOne(username);
+  async findOne(email: string): Promise<User> {
+    return await this.usersRepository.findOne(email);
   }
 
-  async remove(username: string): Promise<void> {
-    await this.usersRepository.delete(username);
+  async remove(email: string): Promise<any> {
+    await this.usersRepository.delete(email);
+    return {
+      message: `${email} deleted!`
+    };
   }
 }
