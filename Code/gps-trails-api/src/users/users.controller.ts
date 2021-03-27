@@ -12,9 +12,10 @@ export class UsersController {
     postUser(@Body() user: CreateUserDto) {
         return this.usersService.insert(user);
     }
+
     @Post('login')
     checkLogin(@Body() user: CreateUserDto) {
-        return this.usersService.findOne(user.username);
+        return this.usersService.findOne(user.email);
     }
 
 }

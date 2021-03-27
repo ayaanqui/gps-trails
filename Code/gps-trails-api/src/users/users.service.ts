@@ -8,22 +8,16 @@ export class UsersService {
   private usersRepository: Repository<User>;
   constructor() {}
    
-  async insert(userDetails: CreateUserDto): Promise<User>{
+  async insert(user: CreateUserDto): Promise<any> {
     const userEntity: User = User.create();
-    const {username} = userDetails;
-    const {password} = userDetails;
-    const {firstName} = userDetails;
-    const {lastName} = userDetails;
-    const {addedReviews} = userDetails;
-    const {addedTrails} = userDetails;
-    userEntity.username = username;
-    userEntity.password = password;
-    userEntity.firstName = firstName;
-    userEntity.lastName = lastName;
-    userEntity.addedReviews = addedReviews;
-    userEntity.addedTrails = addedTrails;
+    userEntity.email = user?.email;
+    userEntity.name = user?.name;
+    userEntity.password = user?.password;
+
     await User.save(userEntity);
-    return userEntity;
+    return {
+      message: `${user.email} created!`
+    };
 }
 
   findAll(): Promise<User[]> {
