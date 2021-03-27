@@ -8,17 +8,25 @@ export class UsersService {
   private usersRepository: Repository<User>;
   constructor() {}
    
+  async hashPassword(password: string, saltOrRounds: number): Promise<string> {
+    /**
+     * See https://docs.nestjs.com/security/encryption-and-hashing
+     * for more info on hashing with Bcrypt
+     */
+    return hash(password, saltOrRounds);
+  }
+
   async insert(user: CreateUserDto): Promise<any> {
     const userEntity: User = User.create();
     userEntity.email = user?.email;
     userEntity.name = user?.name;
-    userEntity.password = user?.password;
+    userEntity.password = await this.hashPassword(user?.password, 10);
 
     await User.save(userEntity);
     return {
       message: `${user.email} created!`
     };
-}
+  }
 
   async findAll(): Promise<User[]> {
     return await this.usersRepository.find();
