@@ -2,42 +2,52 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
 import CreateUserDto from "./dto/create-user.dto";
+import { compare, hash } from 'bcrypt';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class UsersService {
-  private usersRepository: Repository<User>;
-  constructor() {}
-   
-  async insert(userDetails: CreateUserDto): Promise<User>{
+  constructor(
+    @InjectRepository(User)
+    private usersRepository: Repository<User>,
+  ) { }
+
+  async hashPassword(password: string, saltOrRounds: number): Promise<string> {
+    /**
+     * See https://docs.nestjs.com/security/encryption-and-hashing
+     * for more info on hashing with Bcrypt
+     */
+    return hash(password, saltOrRounds);
+  }
+
+  async comparePassword(password: string, hash: string): Promise<boolean> {
+    return await compare(password, hash);
+  }
+
+  async insert(user: CreateUserDto): Promise<any> {
     const userEntity: User = User.create();
-    
-    const {username} = userDetails;
-    const {password} = userDetails;
-    const {firstName} = userDetails;
-    const {lastName} = userDetails;
-    const {addedReviews} = userDetails;
-    const {addedTrails} = userDetails;
+    userEntity.email = user.email;
+    userEntity.name = user.name;
+    userEntity.password = await this.hashPassword(user.password, 10);
 
-    userEntity.username = username;
-    userEntity.password = password;
-    userEntity.firstName = firstName;
-    userEntity.lastName = lastName;
-    userEntity.addedReviews = addedReviews;
-    userEntity.addedTrails = addedTrails;
     await User.save(userEntity);
-    return userEntity;
-}
-
-  findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+    return {
+      message: `${user.email} created!`
+    };
   }
 
-  findOne(username: string): Promise<User> {
-    
-    return this.usersRepository.findOne(username);
+  async findAll(): Promise<User[]> {
+    return await this.usersRepository.find();
   }
 
-  async remove(username: string): Promise<void> {
-    await this.usersRepository.delete(username);
+  async findOne(email: string): Promise<User> {
+    return await this.usersRepository.findOne({ email: email });
+  }
+
+  async remove(email: string): Promise<any> {
+    await this.usersRepository.delete(email);
+    return {
+      message: `${email} deleted!`
+    };
   }
 }

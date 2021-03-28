@@ -28,14 +28,12 @@ export class RegisterComponent implements OnInit {
   }
   createMessage() {
 
-    this.httpClient.post<any>('http://localhost:3000/users/postNewUser', {
+    this.httpClient.post<any>('http://localhost:3000/register', {
       id: 222,
-      username: this.emailId,
-      password: this.password,
-      firstName: this.fullName,
-      lastName: this.fullName,
-      addedReviews: "#242",
-      addedTrails: "32432"
+      email: (<HTMLInputElement>document.getElementById('email')).value,
+      password: (<HTMLInputElement>document.getElementById('password')).value,
+      name: (<HTMLInputElement>document.getElementById('fullname')).value,
+
     }
     ).subscribe(data => {
       console.log(data);
