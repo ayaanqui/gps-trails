@@ -28,13 +28,7 @@ export class RegisterComponent implements OnInit {
   }
   createMessage() {
 
-    this.httpClient.post<any>('http://localhost:3000/users/postNewUser', { title: 'Angular POST Request Example' }).subscribe(data => {
-
-    })
-
-    /*
-    console.log(this.emailId);
-    return this.httpClient.post('http://localhost:3000/users/postNewUser', {
+    this.httpClient.post<any>('http://localhost:3000/users/postNewUser', {
       id: 222,
       username: this.emailId,
       password: this.password,
@@ -42,9 +36,11 @@ export class RegisterComponent implements OnInit {
       lastName: this.fullName,
       addedReviews: "#242",
       addedTrails: "32432"
-    });
-    */
-
+    }
+    ).subscribe(data => {
+      console.log(data);
+    }
+    )
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-addtrail',
@@ -15,11 +16,27 @@ export class AddtrailComponent implements OnInit {
 
   responsemessage: string = "";
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+
+  createMessage() {
+
+    this.httpClient.post<any>('http://localhost:3000/addtrails/add', {
+      id: 222,
+      emailid: "wrgsf",
+      name: "Adfwe",
+      parkname: "sdfref",
+      trailname: "sdfsfsfs",
+      experience: "#242",
+    }
+    ).subscribe(data => {
+      console.log(data);
+    }
+    )
+  }
 
 
 
