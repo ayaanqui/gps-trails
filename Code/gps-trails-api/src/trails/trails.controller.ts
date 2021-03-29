@@ -1,4 +1,5 @@
-import { Controller, Get, HttpException, HttpStatus, Param } from "@nestjs/common";
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, UseGuards } from "@nestjs/common";
+import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
 import { Trail } from "./trail";
 import { data } from "./trails.json";
 
@@ -32,6 +33,12 @@ export class TrailsController {
             },
                 HttpStatus.NOT_FOUND);
         return this.trails[id];
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Post()
+    createNewTrail(@Body() trailData: any): any {
+        return {message: "Not implemented yet"}
     }
 
 }
