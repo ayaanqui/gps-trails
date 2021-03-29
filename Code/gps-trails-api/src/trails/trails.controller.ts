@@ -1,17 +1,20 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
-import { Trail } from "./trail";
+import { Trail as OldTrail } from "./trail";
 import { data } from "./trails.json";
+import { CreateTrailDto } from './dto/create-trail-dto';
+import { TrailsService } from "./trails.service";
+import { Trail } from "./trails.entity";
 
 @Controller('trails')
 export class TrailsController {
 
-    trails: Array<Trail> = new Array<Trail>();
-    nameToTrailMap: Map<string, Trail> = new Map<string, Trail>();
+    trails: Array<OldTrail> = new Array<OldTrail>();
+    nameToTrailMap: Map<string, OldTrail> = new Map<string, OldTrail>();
 
-    constructor() {
+    constructor(private readonly trailServices: TrailsService) {
         data.forEach((t, i) => {
-            let trailOb = new Trail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails);
+            let trailOb = new OldTrail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails);
 
             this.trails.push(trailOb);
             this.nameToTrailMap.set(trailOb.name, trailOb);
@@ -19,12 +22,12 @@ export class TrailsController {
     }
 
     @Get()
-    getAllTrails(): Trail[] {
+    getAllTrails(): OldTrail[] {
         return this.trails;
     }
 
     @Get(':id')
-    getTrailById(@Param() params): Trail {
+    getTrailById(@Param() params): OldTrail {
         const id: number = params ?.id;
         if (id == null || id >= this.trails.length)
             throw new HttpException({
@@ -37,8 +40,9 @@ export class TrailsController {
 
     @UseGuards(JwtAuthGuard)
     @Post()
-    createNewTrail(@Body() trailData: any): any {
-        return {message: "Not implemented yet"}
+    async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
+        const newTrail: Trail = await this.trailServices.insert(trailData);
+        return newTrail;
     }
 
 }
