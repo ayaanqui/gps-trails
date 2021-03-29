@@ -4,9 +4,11 @@
             "name": "Yosemite National Park",
             "image": "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg",
             "description": "Yosemite National Park is in California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoia trees, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome.",
-            "latitude": 33.8688,
-            "longitude": 151.2093,
+            "latitude": 37.8651,
+            "longitude": -119.5383,
             "parkarea": 234234,
+            "views": "34332",
+            "ratingsAvg": 4.2,
             "contact": "2093720200",
             "subtrails": [
                 {
@@ -14,8 +16,16 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 8.8,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "time": 5,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "trailscoordinates": [],
                     "difficulty": "hard",
                     "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
                     "routetype": "loop",
@@ -36,6 +46,8 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 2712,
                     "length": 7.6,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
                     "time": 4,
                     "difficulty": "hard",
@@ -58,6 +70,8 @@
                     "reviewsTrial": 2.5,
                     "noOfReview": 1279,
                     "length": 4,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
                     "time": 5,
                     "difficulty": "medium",
@@ -77,12 +91,15 @@
                 }
             ]
         },
+        /** Acadia national park **/
         {
             "name": "Acadia",
             "image": "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg",
             "description": "Located in the Silicon valley of United States..",
             "latitude": 44.376789,
             "longitude": -68.255569,
+            "views": "3332",
+            "ratingsAvg": 3.2,
             "parkarea": 234234,
             "contact": "2093720200",
             "subtrails": [
@@ -91,10 +108,66 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 8.8,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "time": 5,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "",
+                        "",
+                        ""
+                    ],
                     "difficulty": "hard",
                     "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "routetype": "loop",
+                    "elevationgain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Upper Yoesmite Falls Trail",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 2712,
+                    "length": 7.6,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "time": 4,
+                    "difficulty": "hard",
+                    "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
                     "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vernal Park",
+                    "reviewsTrial": 2.5,
+                    "noOfReview": 1279,
+                    "length": 4,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 5,
+                    "difficulty": "medium",
+                    "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
+                    "route-type": "out & back",
                     "elevation-gain": 2191,
                     "reviews": [
                         {
@@ -109,70 +182,203 @@
                 }
             ]
         },
+        /** American Samona*/
         {
             "name": "American Samoa",
             "image": "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg",
             "description": "A large reservoir formed by Theodore Roosevelt Dam on the Salt River in Arizona as part of the Salt River Project.",
             "latitude": 14.25,
             "longitude": 170.68,
+            "views": "34332",
+            "ratingsAvg": 2.2,
             "parkarea": 234234,
             "contact": "2093720200",
             "subtrails": [
                 {
-                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "name": "Mount Alava Trail",
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
-                    "length": 8.8,
-                    "time": 5,
-                    "difficulty": "hard",
-                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
-                    "route-type": "loop",
-                    "elevation-gain": 2191,
+                    "length": 6.1,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "time": 3,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/21775565/extra_large_12d69f02e753010b9dfda276d6fff1d7.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/21775564/extra_large_2a28f701d870c5e6081475467e23b6f7.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/12696338/extra_large_22743eee6e6a294a2071150d2760b2f4.jpg"
+                    ],
+                    "difficulty": "moderate",
+                    "description": "Mount 'Alava Trail is a 6.1 mile moderately trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
+                    "routetype": "out & back",
+                    "elevationgain": 1548,
                     "reviews": [
                         {
-                            "name": "martha steward",
+                            "name": "Kerry Bailey",
+                            "reviewOfTrail": "After 62 national parks and hiking 100's of trails, some day hikes and many multiple nights I would put this in my bottom 10.  The trail is moderate even with the slippery rock after it rains.  the bird sounds are amazing. BUT this could be so much more.  it is kind of a boring hike.  10 foot wall of green on both sides of the trail. There are maybe 3 or 4 good viewpoints when with some planning there could be many more.  The view at the top was disappointing.  The NPS in their infinite wisdom to not ever harm nature, have let plants start to block the view point about 25 to 30%.  My less than 5' tall wife had to climb on the wall for the view.  "
+                        },
+                        {
+                            "name": "Sam Vandewater",
+                            "reviewOfTrail": "I would consider this trail difficult after it rains for those who are not strong hikers or sure-footed because of how slippery it is. The beginning is a little steep but then the grade becomes fairly moderate for the remainder of the trail. You end of at the top of the ridge overlooking Pago Pago harbor and Rainmaker Mountain. There were a few coconut crabs along the trail and sensitive plants that have leaves that quickly close if you touch them. The views were amazing from the top. There is a small cover building that allows you to take a break from the sun/rain."
+                        }
+                    ]
+                },
+                {
+                    "name": "Lower Sauma Ridge Trail",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 2712,
+                    "length": 0.4,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "images": [
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/25412466/extra_large_bf20bfd85245e88b2c6e2c0746de0090.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/25412464/extra_large_11f9371199b2e85eab6b602dbaca5de3.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/12696338/extra_large_22743eee6e6a294a2071150d2760b2f4.jpg"
+                    ],
+                    "time": 4,
+                    "difficulty": "easy",
+                    "description": "Lower Sauma Ridge Trail is a 0.4 mile lightly trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
+                    "route-type": "out & back",
+                    "elevation-gain": 173,
+                    "reviews": [
+                        {
+                            "name": "Caitlin Worrell",
                             "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
                         },
                         {
-                            "name": "sdfdsf",
-                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                            "name": "Sam Vandewater",
+                            "reviewOfTrail": "Have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pola Island Trail",
+                    "reviewsTrial": 2.5,
+                    "noOfReview": 1279,
+                    "length": 0.6,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 19,
+                    "difficulty": "easy",
+                    "description": "Pola Island Trail is a 0.6 mile moderately trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
+                    "route-type": "out & back",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "Caitlin Worrell",
+                            "reviewOfTrail": "Unfriendly dogs can be a big challenge in American Samoa, so we drove past the last house. We pulled over a bit too early to park because the map indicated that we were already about half way down the trail. There is amole parking where the three informational signs. The beach had large rocks so it would be challenging without appropriate footwear. There were lovely views of Pola Island were a very short walk from the parking area. We met the high talking chief on the beach who warned us not to get too close to the water due to strong waves and currents.  "
+                        },
+                        {
+                            "name": "Kevin Mora",
+                            "reviewOfTrail": "Short walk to the water’s edge where waves crash hard against the shoreline. No problems with dogs on the way in and a few barked as we left. Just stay off their property and motion like you are picking up a rock to throw at them and they will keep their distance. 5/9/18"
                         }
                     ]
                 }
             ]
         },
+        /*Badlands*/
         {
             "name": "Badlands",
             "image": "https://www.chicagotribune.com/resizer/e-WgIn8EDK5omWyu1F6tJs2GNBo=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/BXPILZSONRBPJIQ3J6X4QICDNM.jpg",
             "description": "Springbrook Nature Center is a 1.6 mile lightly trafficked loop trail located near Itasca, Illinois that features beautiful wild flowers and is good for all skill levels.",
             "latitude": 51.418758,
             "longitude": -112.616333,
+            "views": "34232",
+            "ratingsAvg": 4.7,
             "parkarea": 234234,
             "contact": "2093720200",
             "subtrails": [
                 {
-                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "name": "Notch Trail",
                     "reviewsTrial": 3.5,
-                    "noOfReview": 3244,
-                    "length": 8.8,
-                    "time": 5,
-                    "difficulty": "hard",
-                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
-                    "route-type": "loop",
-                    "elevation-gain": 2191,
+                    "noOfReview": 1021,
+                    "length": 1.3,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "time": 37,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "difficulty": "moderate",
+                    "description": "Notch Trail is a 1.3 mile heavily trafficked out and back trail located near Interior, South Dakota that features a waterfall and is rated as moderate. The trail is primarily used for hiking, nature trips, and bird watching and is best used from March until October.",
+                    "routetype": "out & back",
+                    "elevationgain": 131,
                     "reviews": [
                         {
-                            "name": "martha steward",
-                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                            "name": "Griffin Lang",
+                            "reviewOfTrail": "Nice and short out and back. Good quick way to get into the badlands and feel the size of the rock (dirt?) towers. Leads to a cool overlook with a couple other off trail places to explore. Ladder is fun, a bit shakey but nothing too bad. The lady in front of us did it with no hands. "
                         },
                         {
-                            "name": "sdfdsf",
-                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                            "name": "Joy Lyn",
+                            "reviewOfTrail": "I wasn’t sure about this when I saw the ladder, but there are great views at the top and well worth the climb. "
+                        },
+                        {
+                            "name": "Brie Stahl",
+                            "reviewOfTrail": "Went early in the morning around sunrise. There was not a soul on the trail the entire time we were there. Gorgeous views of the buttes, and an overlook at the end. Really loved this trail the most of all the Badlands hikes I did. "
+                        }
+                    ]
+                },
+                {
+                    "name": "The Door Trail",
+                    "reviewsTrial": 4.2,
+                    "noOfReview": 518,
+                    "length": 0.8,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/10756106/extra_large_ce56739f16a92e291a47795e9d7928df.jpg",
+                    "images": [
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/34501527/extra_large_444b4dcc560e38dd9d2f976c81895e5a.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/34123377/extra_large_536b536c21cfcd33b0afc40ee53a6960.jpg",
+                        "https://cdn-assets.alltrails.com/uploads/photo/image/34123376/extra_large_947a2c022de29734854f4452d654f21b.jpg"
+                    ],
+                    "time": 4,
+                    "difficulty": "easy",
+                    "description": "The Door Trail is a 0.8 mile heavily trafficked out and back trail located near Interior, South Dakota that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is best used from April until October.",
+                    "route-type": "out & back",
+                    "elevation-gain": 36,
+                    "reviews": [
+                        {
+                            "name": "Anna Wondra",
+                            "reviewOfTrail": "Broadwalk is very nice. "
+                        },
+                        {
+                            "name": "Brie Stahl",
+                            "reviewOfTrail": "Starts as a easy board walk and leads into the buttes. You follow little trail markers until the “end of trail sign” gorgeous 360 views of the buttes that surround you. Loved this hike. Would recommend doing this if you see badlands!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Castle Trail",
+                    "reviewsTrial": 4.8,
+                    "noOfReview": 469,
+                    "length": 10.5,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 5,
+                    "difficulty": "moderate",
+                    "description": "Castle Trail is a 10.5 mile heavily trafficked loop trail located near Interior, South Dakota that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from April until October.",
+                    "route-type": "Loop",
+                    "elevation-gain": 314,
+                    "reviews": [
+                        {
+                            "name": "Luke din",
+                            "reviewOfTrail": "really nice all together. great barren views. it was pretty wet and muddy because the snow is all melting but there were big sections where that wasn’t a problem. lost the trail a few times on the way in but after i really focused on finding the red marker poles it was fine. some of it was extremely slippery but that became more fun than anything to be honest. also, the alleged dog defection comes from coyotes. "
+                        },
+                        {
+                            "name": "James Hayne",
+                            "reviewOfTrail": "Cool out and back hike through large rock formations. There is an option to take the northern part through the prairie, and while not hard, not as pretty as the southern section.   On the south side you can also take a quick detour to look out over Saddle Pass.  We started early in the morning (Sept) after doing the Notch/Window/Door trails to beat the heat since there is zero shade. We wrapped up around noon and it was getting quite toasty so I wouldn't recommend doing this midday/afternoon. "
                         }
                     ]
                 }
             ]
         },
+        /* Big bend*/
         {
             "name": "Big Bend",
             "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Canyon%2C_Rio_Grande%2C_Texas.jpeg",
@@ -187,10 +393,66 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 8.8,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "time": 5,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "",
+                        "",
+                        ""
+                    ],
                     "difficulty": "hard",
                     "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "routetype": "loop",
+                    "elevationgain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Upper Yoesmite Falls Trail",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 2712,
+                    "length": 7.6,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "time": 4,
+                    "difficulty": "hard",
+                    "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
                     "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vernal Park",
+                    "reviewsTrial": 2.5,
+                    "noOfReview": 1279,
+                    "length": 4,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 5,
+                    "difficulty": "medium",
+                    "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
+                    "route-type": "out & back",
                     "elevation-gain": 2191,
                     "reviews": [
                         {
@@ -205,6 +467,7 @@
                 }
             ]
         },
+        /*Biscayne*/
         {
             "name": "Biscayne",
             "image": "https://www.nps.gov/bisc/planyourvisit/images/BISC-UW-250711-2_1.jpg?maxwidth=650&autorotate=false",
@@ -219,10 +482,66 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 8.8,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
                     "time": 5,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "images": [
+                        "",
+                        "",
+                        ""
+                    ],
                     "difficulty": "hard",
                     "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "routetype": "loop",
+                    "elevationgain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Upper Yoesmite Falls Trail",
+                    "reviewsTrial": 3.5,
+                    "noOfReview": 2712,
+                    "length": 7.6,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "time": 4,
+                    "difficulty": "hard",
+                    "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
                     "route-type": "loop",
+                    "elevation-gain": 2191,
+                    "reviews": [
+                        {
+                            "name": "martha steward",
+                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                        },
+                        {
+                            "name": "sdfdsf",
+                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vernal Park",
+                    "reviewsTrial": 2.5,
+                    "noOfReview": 1279,
+                    "length": 4,
+                    "latitude": 14.25,
+                    "longitude": 151.2093,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
+                    "time": 5,
+                    "difficulty": "medium",
+                    "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
+                    "route-type": "out & back",
                     "elevation-gain": 2191,
                     "reviews": [
                         {

@@ -10,7 +10,7 @@ export class TrailsController {
 
     constructor() {
         data.forEach((t, i) => {
-            let trailOb = new Trail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails);
+            let trailOb = new Trail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails, t.ratingsAvg, t.views);
 
             this.trails.push(trailOb);
             this.nameToTrailMap.set(trailOb.name, trailOb);
