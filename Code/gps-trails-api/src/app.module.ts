@@ -11,6 +11,8 @@ import { AddTrailsController } from './addtrails/addtrails.controller';
 import { AddTrailsService } from './addtrails/addtrails.service';
 import { AddTrailsModule } from './addtrails/addtrails.module';
 import { AddTrails } from './addtrails/addtrails.entity';
+import { AuthService } from './auth/auth.service';
+import { LocalStrategy } from './auth/local.strategy';
 
 @Module({
   imports: [
@@ -19,8 +21,7 @@ import { AddTrails } from './addtrails/addtrails.entity';
     AddTrailsModule,
     TypeOrmModule.forFeature([User, AddTrails], )
   ],
-  providers: [UsersService, AddTrailsService],
+  providers: [UsersService, AddTrailsService, AuthService, LocalStrategy],
   controllers: [AppController, TrailsController, AddTrailsController, AuthController, RegisterController],
-
 })
 export class AppModule { }
