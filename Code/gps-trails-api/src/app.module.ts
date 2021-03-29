@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { TrailsController } from './trails/trails.controller';
-import { User } from './users/user.entity';
+import { User } from './users/users.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersService } from './users/users.service';
 import { RegisterController } from './register/register.controller';
