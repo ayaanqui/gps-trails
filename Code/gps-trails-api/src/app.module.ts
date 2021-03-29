@@ -17,20 +17,22 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './auth/constants';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './auth/jwt.strategy';
+import { Trail } from './trails/trails.entity';
+import { TrailsService } from './trails/trails.service';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     AddTrailsService,
     AddTrailsModule,
-    TypeOrmModule.forFeature([User, AddTrails], ),
+    TypeOrmModule.forFeature([User, Trail, AddTrails], ),
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60 days' },
     }),
     PassportModule
   ],
-  providers: [UsersService, AddTrailsService, AuthService, LocalStrategy, JwtStrategy],
+  providers: [UsersService, TrailsService, AddTrailsService, AuthService, LocalStrategy, JwtStrategy],
   controllers: [AppController, TrailsController, AddTrailsController, AuthController, RegisterController],
 })
 export class AppModule { }
