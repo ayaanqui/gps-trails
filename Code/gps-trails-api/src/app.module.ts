@@ -13,13 +13,21 @@ import { AddTrailsModule } from './addtrails/addtrails.module';
 import { AddTrails } from './addtrails/addtrails.entity';
 import { AuthService } from './auth/auth.service';
 import { LocalStrategy } from './auth/local.strategy';
+import { JwtModule } from '@nestjs/jwt';
+import { jwtConstants } from './auth/constants';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     AddTrailsService,
     AddTrailsModule,
-    TypeOrmModule.forFeature([User, AddTrails], )
+    TypeOrmModule.forFeature([User, AddTrails], ),
+    JwtModule.register({
+      secret: jwtConstants.secret,
+      signOptions: { expiresIn: '60 days' },
+    }),
+    PassportModule
   ],
   providers: [UsersService, AddTrailsService, AuthService, LocalStrategy],
   controllers: [AppController, TrailsController, AddTrailsController, AuthController, RegisterController],
