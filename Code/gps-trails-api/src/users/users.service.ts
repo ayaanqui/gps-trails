@@ -10,8 +10,8 @@ export class UsersService {
   constructor(
     @InjectRepository(User)
     private usersRepository: Repository<User>,
-  ) {}
-   
+  ) { }
+
   async hashPassword(password: string, saltOrRounds: number): Promise<string> {
     /**
      * See https://docs.nestjs.com/security/encryption-and-hashing
@@ -26,9 +26,9 @@ export class UsersService {
 
   async insert(user: CreateUserDto): Promise<any> {
     const userEntity: User = User.create();
-    userEntity.email = user?.email;
-    userEntity.name = user?.name;
-    userEntity.password = await this.hashPassword(user?.password, 10);
+    userEntity.email = user.email;
+    userEntity.name = user.name;
+    userEntity.password = await this.hashPassword(user.password, 10);
 
     await User.save(userEntity);
     return {

@@ -5,33 +5,34 @@
 
     </div>
     <div class="col-md-6">
-
+        <p style="color: green">{{message}}</p>
         <div class="containerFluidOne">
             <h4> Share your experience with us!!</h4>
             {{responsemessage}}
-            <form>
+            <form action="http://localhost:3000/addtrails/add" method="POST">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="emailInputId" placeholder="name@example.com" [(ngModel)]="email">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Please enter your full name">
+                    <input type="text" class="form-control" id="nameInputId" placeholder="Please enter your full name" [(ngModel)]="name">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Park Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Please enter your full name">
+                    <input type="email" class="form-control" id="parknameInputId" placeholder="Please enter your full name" [(ngModel)]="parkname">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Trail Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Please enter your full name">
+                    <input type="email" class="form-control" id="trailInputId" placeholder="Please enter your full name">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Your experience</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Let us know you full experience and your adventures..."></textarea>
+                    <textarea class="form-control" id="experienceInputId" rows="3" placeholder="Let us know you full experience and your adventures..."
+                        [(ngModel)]="experience"></textarea>
                 </div>
 
-                <button class="btn btn-primary">Submit your review</button>
+                <button class="btn btn-primary" (click)="createMessage()">Submit your review</button>
             </form>
         </div>
 
