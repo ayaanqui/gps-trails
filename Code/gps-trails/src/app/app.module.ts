@@ -18,6 +18,8 @@ import { DetailledViewComponent } from './detailled-view/detailled-view.componen
 import { DetailServiceClass } from './home/details.service';
 import { AddtrailComponent } from './addtrail/addtrail.component';
 import { SubtrialsComponent } from './subtrials/subtrials.component';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './reducers/auth.reducer';
 
 
 const appRoutes: Routes = [
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBiGAsSAOdImXha7tc52eJQ63X_KqnHyTQ'
-    })
+    }),
+    StoreModule.forRoot({ auth: authReducer })
   ],
   providers: [DetailServiceClass],
   bootstrap: [AppComponent]
