@@ -11,7 +11,15 @@ export class DetailServiceClass {
     selectedString: any;
 
 
-    selectedSubTrail: any;
+    selectedSubTrail: {
+        name: string, reviewsTrial: number, noOfReview: number, length: number, latitude: number, longitude: number,
+        time: number, image: string, images: any, path: any, difficulty: string, description: string, routetype: string, elevationgain: number,
+        reviews: any
+    } = {
+            name: "", reviewsTrial: 234, noOfReview: 23, length: 34, latitude: 45, longitude: 567,
+            time: 35, image: "", images: [], path: [], difficulty: "", description: "", routetype: "34", elevationgain: 34,
+            reviews: 3
+        };
 
     constructor(private httpClient: HttpClient) {
 
