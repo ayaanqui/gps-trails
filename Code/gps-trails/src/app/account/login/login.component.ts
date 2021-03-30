@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   password: string = "";
 
   errorMsg: string = "";
+
+  user: any = null;
   accessToken: string = "";
 
   error: boolean = false;
@@ -20,6 +22,11 @@ export class LoginComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
+    if (localStorage.getItem('access_token') && localStorage.getItem('user')) {
+      const userStr: any = localStorage.getItem('user');
+      const user: any = JSON.parse(userStr);
+      console.log(`Already logged in as ${user.email} (${user.name})`);
+    }
   }
 
   login() {
@@ -29,10 +36,14 @@ export class LoginComponent implements OnInit {
       }
     )
       .subscribe(
-        (data: {access_token: string}) => {
+        (data: any) => {
           this.error = false;
           this.success = true;
           this.accessToken = data.access_token;
+          this.user = data.user;
+          
+          localStorage.setItem('access_token', this.accessToken);
+          localStorage.setItem('user', JSON.stringify(this.user));
         }, 
         (error: HttpErrorResponse) => {
           this.success = false;
