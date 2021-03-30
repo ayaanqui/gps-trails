@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,13 +20,18 @@ export class LoginComponent implements OnInit {
   error: boolean = false;
   success: boolean = false;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     if (localStorage.getItem('access_token') && localStorage.getItem('user')) {
       const userStr: any = localStorage.getItem('user');
       const user: any = JSON.parse(userStr);
-      console.log(`Already logged in as ${user.email} (${user.name})`);
+      alert(`Already logged in as ${user.email} (${user.name})`);
+
+      this.router.navigate(['/']);
     }
   }
 
