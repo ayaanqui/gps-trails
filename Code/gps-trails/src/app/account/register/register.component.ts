@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DetailServiceClass } from '../../home/details.service';
 
@@ -11,34 +11,35 @@ import { DetailServiceClass } from '../../home/details.service';
 })
 export class RegisterComponent implements OnInit {
 
-
-  emailId: string = "";
-  fullName: string = "";
+  email: string = "";
+  fullname: string = "";
   password: string = "";
-  message?: {
-    username: string,
-    password: string,
-    fullName: string
-  };
+  
+  errorMsg: string = "";
 
-  ngOnInit(): void {
-  }
-  constructor(private httpClient: HttpClient) {
+  error: boolean = false;
+  success: boolean = false;
 
-  }
+  constructor(private httpClient: HttpClient) {}
+
+  ngOnInit(): void {}
+
   createMessage() {
-
-    this.httpClient.post<any>('http://localhost:3000/register', {
-      id: 222,
-      email: (<HTMLInputElement>document.getElementById('email')).value,
-      password: (<HTMLInputElement>document.getElementById('password')).value,
-      name: (<HTMLInputElement>document.getElementById('fullname')).value,
-
-    }
+    this.httpClient.post<any>(
+      'http://localhost:3000/register', 
+      {
+        email: this.email,
+        password: this.password,
+        name: this.fullname,
+      }
     ).subscribe(data => {
-      console.log(data);
-    }
-    )
+      this.error = false;
+      this.success = true;
+    }, (error: HttpErrorResponse) => {
+      this.success = false;
+      this.error = true;
+      this.errorMsg = error.error.message;
+    });
   }
 
 }

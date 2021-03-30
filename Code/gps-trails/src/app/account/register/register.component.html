@@ -26,16 +26,23 @@
                         <span class="kpx_spanOr">or</span>
                     </div>
                 </div>
-                <form action="https://codingproject14.000webhostapp.com/register.php" method="POST">
 
+                <form action="https://codingproject14.000webhostapp.com/register.php" method="POST">
+                    <div class="alert alert-success" role="alert" *ngIf="success">
+                        Account created successfully!
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" *ngIf="error">
+                        {{errorMsg}}
+                    </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Ex. name@example.com" [(ngModel)]="emailId">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Ex. name@example.com" [(ngModel)]="email">
                     </div>
                     <div class="mb-3">
                         <label for="firstname" class="form-label">Fullname</label>
-                        <input name="firstname" type="firstname" class="form-control" id="fullname" placeholder="Ex. John Doe" [(ngModel)]="fullName">
+                        <input name="firstname" type="firstname" class="form-control" id="fullname" placeholder="Ex. John Doe" [(ngModel)]="fullname">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
