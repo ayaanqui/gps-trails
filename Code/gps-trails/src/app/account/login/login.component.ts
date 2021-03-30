@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { loggedIn } from '../../reducers/auth.reducer';
+import { AuthStatus } from '../../reducers/auth.reducer';
 import { Observable } from 'rxjs';
 import { login } from 'src/app/actions/auth.action';
 
@@ -20,24 +20,24 @@ export class LoginComponent implements OnInit {
   accessToken: string = "";
   error: boolean = false;
   success: boolean = false;
-  loggedIn$: Observable<boolean>;
+  authStatus$: Observable<AuthStatus>;
 
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private store: Store<{ loggedIn: boolean }>,
+    private store: Store<{ authStatus: AuthStatus }>,
   ) {
-    this.loggedIn$ = store.select('loggedIn');
+    this.authStatus$ = store.select('authStatus');
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('access_token') && localStorage.getItem('user')) {
-      const userStr: any = localStorage.getItem('user');
-      const user: any = JSON.parse(userStr);
-      alert(`Already logged in as ${user.email} (${user.name})`);
-
-      this.router.navigate(['/']);
-    }
+    this.authStatus$.subscribe(data => {
+      if (data.loggedIn) {
+        alert(`Already logged in as ${data.user?.email} (${data.user?.name})`);
+        this.router.navigate(['/']);
+      }
+      console.log('shit')
+    });
   }
 
   login() {

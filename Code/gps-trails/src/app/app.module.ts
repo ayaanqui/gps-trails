@@ -55,7 +55,7 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBiGAsSAOdImXha7tc52eJQ63X_KqnHyTQ'
     }),
-    StoreModule.forRoot({ auth: authReducer })
+    StoreModule.forRoot({ authStatus: authReducer }),
   ],
   providers: [DetailServiceClass],
   bootstrap: [AppComponent]
