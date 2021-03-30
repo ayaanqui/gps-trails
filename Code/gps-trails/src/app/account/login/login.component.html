@@ -26,18 +26,26 @@
                         <span class="kpx_spanOr">or</span>
                     </div>
                 </div>
+
+                <div class="alert alert-success" role="alert" *ngIf="success">
+                    Logged in successfully!
+                </div>
+                
+                <div class="alert alert-danger" role="alert" *ngIf="error">
+                    {{errorMsg}}
+                </div>
     
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" [(ngModel)]="email">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input class="form-control" id="password" placeholder="Password" type="password">
+                    <input class="form-control" id="password" placeholder="Password" type="password" [(ngModel)]="password">
                 </div>
 
                 <div class="mt-4 d-flex flex-row align-items-center">
-                    <button class="btn btn-primary mr-3">Login</button>
+                    <button class="btn btn-primary mr-3" (click)="login()">Login</button>
                     <div class="form-check ml-3">
                         <input class="form-check-input" type="checkbox" value="" id="remeberme-check" checked>
                         <label class="form-check-label" for="remeberme-check">
