@@ -17,10 +17,14 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.store.subscribe(data => {
-      if (!data.authStatus.loggedIn)
-        this.store.dispatch(login());
-    });
+    if (localStorage.getItem('access_token') && localStorage.getItem('user')) {
+      this.store.subscribe(data => {
+        if (!data.authStatus.loggedIn) {
+          this.store.dispatch(login());
+          return;
+        }
+      });
+    }
   }
 
 }

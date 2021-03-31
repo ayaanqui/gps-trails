@@ -25,13 +25,22 @@
                 </li>
                 <li class="nav-item nav-mobile-spacer"></li>
             </ul>
-            <div class="d-flex ml-auto">
+
+            <div class="d-flex ml-auto" *ngIf="!authStatus || authStatus?.loggedIn == false">
                 <a [routerLink]="['register']">
                     <button class="btn btn-sm btn-primary" type="submit">Sign Up</button>
                 </a>
                 <a [routerLink]="['login']">
                     <button class="btn btn-sm ml-2 btn-outline-primary" type="submit">
                         Log In
+                    </button>
+                </a>
+            </div>
+
+            <div class="d-flex ml-auto" *ngIf="authStatus?.loggedIn == true">
+                <a [routerLink]="['/']">
+                    <button class="btn btn-sm ml-2 btn-white" type="submit" (click)="clickLogout()">
+                        Hi, {{ authStatus?.user?.name }}
                     </button>
                 </a>
             </div>

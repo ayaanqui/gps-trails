@@ -33,10 +33,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.authStatus$.subscribe(data => {
       if (data.loggedIn) {
-        alert(`Already logged in as ${data.user?.email} (${data.user?.name})`);
         this.router.navigate(['/']);
       }
-      console.log('shit')
     });
   }
 
