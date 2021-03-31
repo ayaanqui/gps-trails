@@ -83,6 +83,7 @@
 
     <div class="row">
         <h3>List of Trials</h3>
+        <br />
         <div *ngFor="let subtrailitem of subtrialsList" (click)="goToSubTrials(subtrailitem)" [routerLink]="['../subtrial']">
             <ul class=" list-group ">
                 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">

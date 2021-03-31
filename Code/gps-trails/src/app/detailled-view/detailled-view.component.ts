@@ -51,7 +51,11 @@ export class DetailledViewComponent implements OnInit {
   }
 
 
-  goToSubTrials(trail: any) {
+  goToSubTrials(trail: {
+    name: string, reviewsTrial: number, noOfReview: number, length: number, latitude: number, longitude: number,
+    time: number, image: string, images: any, path: any, difficulty: string, description: string, routetype: string, elevationgain: number,
+    reviews: any
+  }) {
     this.detailService.selectedSubTrail = trail;
   }
 

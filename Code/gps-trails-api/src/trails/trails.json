@@ -16,8 +16,8 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 8.8,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 37.73195,
+                    "longitude": -119.56619,
                     "time": 5,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
                     "images": [
@@ -25,7 +25,68 @@
                         "",
                         ""
                     ],
-                    "trailscoordinates": [],
+                    "path": [
+                        [
+                            -119.56619,
+                            37.73495
+                        ],
+                        [
+                            -119.56610,
+                            37.73490
+                        ],
+                        [
+                            -119.56510,
+                            37.73480
+                        ],
+                        [
+                            -119.56010,
+                            37.73200
+                        ],
+                        [
+                            -119.55910,
+                            37.73000
+                        ],
+                        [
+                            -119.55410,
+                            37.72990
+                        ],
+                        [
+                            -119.54910,
+                            37.72980
+                        ],
+                        [
+                            -119.54510,
+                            37.72700
+                        ],
+                        [
+                            -119.54210,
+                            37.72680
+                        ],
+                        [
+                            -119.54010,
+                            37.72660
+                        ],
+                        [
+                            -119.55400,
+                            37.72650
+                        ],
+                        [
+                            -119.55400,
+                            37.72580
+                        ],
+                        [
+                            -119.53910,
+                            37.72540
+                        ],
+                        [
+                            -119.53410,
+                            37.72510
+                        ],
+                        [
+                            -119.53310,
+                            37.72462
+                        ]
+                    ],
                     "difficulty": "hard",
                     "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
                     "routetype": "loop",
@@ -36,7 +97,7 @@
                             "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
                         },
                         {
-                            "name": "sdfdsf",
+                            "name": "John mason",
                             "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
                         }
                     ]
@@ -46,10 +107,72 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 2712,
                     "length": 7.6,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 37.7514,
+                    "longitude": -119.60325,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
                     "time": 4,
+                    "path": [
+                        [
+                            -119.59769,
+                            37.7514
+                        ],
+                        [
+                            -119.59798,
+                            37.7510
+                        ],
+                        [
+                            -119.59799,
+                            37.7505
+                        ],
+                        [
+                            -119.59800,
+                            37.7500
+                        ],
+                        [
+                            -119.59810,
+                            37.7490
+                        ],
+                        [
+                            -119.59812,
+                            37.7480
+                        ],
+                        [
+                            -119.59921,
+                            37.7470
+                        ],
+                        [
+                            -119.59982,
+                            37.7460
+                        ],
+                        [
+                            -119.59992,
+                            37.7450
+                        ],
+                        [
+                            -119.59999,
+                            37.7448
+                        ],
+                        [
+                            -119.60000,
+                            37.7445
+                        ],
+                        [
+                            -119.60110,
+                            37.7443
+                        ],
+                        [
+                            -119.60135,
+                            37.7442
+                        ],
+                        [
+                            -119.60235,
+                            37.7441
+                        ],
+                        [
+                            -119.60325,
+                            37.7420
+                        ]
+                    ],
                     "difficulty": "hard",
                     "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
                     "route-type": "loop",
@@ -60,7 +183,7 @@
                             "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
                         },
                         {
-                            "name": "sdfdsf",
+                            "name": "John Caevetes",
                             "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
                         }
                     ]
@@ -70,14 +193,76 @@
                     "reviewsTrial": 2.5,
                     "noOfReview": 1279,
                     "length": 4,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 37.73495,
+                    "longitude": -119.56619,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
                     "time": 5,
+                    "path": [
+                        [
+                            -119.56619,
+                            37.73495
+                        ],
+                        [
+                            -119.56610,
+                            37.73490
+                        ],
+                        [
+                            -119.56510,
+                            37.73480
+                        ],
+                        [
+                            -119.56010,
+                            37.73200
+                        ],
+                        [
+                            -119.55910,
+                            37.73000
+                        ],
+                        [
+                            -119.55410,
+                            37.72990
+                        ],
+                        [
+                            -119.54910,
+                            37.72980
+                        ],
+                        [
+                            -119.54510,
+                            37.72700
+                        ],
+                        [
+                            -119.54210,
+                            37.72680
+                        ],
+                        [
+                            -119.54010,
+                            37.72660
+                        ],
+                        [
+                            -119.55400,
+                            37.72650
+                        ],
+                        [
+                            -119.55400,
+                            37.72580
+                        ],
+                        [
+                            -119.53910,
+                            37.72540
+                        ],
+                        [
+                            -119.53410,
+                            37.72510
+                        ],
+                        [
+                            -119.53310,
+                            37.72462
+                        ]
+                    ],
                     "difficulty": "medium",
                     "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
-                    "route-type": "out & back",
-                    "elevation-gain": 2191,
+                    "routetype": "out & back",
+                    "elevationgain": 2191,
                     "reviews": [
                         {
                             "name": "martha steward",
@@ -95,7 +280,7 @@
         {
             "name": "Acadia",
             "image": "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg",
-            "description": "Located in the Silicon valley of United States..",
+            "description": "Looking for a great trail in Acadia National Park, Maine? AllTrails has 216 great hiking trails, trail running trails, mountain biking trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Ready for some activity? There are 123 moderate trails in Acadia National Park ranging from 0.9 to 27.1 miles and from 16 to 1,525 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
             "latitude": 44.376789,
             "longitude": -68.255569,
             "views": "3332",
@@ -104,78 +289,264 @@
             "contact": "2093720200",
             "subtrails": [
                 {
-                    "name": "Vernal and Nevada Falls via the Mist Trials",
+                    "name": "Beehive Loop Trail",
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
-                    "length": 8.8,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
-                    "time": 5,
-                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "length": 1.4,
+                    "latitude": 44.37963,
+                    "longitude": -68.23233,
+                    "time": 33,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/13572653/extra_large_17c7cfff251b47f85ea18fae1af132ed.jpg",
                     "images": [
                         "",
                         "",
                         ""
                     ],
+                    "path": [
+                        [
+                            -68.19175,
+                            44.33693
+                        ],
+                        [
+                            -68.19175,
+                            44.33692
+                        ],
+                        [
+                            -68.19100,
+                            44.33691
+                        ],
+                        [
+                            -68.19000,
+                            44.33690
+                        ],
+                        [
+                            -68.18900,
+                            44.33689
+                        ],
+                        [
+                            -68.18800,
+                            44.33688
+                        ],
+                        [
+                            -68.18700,
+                            44.33686
+                        ],
+                        [
+                            -68.18600,
+                            44.33682
+                        ],
+                        [
+                            -68.18500,
+                            44.33680
+                        ],
+                        [
+                            -68.18449,
+                            44.33560
+                        ],
+                        [
+                            -68.18445,
+                            44.33490
+                        ],
+                        [
+                            -68.18439,
+                            44.33399
+                        ],
+                        [
+                            -68.18435,
+                            44.33290
+                        ],
+                        [
+                            -68.18425,
+                            44.33190
+                        ],
+                        [
+                            -68.18413,
+                            44.33026
+                        ]
+                    ],
                     "difficulty": "hard",
-                    "description": "Vernal and Nevada Falls via the Mist Trail is a 8.8 mile heavily trafficked loop trail located near Yosemite Valley, California that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is best used from May until October.",
+                    "description": "Acadia National Park charges a fee to enter. Fees are $30 per vehicle or $25 per motorcycle. If you are entering on foot, horse, or bike the fee is $15 per person. You can also purchase a park specific annual pass for $55. A steep climb to the top of this small mountain with wonderful views out over the Atlantic and surrounding Acadia hills. The Beehive Trail is a very popular moderate to difficult out and back or loop trail using iron rungs on ledges of exposed cliffs, and is very steep, offering spectacular views of Sand Beach and the surrounding area at Acadia National Park.  Start just north of and across the One way loop road from the Sand Beach parking area, climbing steps and through the forest to some exposed fairly flat rocky areas and a tall cairn of rocks marking your next steps.  Be sure to look for the light blue (Carolina Blue) trail markers as the trail can be quickly lost in your enthusiasm to scale the cliffs.  Stay on trail as strategically placed iron rungs, bridges and hand and foot holds take the technical part out of the climb.  Once at the top you can opt to go down the back side and make it a loop or go down the way you came. ",
                     "routetype": "loop",
-                    "elevationgain": 2191,
+                    "elevationgain": 488,
                     "reviews": [
                         {
-                            "name": "martha steward",
-                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                            "name": "Noah Desmarais",
+                            "reviewOfTrail": "Steep hike but so beautiful "
                         },
                         {
-                            "name": "sdfdsf",
+                            "name": "Anthony R",
                             "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
                         }
                     ]
                 },
                 {
-                    "name": "Upper Yoesmite Falls Trail",
+                    "name": "Cadillac North Ridge Trail",
                     "reviewsTrial": 3.5,
                     "noOfReview": 2712,
                     "length": 7.6,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
-                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
+                    "latitude": 44.37854,
+                    "longitude": -68.22954,
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23103883/extra_large_9d360df7beadbf067316fffb79244607.jpg",
                     "time": 4,
                     "difficulty": "hard",
-                    "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
-                    "route-type": "loop",
-                    "elevation-gain": 2191,
+                    "path": [
+                        [
+                            -68.22954,
+                            44.37854
+                        ],
+                        [
+                            -68.22954,
+                            44.37844
+                        ],
+                        [
+                            -68.22954,
+                            44.37834
+                        ],
+                        [
+                            -68.22940,
+                            44.37824
+                        ],
+                        [
+                            -68.22930,
+                            44.37814
+                        ],
+                        [
+                            -68.22920,
+                            44.37804
+                        ],
+                        [
+                            -68.22910,
+                            44.37794
+                        ],
+                        [
+                            -68.22900,
+                            44.37790
+                        ],
+                        [
+                            -68.22895,
+                            44.37785
+                        ],
+                        [
+                            -68.22890,
+                            44.37780
+                        ],
+                        [
+                            -68.22885,
+                            44.37775
+                        ],
+                        [
+                            -68.22880,
+                            44.37770
+                        ],
+                        [
+                            -68.22875,
+                            44.37765
+                        ],
+                        [
+                            -68.22870,
+                            44.37760
+                        ],
+                        [
+                            -68.22865,
+                            44.37755
+                        ]
+                    ],
+                    "description": "Cadillac North Ridge Trail is a 4 mile heavily trafficked out and back trail located near Bar Harbor, Maine that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+                    "routetype": "out & back",
+                    "elevationgain": 1118,
                     "reviews": [
                         {
-                            "name": "martha steward",
-                            "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
+                            "name": "Lindsey Clive",
+                            "reviewOfTrail": "Majority of the trail is walking on ice. Make sure to have on the proper gear.  The road is closed so you have to walk either the road or the Kebo Trl to the trailhead. Only adds ~0.5 mile round trip. "
                         },
                         {
-                            "name": "sdfdsf",
-                            "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
+                            "name": "Lisa Strainer",
+                            "reviewOfTrail": "A buddy and I went up today for our first time doing this trail. It was great, but you need micro spikes for sure. We jumped on the road 3/4 of the way up, but that was because we couldn’t find the blue markers for the trail. Took the road up which added a good amount of distance to the trail. Took the entire trail back down. Great experience and amazing views "
                         }
                     ]
                 },
                 {
-                    "name": "Vernal Park",
-                    "reviewsTrial": 2.5,
-                    "noOfReview": 1279,
-                    "length": 4,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "name": "Precipice, Orange and Black and Champlain North Ridge Loop",
+                    "reviewsTrial": 2.1,
+                    "noOfReview": 1319,
+                    "length": 2.1,
+                    "latitude": 44.35046,
+                    "longitude": -68.19364,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
                     "time": 5,
-                    "difficulty": "medium",
-                    "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
-                    "route-type": "out & back",
-                    "elevation-gain": 2191,
+                    "difficulty": "hard",
+                    "path": [
+                        [
+                            -68.19364,
+                            44.35046
+                        ],
+                        [
+                            -68.19350,
+                            44.35036
+                        ],
+                        [
+                            -68.19340,
+                            44.35026
+                        ],
+                        [
+                            -68.19340,
+                            44.35016
+                        ],
+                        [
+                            -68.19340,
+                            44.35006
+                        ],
+                        [
+                            -68.19340,
+                            44.34999
+                        ],
+                        [
+                            -68.19340,
+                            44.34996
+                        ],
+                        [
+                            -68.19340,
+                            44.34986
+                        ],
+                        [
+                            -68.19340,
+                            44.34977
+                        ],
+                        [
+                            -68.19340,
+                            44.34966
+                        ],
+                        [
+                            -68.19340,
+                            44.34955
+                        ],
+                        [
+                            -68.19340,
+                            44.34944
+                        ],
+                        [
+                            -68.19340,
+                            44.34933
+                        ],
+                        [
+                            -68.19340,
+                            44.34912
+                        ],
+                        [
+                            -68.19340,
+                            44.34902
+                        ]
+                    ],
+                    "description": "Precipice, Orange and Black and Champlain North Ridge Trail Loop is a 2.1 mile heavily trafficked loop trail located near Bar Harbor, Maine that features beautiful wild flowers and is rated as difficult. The trail is primarily used for hiking, nature trips, and bird watching and is best used from May until October.",
+                    "routetype": "Loop",
+                    "elevationgain": 1053,
                     "reviews": [
                         {
-                            "name": "martha steward",
+                            "name": "Sophie Mcllan",
                             "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
                         },
                         {
-                            "name": "sdfdsf",
+                            "name": "Jactyn Hagis",
                             "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
                         }
                     ]
@@ -187,8 +558,8 @@
             "name": "American Samoa",
             "image": "https://studybreaks.com/wp-content/uploads/2017/07/shutterstock_142351951.jpg",
             "description": "A large reservoir formed by Theodore Roosevelt Dam on the Salt River in Arizona as part of the Salt River Project.",
-            "latitude": 14.25,
-            "longitude": 170.68,
+            "latitude": -14.2583,
+            "longitude": -170.6833,
             "views": "34332",
             "ratingsAvg": 2.2,
             "parkarea": 234234,
@@ -202,13 +573,75 @@
                     "latitude": 14.25,
                     "longitude": 151.2093,
                     "time": 3,
-                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
+                    "image": "https://cdn-assets.alltrails.com/uploads/photo/image/21775563/extra_large_6d50599ac54588e063aed6e1773aa74e.jpg",
                     "images": [
                         "https://cdn-assets.alltrails.com/uploads/photo/image/21775565/extra_large_12d69f02e753010b9dfda276d6fff1d7.jpg",
                         "https://cdn-assets.alltrails.com/uploads/photo/image/21775564/extra_large_2a28f701d870c5e6081475467e23b6f7.jpg",
                         "https://cdn-assets.alltrails.com/uploads/photo/image/12696338/extra_large_22743eee6e6a294a2071150d2760b2f4.jpg"
                     ],
                     "difficulty": "moderate",
+                    "path": [
+                        [
+                            -119.56619,
+                            37.73495
+                        ],
+                        [
+                            -119.56610,
+                            37.73490
+                        ],
+                        [
+                            -119.56510,
+                            37.73480
+                        ],
+                        [
+                            -119.56010,
+                            37.73200
+                        ],
+                        [
+                            -119.55910,
+                            37.73000
+                        ],
+                        [
+                            -119.55410,
+                            37.72990
+                        ],
+                        [
+                            -119.54910,
+                            37.72980
+                        ],
+                        [
+                            -119.54510,
+                            37.72700
+                        ],
+                        [
+                            -119.54210,
+                            37.72680
+                        ],
+                        [
+                            -119.54010,
+                            37.72660
+                        ],
+                        [
+                            -119.55400,
+                            37.72650
+                        ],
+                        [
+                            -119.55400,
+                            37.72580
+                        ],
+                        [
+                            -119.53910,
+                            37.72540
+                        ],
+                        [
+                            -119.53410,
+                            37.72510
+                        ],
+                        [
+                            -119.53310,
+                            37.72462
+                        ]
+                    ],
                     "description": "Mount 'Alava Trail is a 6.1 mile moderately trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
                     "routetype": "out & back",
                     "elevationgain": 1548,
@@ -238,9 +671,71 @@
                     ],
                     "time": 4,
                     "difficulty": "easy",
+                    "path": [
+                        [
+                            -119.56619,
+                            37.73495
+                        ],
+                        [
+                            -119.56610,
+                            37.73490
+                        ],
+                        [
+                            -119.56510,
+                            37.73480
+                        ],
+                        [
+                            -119.56010,
+                            37.73200
+                        ],
+                        [
+                            -119.55910,
+                            37.73000
+                        ],
+                        [
+                            -119.55410,
+                            37.72990
+                        ],
+                        [
+                            -119.54910,
+                            37.72980
+                        ],
+                        [
+                            -119.54510,
+                            37.72700
+                        ],
+                        [
+                            -119.54210,
+                            37.72680
+                        ],
+                        [
+                            -119.54010,
+                            37.72660
+                        ],
+                        [
+                            -119.55400,
+                            37.72650
+                        ],
+                        [
+                            -119.55400,
+                            37.72580
+                        ],
+                        [
+                            -119.53910,
+                            37.72540
+                        ],
+                        [
+                            -119.53410,
+                            37.72510
+                        ],
+                        [
+                            -119.53310,
+                            37.72462
+                        ]
+                    ],
                     "description": "Lower Sauma Ridge Trail is a 0.4 mile lightly trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
-                    "route-type": "out & back",
-                    "elevation-gain": 173,
+                    "routetype": "out & back",
+                    "elevationgain": 173,
                     "reviews": [
                         {
                             "name": "Caitlin Worrell",
@@ -262,9 +757,71 @@
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
                     "time": 19,
                     "difficulty": "easy",
+                    "path": [
+                        [
+                            -119.56619,
+                            37.73495
+                        ],
+                        [
+                            -119.56610,
+                            37.73490
+                        ],
+                        [
+                            -119.56510,
+                            37.73480
+                        ],
+                        [
+                            -119.56010,
+                            37.73200
+                        ],
+                        [
+                            -119.55910,
+                            37.73000
+                        ],
+                        [
+                            -119.55410,
+                            37.72990
+                        ],
+                        [
+                            -119.54910,
+                            37.72980
+                        ],
+                        [
+                            -119.54510,
+                            37.72700
+                        ],
+                        [
+                            -119.54210,
+                            37.72680
+                        ],
+                        [
+                            -119.54010,
+                            37.72660
+                        ],
+                        [
+                            -119.55400,
+                            37.72650
+                        ],
+                        [
+                            -119.55400,
+                            37.72580
+                        ],
+                        [
+                            -119.53910,
+                            37.72540
+                        ],
+                        [
+                            -119.53410,
+                            37.72510
+                        ],
+                        [
+                            -119.53310,
+                            37.72462
+                        ]
+                    ],
                     "description": "Pola Island Trail is a 0.6 mile moderately trafficked out and back trail located near Pago Pago, Tutuila, American Samoa that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round.",
-                    "route-type": "out & back",
-                    "elevation-gain": 2191,
+                    "routetype": "out & back",
+                    "elevationgain": 2191,
                     "reviews": [
                         {
                             "name": "Caitlin Worrell",
@@ -282,9 +839,9 @@
         {
             "name": "Badlands",
             "image": "https://www.chicagotribune.com/resizer/e-WgIn8EDK5omWyu1F6tJs2GNBo=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/BXPILZSONRBPJIQ3J6X4QICDNM.jpg",
-            "description": "Springbrook Nature Center is a 1.6 mile lightly trafficked loop trail located near Itasca, Illinois that features beautiful wild flowers and is good for all skill levels.",
-            "latitude": 51.418758,
-            "longitude": -112.616333,
+            "description": "Looking for a great trail in Badlands National Park, South Dakota? AllTrails has 14 great hiking trails, views trails, wildlife trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Just looking to take a quick stroll? We've got 7 easy trails in Badlands National Park ranging from 0.8 to 4.5 miles and from 2,411 to 2,742 feet above sea level. Start checking them out and you'll be out on the trail in no time!.",
+            "latitude": 43.8554,
+            "longitude": -102.3397,
             "views": "34232",
             "ratingsAvg": 4.7,
             "parkarea": 234234,
@@ -339,8 +896,8 @@
                     "time": 4,
                     "difficulty": "easy",
                     "description": "The Door Trail is a 0.8 mile heavily trafficked out and back trail located near Interior, South Dakota that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is best used from April until October.",
-                    "route-type": "out & back",
-                    "elevation-gain": 36,
+                    "routetype": "out & back",
+                    "elevationgain": 36,
                     "reviews": [
                         {
                             "name": "Anna Wondra",
@@ -363,8 +920,8 @@
                     "time": 5,
                     "difficulty": "moderate",
                     "description": "Castle Trail is a 10.5 mile heavily trafficked loop trail located near Interior, South Dakota that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from April until October.",
-                    "route-type": "Loop",
-                    "elevation-gain": 314,
+                    "routetype": "Loop",
+                    "elevationgain": 314,
                     "reviews": [
                         {
                             "name": "Luke din",
@@ -384,7 +941,7 @@
             "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Canyon%2C_Rio_Grande%2C_Texas.jpeg",
             "description": "Mount LeConte via Rainbow Falls Trail is a 13 mile heavily trafficked out and back trail located near Gatlinburg, Tennessee that features a waterfall. The trail is only recommended for very experienced adventurers and is primarily used for hiking and nature trips.",
             "latitude": 29.2498,
-            "longitude": 103.2502,
+            "longitude": -103.2502,
             "parkarea": 234234,
             "contact": "2093720200",
             "subtrails": [
@@ -428,8 +985,8 @@
                     "time": 4,
                     "difficulty": "hard",
                     "description": "Upper Yosemite Falls Trail is a 7.6 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is only recommended for very experienced adventurers. The trail is primarily used for hiking.",
-                    "route-type": "loop",
-                    "elevation-gain": 2191,
+                    "routetype": "loop",
+                    "elevationgain": 2191,
                     "reviews": [
                         {
                             "name": "martha steward",
@@ -452,8 +1009,8 @@
                     "time": 5,
                     "difficulty": "medium",
                     "description": "Vernal Falls is a 4 mile heavily trafficked out and back trail located near Yosemite Valley, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is best used from May until November.",
-                    "route-type": "out & back",
-                    "elevation-gain": 2191,
+                    "routetype": "out & back",
+                    "elevationgain": 2191,
                     "reviews": [
                         {
                             "name": "martha steward",
@@ -472,8 +1029,8 @@
             "name": "Biscayne",
             "image": "https://www.nps.gov/bisc/planyourvisit/images/BISC-UW-250711-2_1.jpg?maxwidth=650&autorotate=false",
             "description": "Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangrove forest, the Bay, the Keys, and coral reefs. Threatened animals include the West Indian manatee, American crocodile, various sea turtles, and peregrine falcon.",
-            "latitude": 25.65,
-            "longitude": 80.08,
+            "latitude": 48.24,
+            "longitude": -80.2083,
             "parkarea": 234234,
             "contact": "2093720200",
             "subtrails": [
