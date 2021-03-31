@@ -5,43 +5,43 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-    constructor(
-        private userServices: UsersService,
-        private jwtService: JwtService
-    ) {}
+  constructor(
+    private userServices: UsersService,
+    private jwtService: JwtService
+  ) { }
 
-    async validateUser(email: string, password: string): Promise<any> {
-        const user: User = await this.userServices.findOne(email);
-        if (user == null)
-            return null;
-        
-        const passwordMatch: boolean = await this.userServices.comparePassword(password, user.password);
-        if (!passwordMatch)
-            return null;
-        return user;
-    }
+  async validateUser(email: string, password: string): Promise<any> {
+    const user: User = await this.userServices.findOne(email);
+    if (user == null)
+      return null;
 
-    async validateUserIdEmail(id: number, email: string): Promise<any> {
-        const user: User = await this.userServices.findOne(email);
-        if (user == null)
-            return null;
-        
-        if (user.id !== id)
-            return null;
-        
-        return user;
-    }
+    const passwordMatch: boolean = await this.userServices.comparePassword(password, user.password);
+    if (!passwordMatch)
+      return null;
+    return user;
+  }
 
-    // TODO: If this doesn't work try using user: any as param
-    async login(user: User) {
-        const payload = { email: user.email, sub: user.id };
-        return {
-            access_token: this.jwtService.sign(payload),
-            user: {
-                id: user.id,
-                email: user.email,
-                name: user.name,
-            },
-        };
-    }
+  async validateUserIdEmail(id: number, email: string): Promise<any> {
+    const user: User = await this.userServices.findOne(email);
+    if (user == null)
+      return null;
+
+    if (user.id !== id)
+      return null;
+
+    return user;
+  }
+
+  // TODO: If this doesn't work try using user: any as param
+  async login(user: User) {
+    const payload = { email: user.email, sub: user.id };
+    return {
+      access_token: this.jwtService.sign(payload),
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+      },
+    };
+  }
 }

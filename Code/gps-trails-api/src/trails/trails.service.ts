@@ -6,18 +6,18 @@ import { CreateTrailDto } from './dto/create-trail-dto';
 
 @Injectable()
 export class TrailsService {
-    constructor(
-        @InjectRepository(Trail)
-        private readonly trailRepository: Repository<Trail>,
-    ) {}
+  constructor(
+    @InjectRepository(Trail)
+    private readonly trailRepository: Repository<Trail>,
+  ) { }
 
-    async insert(trailData: CreateTrailDto): Promise<Trail> {
-        const newTrail: Trail = CreateTrailDto.createAndGetTrail(trailData);
-        await Trail.save(newTrail);
-        return newTrail;
-    }
+  async insert(trailData: CreateTrailDto): Promise<Trail> {
+    const newTrail: Trail = CreateTrailDto.createAndGetTrail(trailData);
+    await Trail.save(newTrail);
+    return newTrail;
+  }
 
-    async findAll(): Promise<Trail[]> {
-        return await this.trailRepository.find();
-    }
+  async findAll(): Promise<Trail[]> {
+    return await this.trailRepository.find();
+  }
 }
