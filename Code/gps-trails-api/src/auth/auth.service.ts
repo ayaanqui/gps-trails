@@ -21,6 +21,17 @@ export class AuthService {
         return user;
     }
 
+    async validateUserIdEmail(id: number, email: string): Promise<any> {
+        const user: User = await this.userServices.findOne(email);
+        if (user == null)
+            return null;
+        
+        if (user.id !== id)
+            return null;
+        
+        return user;
+    }
+
     // TODO: If this doesn't work try using user: any as param
     async login(user: User) {
         const payload = { email: user.email, sub: user.id };
