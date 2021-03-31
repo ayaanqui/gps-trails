@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
     this.store.dispatch(logout());
 
     this.store.subscribe(data => {
-      this.authStatus = data.authStatus;
+      this.authStatus = {...data}.authStatus;
     });
   }
 

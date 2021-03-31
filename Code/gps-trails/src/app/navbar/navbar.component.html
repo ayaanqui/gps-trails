@@ -9,8 +9,7 @@
         <a class="navbar-brand" [routerLink]="['/']">
             <b>GPS Trails</b>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,12 +37,23 @@
             </div>
 
             <div class="d-flex ml-auto" *ngIf="authStatus?.loggedIn == true">
-                <a [routerLink]="['/']">
-                    <button class="btn btn-sm ml-2 btn-white" type="submit" (click)="clickLogout()">
-                        Hi, {{ authStatus?.user?.name }}
-                    </button>
-                </a>
+                <div class="dropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                {{ authStatus?.user?.name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/">Profile</a>
+                                <a class="dropdown-item" href="/">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" role="button" (click)="clickLogout()">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
 
