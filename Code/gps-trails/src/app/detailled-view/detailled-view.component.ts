@@ -24,14 +24,14 @@ export class DetailledViewComponent implements OnInit {
   constructor(private detailService: DetailServiceClass) {
 
     this.selectedParkItem = this.detailService.selectedString;
-    this.searchresult = this.selectedParkItem.parkname;
+    this.searchresult = this.selectedParkItem.name;
     this.subtrialsList = this.selectedParkItem.subtrails;
   }
 
   ngOnInit() {
 
     this.selectedParkItem = this.detailService.selectedString;
-    this.searchresult = this.selectedParkItem.parkname;
+    this.searchresult = this.selectedParkItem.name;
     this.subtrialsList = this.detailService.selectedString.subtrails;
 
     this.map = new mapboxgl.Map({
@@ -42,6 +42,7 @@ export class DetailledViewComponent implements OnInit {
       center: [-119.5383, 51.678418]
 
     });
+    console.log("coordindates are :" + this.detailService.selectedString.longitude);
     // Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
 

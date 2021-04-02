@@ -43,10 +43,10 @@
         </form>
     </div>
     <p> {{selectedParkItem.description}}.
-        <br/> Looking for a great trail in {{selectedParkItem.name}}?. GPS Trails has 118 great hiking trails, trail running trails,
+        <br/>
+        <br /> Looking for a great trail in {{selectedParkItem.name}}?. GPS Trails has 118 great hiking trails, trail running trails,
         views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos
-        from hikers, campers, and nature lovers like you. Ready...
-        <a>show more</a>
+        from hikers, campers, and nature lovers like you.
     </p>
 
     <div class="row">
@@ -54,25 +54,37 @@
             <div id='map'></div>
         </div>
         <div class="col-md-4">
-            <img src="https://as2.ftcdn.net/jpg/02/59/70/63/500_F_259706356_ytdIgbxBe4osHihsHZkKBHkVQ8qCqx6e.jpg" width="60px" height="60px"
-                alt="..." class="rounded-circle"> Directions
+            <ul>
+                <li>
+                    <img src="https://as2.ftcdn.net/jpg/02/59/70/63/500_F_259706356_ytdIgbxBe4osHihsHZkKBHkVQ8qCqx6e.jpg" width="60px" height="60px"
+                        alt="..." class="rounded-circle"> Directions
+                </li>
+                <br />
+                <li>
+                    <img src="https://iconarchive.com/download/i99352/dtafalonso/android-lollipop/Downloads.ico" width="60px" height="60px" alt="..."
+                        class="rounded-circle" onclick="window.print()">
+                    <span onclick="window.print()">Download</span>
+                </li>
+            </ul>
+
+
         </div>
     </div>
 
 
-    <div class="row">
+    <div class="row ">
         <br />
         <hr />
 
         <h4>Park Information</h4>
 
-        <div class="col-md-6">
+        <div class="col-md-6 ">
             <p>
                 <strong>Park area : </strong>
                 {{selectedParkItem.parkarea}} acres
             </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 ">
             <p>
                 <strong>Contact: </strong>
                 {{selectedParkItem.contact}}
@@ -81,10 +93,11 @@
 
     </div>
 
-    <div class="row">
+    <div class="row ">
         <h3>List of Trials</h3>
         <br />
-        <div *ngFor="let subtrailitem of subtrialsList" (click)="goToSubTrials(subtrailitem)" [routerLink]="['../subtrial']">
+        <div *ngFor="let subtrailitem of subtrialsList " (click)="goToSubTrials(subtrailitem) " [routerLink]="[
+                        '../subtrial'] ">
             <ul class=" list-group ">
                 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
                     <div class="flex-column ">
@@ -108,7 +121,7 @@
                         <div class="media-left ">
                             <a href="# ">
                                 <img class="media-object " src="{{subtrailitem.image}} " alt="... " style="width: 100px;height:
-            100px; ">
+                        100px; ">
                             </a>
                         </div>
                         <div class="media-body " style="padding: 6px; ">
@@ -133,14 +146,14 @@
 </script>
 
 
-<footer class="bg-light text-center text-lg-start">
+<footer class="bg-light text-center text-lg-start ">
     <!-- Grid container -->
-    <div class="container p-4">
+    <div class="container p-4 ">
         <!--Grid row-->
-        <div class="row">
+        <div class="row ">
             <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">GPS Trails</h5>
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 ">
+                <h5 class="text-uppercase ">GPS Trails</h5>
 
                 <p>
                     GPS Trails helps to make your trials more organized and memorble by providing you the most optimal trails to walk and being
@@ -150,21 +163,21 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Contacts us</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
+                <h5 class="text-uppercase ">Contacts us</h5>
 
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0 ">
                     <li>
-                        <a href="#!" class="text-dark">Facebook</a>
+                        <a href="#! " class="text-dark ">Facebook</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-dark">Instagram</a>
+                        <a href="#! " class="text-dark ">Instagram</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-dark">Twitch</a>
+                        <a href="#! " class="text-dark ">Twitch</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-dark">Whatsapp</a>
+                        <a href="#! " class="text-dark ">Whatsapp</a>
                     </li>
                 </ul>
             </div>
@@ -178,9 +191,9 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgb(0, 0, 0); color: floralwhite">
+    <div class="text-center p-3 " style="background-color: rgb(0, 0, 0); color: floralwhite ">
         © 2020 Copyright:GPS Trials.com
-        <a class="text-dark" href="" style="color:floralwhite">gpstrials.com</a>
+        <a class="text-dark " href=" " style="color:floralwhite ">gpstrials.com</a>
     </div>
     <!-- Copyright -->
 </footer>
