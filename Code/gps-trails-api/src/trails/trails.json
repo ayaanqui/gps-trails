@@ -2,7 +2,7 @@
     "data": [
         {
             "name": "Yosemite National Park",
-            "image": "https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg",
+            "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
             "description": "Yosemite National Park is in California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoia trees, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome.",
             "latitude": 37.8651,
             "longitude": -119.5383,
@@ -269,7 +269,7 @@
                             "reviewOfTrail": "First part of trail was paved, offered beautiful views! We got to the part where Mist trail and John Muir trail split, and the mist trail was closed. We tried doing the John Muir trail, but switchbacks became too icy and were covered with snow. "
                         },
                         {
-                            "name": "sdfdsf",
+                            "name": "John hall",
                             "reviewOfTrail": "it was beautiful and a great place to spend time. absolutely love it but where the trail is supposed to take you is closed off so you have to take a detour and then it got really icy and slim before we got to the waterfalls so we had to take a stop. but great!"
                         }
                     ]
@@ -281,8 +281,8 @@
             "name": "Acadia",
             "image": "https://www.apple.com/newsroom/images/product/services/lifestyle/ApplePay-and-AppleWatch-celebrate-americas-national-parks-08232018_big.jpg.large.jpg",
             "description": "Looking for a great trail in Acadia National Park, Maine? AllTrails has 216 great hiking trails, trail running trails, mountain biking trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Ready for some activity? There are 123 moderate trails in Acadia National Park ranging from 0.9 to 27.1 miles and from 16 to 1,525 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
-            "latitude": 44.376789,
-            "longitude": -68.255569,
+            "latitude": 44.37963,
+            "longitude": -68.23233,
             "views": "3332",
             "ratingsAvg": 3.2,
             "parkarea": 234234,
@@ -570,8 +570,8 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 3244,
                     "length": 6.1,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": -14.28376,
+                    "longitude": -170.71302,
                     "time": 3,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/21775563/extra_large_6d50599ac54588e063aed6e1773aa74e.jpg",
                     "images": [
@@ -661,8 +661,8 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 2712,
                     "length": 0.4,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 14.24849,
+                    "longitude": -151.66159,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/11345386/extra_large_fa8eefb8bdabad74d664937fe1edeac4.jpg",
                     "images": [
                         "https://cdn-assets.alltrails.com/uploads/photo/image/25412466/extra_large_bf20bfd85245e88b2c6e2c0746de0090.jpg",
@@ -852,8 +852,8 @@
                     "reviewsTrial": 3.5,
                     "noOfReview": 1021,
                     "length": 1.3,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 43.76031,
+                    "longitude": -101.92808,
                     "time": 37,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/24020427/extra_large_d3262dbcaabde12e4785e5db9f61a767.jpg",
                     "images": [
@@ -885,8 +885,8 @@
                     "reviewsTrial": 4.2,
                     "noOfReview": 518,
                     "length": 0.8,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 43.7636,
+                    "longitude": -101.92684,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/10756106/extra_large_ce56739f16a92e291a47795e9d7928df.jpg",
                     "images": [
                         "https://cdn-assets.alltrails.com/uploads/photo/image/34501527/extra_large_444b4dcc560e38dd9d2f976c81895e5a.jpg",
@@ -914,8 +914,8 @@
                     "reviewsTrial": 4.8,
                     "noOfReview": 469,
                     "length": 10.5,
-                    "latitude": 14.25,
-                    "longitude": 151.2093,
+                    "latitude": 43.7613,
+                    "longitude": -101.92792,
                     "image": "https://cdn-assets.alltrails.com/uploads/photo/image/23277391/extra_large_18dd427c899e52b2fef2066513f18a5a.jpg",
                     "time": 5,
                     "difficulty": "moderate",
