@@ -9,40 +9,40 @@ import { Trail } from "./trails.entity";
 @Controller('trails')
 export class TrailsController {
 
-    trails: Array<OldTrail> = new Array<OldTrail>();
-    nameToTrailMap: Map<string, OldTrail> = new Map<string, OldTrail>();
+  trails: Array<OldTrail> = new Array<OldTrail>();
+  nameToTrailMap: Map<string, OldTrail> = new Map<string, OldTrail>();
 
-    constructor(private readonly trailServices: TrailsService) {
-        data.forEach((t, i) => {
-            let trailOb = new OldTrail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails, t.ratingsAvg, t.views);
+  constructor(private readonly trailServices: TrailsService) {
+    data.forEach((t, i) => {
+      let trailOb = new OldTrail(i, t.name, t.image, t.description, t.latitude, t.longitude, t.parkarea, t.contact, t.subtrails, t.ratingsAvg, t.views);
 
-            this.trails.push(trailOb);
-            this.nameToTrailMap.set(trailOb.name, trailOb);
-        });
-    }
+      this.trails.push(trailOb);
+      this.nameToTrailMap.set(trailOb.name, trailOb);
+    });
+  }
 
-    @Get()
-    getAllTrails(): OldTrail[] {
-        return this.trails;
-    }
+  @Get()
+  getAllTrails(): OldTrail[] {
+    return this.trails;
+  }
 
-    @Get(':id')
-    getTrailById(@Param() params): OldTrail {
-        const id: number = params ?.id;
-        if (id == null || id >= this.trails.length)
-            throw new HttpException({
-                status: HttpStatus.NOT_FOUND,
-                error: 'Trail not found',
-            },
-                HttpStatus.NOT_FOUND);
-        return this.trails[id];
-    }
+  @Get(':id')
+  getTrailById(@Param() params): OldTrail {
+    const id: number = params?.id;
+    if (id == null || id >= this.trails.length)
+      throw new HttpException({
+        status: HttpStatus.NOT_FOUND,
+        error: 'Trail not found',
+      },
+        HttpStatus.NOT_FOUND);
+    return this.trails[id];
+  }
 
-    @UseGuards(JwtAuthGuard)
-    @Post()
-    async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
-        const newTrail: Trail = await this.trailServices.insert(trailData);
-        return newTrail;
-    }
+  @UseGuards(JwtAuthGuard)
+  @Post()
+  async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
+    const newTrail: Trail = await this.trailServices.insert(trailData);
+    return newTrail;
+  }
 
 }

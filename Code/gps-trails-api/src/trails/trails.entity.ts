@@ -2,36 +2,36 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('trails')
 export class Trail extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    image: string;
+  @Column()
+  name: string;
 
-    @Column('text')
-    description: string;
+  @Column()
+  image: string;
 
-    @Column('double')
-    lat: number;
+  @Column('text')
+  description: string;
 
-    @Column('double')
-    lon: number;
+  @Column('double')
+  lat: number;
 
-    @Column('double')
-    ratingsAvg: number = 0.0;
-    
-    @Column('bigint')
-    views: number = 0.0;
+  @Column('double')
+  lon: number;
 
-    @Column()
-    location: string;
+  @Column('double')
+  ratingsAvg: number = 0.0;
 
-    @Column('bigint')
-    areaAcres: number;
+  @Column('bigint')
+  views: number = 0.0;
 
-    @Column()
-    contact: string = "";
+  @Column()
+  location: string;
+
+  @Column('bigint')
+  areaAcres: number;
+
+  @Column()
+  contact: string = "";
 }
