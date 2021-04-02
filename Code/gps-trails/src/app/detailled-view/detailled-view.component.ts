@@ -13,8 +13,8 @@ export class DetailledViewComponent implements OnInit {
 
   map?: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number;
+  lng: number;
 
   selectedParkItem: any;
 
@@ -26,11 +26,15 @@ export class DetailledViewComponent implements OnInit {
     this.selectedParkItem = this.detailService.selectedString;
     this.searchresult = this.selectedParkItem.name;
     this.subtrialsList = this.selectedParkItem.subtrails;
+    this.lat = this.selectedParkItem.latitude;
+    this.lng = this.selectedParkItem.longitude;
   }
 
   ngOnInit() {
 
     this.selectedParkItem = this.detailService.selectedString;
+    this.lat = this.selectedParkItem.latitude;
+    this.lng = this.selectedParkItem.longitude;
     this.searchresult = this.selectedParkItem.name;
     this.subtrialsList = this.detailService.selectedString.subtrails;
 
@@ -39,7 +43,7 @@ export class DetailledViewComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 8,
-      center: [-119.5383, 51.678418]
+      center: [-119.56619, 37.73195]
 
     });
     console.log("coordindates are :" + this.detailService.selectedString.longitude);
@@ -47,7 +51,7 @@ export class DetailledViewComponent implements OnInit {
     this.map.addControl(new mapboxgl.NavigationControl());
 
     var marker = new mapboxgl.Marker()
-      .setLngLat([-119.5383, 51.678418])
+      .setLngLat([-119.56619, 37.73195])
       .addTo(this.map);
   }
 
