@@ -22,4 +22,9 @@ describe('AddtrailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Need valid email address of registered user', () => {
+    
+  });
+
 });
