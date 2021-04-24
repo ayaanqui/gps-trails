@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DetailServiceClass } from '../home/details.service';
 import { DetailledViewComponent } from './detailled-view.component';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('DetailledViewComponent', () => {
   let component: DetailledViewComponent;
@@ -8,7 +9,8 @@ describe('DetailledViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailledViewComponent ]
+      declarations: [ DetailledViewComponent ],
+      imports: [ DetailServiceClass, HttpClientModule ]
     })
     .compileComponents();
   });
@@ -19,7 +21,4 @@ describe('DetailledViewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

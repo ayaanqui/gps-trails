@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DetailServiceClass } from '../home/details.service';
 import { SubtrialsComponent } from './subtrials.component';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('SubtrialsComponent', () => {
   let component: SubtrialsComponent;
@@ -8,7 +9,8 @@ describe('SubtrialsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubtrialsComponent ]
+      declarations: [ SubtrialsComponent ],
+      imports: [ DetailServiceClass, HttpClientModule ]
     })
     .compileComponents();
   });
@@ -19,7 +21,4 @@ describe('SubtrialsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

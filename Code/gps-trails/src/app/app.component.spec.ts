@@ -15,14 +15,4 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'gps-trails'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    expect(app.title).toEqual('gps-trails');
-  });
 });
