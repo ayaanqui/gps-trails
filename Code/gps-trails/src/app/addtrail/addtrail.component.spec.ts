@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AddtrailComponent } from './addtrail.component';
 
 describe('AddtrailComponent', () => {
@@ -8,7 +8,8 @@ describe('AddtrailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddtrailComponent ]
+      declarations: [ AddtrailComponent ],
+      imports: [ HttpClientModule ]
     })
     .compileComponents();
   });
@@ -22,4 +23,17 @@ describe('AddtrailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should validate components filled in', () =>{
+    component.email = "test@email.com"
+    component.name = "test"
+    component.parkname = "TestPark"
+    component.trailname = "Trail"
+    component.experience = "Happy"
+    component.message = "Message"
+    component.responsemessage = "Response"
+    component.createMessage()
+    
+  });
+
 });

@@ -26,14 +26,14 @@ export class AddtrailComponent implements OnInit {
 
 
   createMessage() {
-
+    console.log(this.email);
     this.httpClient.post<any>('http://localhost:3000/addtrails/add', {
       id: 222,
-      emailid: (<HTMLInputElement>document.getElementById('emailInputId')).value,
-      name: (<HTMLInputElement>document.getElementById('nameInputId')).value,
-      parkname: (<HTMLInputElement>document.getElementById('parknameInputId')).value,
-      trailname: (<HTMLInputElement>document.getElementById('trailInputId')).value,
-      experience: (<HTMLInputElement>document.getElementById('experienceInputId')).value,
+      emailid: this.email,
+      name: this.name,
+      parkname: this.parkname,
+      trailname: this.trailname,
+      experience: this.experience,
     }
     ).subscribe(data => {
       this.message = "Review submitted";

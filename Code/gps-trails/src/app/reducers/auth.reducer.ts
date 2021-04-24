@@ -1,3 +1,4 @@
+import { NgModule } from "@angular/core";
 import { Action, createReducer, on } from "@ngrx/store";
 import { login, logout } from '../actions/auth.action';
 

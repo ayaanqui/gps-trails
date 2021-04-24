@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home.component';
+import { DetailServiceClass } from './details.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +9,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      imports: [ HttpClientModule, DetailServiceClass]
     })
     .compileComponents();
   });
@@ -21,5 +23,10 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('search test', () => {
+    component.searchresult = "Yo"
+    component.searchThis()
   });
 });
