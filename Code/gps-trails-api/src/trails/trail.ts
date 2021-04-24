@@ -28,11 +28,11 @@ export class Trail {
     this.subtrails = subtrails;
   }
 
-  private genRandom(min: number, max: number): number {
+  static genRandom(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
-  private genRandomDec(from: number, to: number, fixed: number): number {
+  static genRandomDec(from: number, to: number, fixed: number): number {
     return Number.parseFloat((Math.random() * (to - from) + from).toFixed(fixed)) * 1;
   }
 };
