@@ -2,7 +2,7 @@ import { EventEmitter, Injectable, NgModule, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@NgModule()
+//@NgModule()
 @Injectable()
 export class DetailServiceClass {
 

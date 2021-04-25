@@ -26,7 +26,6 @@ export class AddtrailComponent implements OnInit {
 
 
   createMessage() {
-    console.log(this.email);
     this.httpClient.post<any>('http://localhost:3000/addtrails/add', {
       id: 222,
       emailid: this.email,

@@ -25,8 +25,4 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('search test', () => {
-    component.searchresult = "Yo"
-    component.searchThis()
-  });
 });
