@@ -23,6 +23,25 @@ Since this project relies on MySQL as the database, all dependencies are for MyS
 ```
 $ cd gps-trails/api/
 ```
+### Setting Up TypeORM Config Files
+Now, we need to ensure that TypeORM is able to find the connection strings to connect to the database properly
+
+1. Create a file named `ormconfig.json` in the root of `gps-trails/api/` directory
+2. Paste and fill out the contents with the appropriate information
+```json
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "root",
+  "database": "gps-trails",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true
+}
+```
+_*The only fields that need to be changed are `username`, `password`, and `database`. Anything other than these fields should not be changed._
+
 After this we will need to make sure that all the dependencies are installed for the server to start up properly.
 
 ```
