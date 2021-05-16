@@ -2,11 +2,25 @@
 
 GPS  Trails  is  a  user-centralized web-application that  is  designed  to  foster  a  new community of nature enthusiasts. Some of its features include allowing users to input their own trial discoveries and reviewing previous trails already in the database.
 
-<p><img src="frontend/src/assets/img/previews/homepage.png" /></p>
+<p align="center">
+    <img src="frontend/src/assets/img/previews/homepage.png" />
+    <i>Homepage</i>
+</p>
 <br />
 
 ## Implementation
 GPS Trails is implemented using 3 stand-alone  components: Angular for the client facing front-end, NestJS as the backend API server that talks to a MySQL database to store and fetch trail and user related data. Additionally, we make use of the Mapbox API in order to serve a custom interactable map interface.
+
+## Pages
+<p align="center">
+    <img src="frontend/src/assets/img/previews/explore_acadia.png" />
+    <i>Emplore page on <a href="https://en.wikipedia.org/wiki/Acadia_National_Park">Acadia National Park</a></i>
+</p>
+<br />
+<p align="center">
+    <img src="frontend/src/assets/img/previews/park_page.png" />
+    <i>Detailed park page on <a href="https://en.wikipedia.org/wiki/Yosemite_National_Park">Yosemite National Park</a></i>
+</p>
 
 ## Set Up
 ### Clone project
