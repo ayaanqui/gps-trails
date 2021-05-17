@@ -4,7 +4,7 @@ GPS  Trails  is  a  user-centralized web-application that  is  designed  to  fos
 
 <p align="center">
     <img src="frontend/src/assets/img/previews/homepage.png" />
-    <i>Homepage</i>
+    <small><i>Homepage</i></small>
 </p>
 <br />
 
@@ -14,12 +14,12 @@ GPS Trails is implemented using 3 stand-alone  components: Angular for the clien
 ## Pages
 <p align="center">
     <img src="frontend/src/assets/img/previews/explore_acadia.png" />
-    <i>Emplore page on <a href="https://en.wikipedia.org/wiki/Acadia_National_Park">Acadia National Park</a></i>
+    <small><i>Emplore page on <a href="https://en.wikipedia.org/wiki/Acadia_National_Park">Acadia National Park</a></i></small>
 </p>
 <br />
 <p align="center">
     <img src="frontend/src/assets/img/previews/park_page.png" />
-    <i>Detailed park page on <a href="https://en.wikipedia.org/wiki/Yosemite_National_Park">Yosemite National Park</a></i>
+    <small><i>Detailed park page on <a href="https://en.wikipedia.org/wiki/Yosemite_National_Park">Yosemite National Park</a></i></small>
 </p>
 
 ## Set Up
