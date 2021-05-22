@@ -11,10 +11,13 @@ export class TrailsService {
     private readonly trailRepository: Repository<Trail>,
   ) { }
 
+  async findById(id: number): Promise<Trail> {
+    return await this.trailRepository.findOne(id);
+  }
+
   async insert(trailData: CreateTrailDto): Promise<Trail> {
     const newTrail: Trail = CreateTrailDto.createAndGetTrail(trailData);
-    await Trail.save(newTrail);
-    return newTrail;
+    return await Trail.save(newTrail);
   }
 
   async findAll(): Promise<Trail[]> {
