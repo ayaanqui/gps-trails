@@ -21,17 +21,17 @@ export class Trail extends BaseEntity {
   lon: number;
 
   @Column('double')
-  ratingsAvg: number = 0.0;
+  parkArea: number;
 
   @Column('bigint')
   views: number = 0.0;
 
+  @Column('double')
+  ratingsAvg: number = 0.0;
+
+  @Column()
+  contact: string;
+
   @Column()
   location: string;
-
-  @Column('bigint')
-  areaAcres: number;
-
-  @Column()
-  contact: string = "";
 }
