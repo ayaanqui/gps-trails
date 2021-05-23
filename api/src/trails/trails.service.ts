@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Trail } from "./trails.entity";
-import { CreateTrailDto } from './dto/create-trail-dto';
+import { CreateTrailDto } from './dto/createTrailDto';
 
 @Injectable()
 export class TrailsService {

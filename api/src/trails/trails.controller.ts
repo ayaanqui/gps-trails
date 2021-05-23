@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
-import { CreateTrailDto } from './dto/create-trail-dto';
+import { CreateTrailDto } from './dto/createTrailDto';
 import { TrailsService } from "./trails.service";
 import { Trail } from "./trails.entity";
 
