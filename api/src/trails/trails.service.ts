@@ -16,7 +16,7 @@ export class TrailsService {
   }
 
   async insert(trailData: CreateTrailDto): Promise<Trail> {
-    const newTrail: Trail = CreateTrailDto.createAndGetTrail(trailData);
+    const newTrail: Trail = trailData.toTrail();
     return await Trail.save(newTrail);
   }
 

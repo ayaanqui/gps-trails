@@ -33,7 +33,17 @@ export class TrailsController {
   @UseGuards(JwtAuthGuard)
   @Post()
   async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
-    return await this.trailServices.insert(trailData);
+    const t: CreateTrailDto = new CreateTrailDto(trailData.name, trailData.image, trailData.description, trailData.lat, trailData.lon, trailData.parkArea, trailData.contact, trailData.location);
+
+    if (!t)
+      throw new HttpException(
+        {
+          status: HttpStatus.BAD_REQUEST,
+          error: 'Something went wrong'
+        },
+        HttpStatus.BAD_REQUEST
+      );
+    return await this.trailServices.insert(t);
   }
 
 }
