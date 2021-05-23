@@ -33,7 +33,7 @@ export class TrailsController {
   @UseGuards(JwtAuthGuard)
   @Post()
   async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
-    const t: CreateTrailDto = new CreateTrailDto(trailData.name, trailData.image, trailData.description, trailData.lat, trailData.lon, trailData.parkArea, trailData.contact, trailData.location);
+    const t: Trail = CreateTrailDto.toTrail(trailData);
 
     if (!t)
       throw new HttpException(

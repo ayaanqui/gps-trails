@@ -12,29 +12,16 @@ export class CreateTrailDto {
   contact: string;
   location: string;
 
-  constructor(name: string, image: string, description: string, lat: number, lon: number, parkArea: number, contact: string, location: string) {
-    this.name = name;
-    this.image = image;
-    this.description = description;
-    this.lat = lat;
-    this.lon = lon;
-    this.parkArea = parkArea;
-    this.contact = contact;
-    this.location = location;
-  }
-
-  toTrail(): Trail {
+  static toTrail(c: CreateTrailDto): Trail {
     const trail: Trail = new Trail();
-    trail.name = this.name;
-    trail.image = this.image;
-    trail.description = this.description;
-    trail.lat = this.lat;
-    trail.lon = this.lon;
-    trail.parkArea = this.parkArea;
-    trail.views = this.views;
-    trail.ratingsAvg = this.ratingsAvg;
-    trail.contact = this.contact;
-    trail.location = this.location;
+    trail.name = c.name;
+    trail.image = c.image;
+    trail.description = c.description;
+    trail.lat = c.lat;
+    trail.lon = c.lon;
+    trail.parkArea = c.parkArea;
+    trail.contact = c.contact;
+    trail.location = c.location;
     return trail;
   }
 }

@@ -15,9 +15,8 @@ export class TrailsService {
     return await this.trailRepository.findOne(id);
   }
 
-  async insert(trailData: CreateTrailDto): Promise<Trail> {
-    const newTrail: Trail = trailData.toTrail();
-    return await Trail.save(newTrail);
+  async insert(trail: Trail): Promise<Trail> {
+    return await Trail.save(trail);
   }
 
   async findAll(): Promise<Trail[]> {
