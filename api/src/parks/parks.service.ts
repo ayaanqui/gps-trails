@@ -1,25 +1,24 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { Trail } from "./parks.entity";
-import { CreateTrailDto } from './dto/createParkDto';
+import { Park } from "./parks.entity";
 
 @Injectable()
-export class TrailsService {
+export class ParksService {
   constructor(
-    @InjectRepository(Trail)
-    private readonly trailRepository: Repository<Trail>,
+    @InjectRepository(Park)
+    private readonly parkRepository: Repository<Park>,
   ) { }
 
-  async findById(id: number): Promise<Trail> {
-    return await this.trailRepository.findOne(id);
+  async findById(id: number): Promise<Park> {
+    return await this.parkRepository.findOne(id);
   }
 
-  async insert(trail: Trail): Promise<Trail> {
-    return await Trail.save(trail);
+  async insert(park: Park): Promise<Park> {
+    return await Park.save(park);
   }
 
-  async findAll(): Promise<Trail[]> {
-    return await this.trailRepository.find();
+  async findAll(): Promise<Park[]> {
+    return await this.parkRepository.find();
   }
 }

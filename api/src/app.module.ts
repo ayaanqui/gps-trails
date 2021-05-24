@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TrailsController } from './parks/parks.controller';
+import { ParksController } from './parks/parks.controller';
 import { User } from './users/users.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersService } from './users/users.service';
@@ -17,22 +17,40 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './auth/constants';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './auth/jwt.strategy';
-import { Trail } from './parks/parks.entity';
-import { TrailsService } from './parks/parks.service';
+import { Park } from './parks/parks.entity';
+import { ParksService } from './parks/parks.service';
+import { TrailsController } from './trails/trails.controller';
+import { TrailsService } from './trails/trails.service';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    AddTrailsService,
-    AddTrailsModule,
-    TypeOrmModule.forFeature([User, Trail, AddTrails], ),
+    TypeOrmModule.forFeature([User, Park, AddTrails],),
+
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60 days' },
     }),
-    PassportModule
+
+    AddTrailsModule,
+    PassportModule,
   ],
-  providers: [UsersService, TrailsService, AddTrailsService, AuthService, LocalStrategy, JwtStrategy],
-  controllers: [AppController, TrailsController, AddTrailsController, AuthController, RegisterController],
+  providers: [
+    UsersService,
+    ParksService,
+    AddTrailsService,
+    AuthService,
+    TrailsService,
+    LocalStrategy,
+    JwtStrategy
+  ],
+  controllers: [
+    AppController,
+    ParksController,
+    TrailsController,
+    AddTrailsController,
+    AuthController,
+    RegisterController
+  ],
 })
 export class AppModule { }

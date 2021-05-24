@@ -1,6 +1,6 @@
-import { Trail } from "../parks.entity";
+import { Park } from "../parks.entity";
 
-export class CreateTrailDto {
+export class CreateParkDto {
   name: string;
   image: string;
   description: string;
@@ -12,8 +12,8 @@ export class CreateTrailDto {
   contact: string;
   location: string;
 
-  static toTrail(c: CreateTrailDto): Trail {
-    const trail: Trail = new Trail();
+  static toPark(c: CreateParkDto): Park {
+    const trail: Park = new Park();
     trail.name = c.name;
     trail.image = c.image;
     trail.description = c.description;

@@ -1,29 +1,29 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
-import { CreateTrailDto } from './dto/createParkDto';
-import { TrailsService } from "./parks.service";
-import { Trail } from "./parks.entity";
+import { CreateParkDto } from './dto/createParkDto';
+import { ParksService } from "./parks.service";
+import { Park } from "./parks.entity";
 
-@Controller('trails')
-export class TrailsController {
+@Controller('parks')
+export class ParksController {
 
-  constructor(private readonly trailServices: TrailsService) {
+  constructor(private readonly parkservices: ParksService) {
   }
 
   @Get()
-  async getAllTrails(): Promise<Trail[]> {
-    return await this.trailServices.findAll();
+  async getAllParks(): Promise<Park[]> {
+    return await this.parkservices.findAll();
   }
 
   @Get(':id')
-  async getTrailById(@Param() params): Promise<Trail> {
+  async getParkById(@Param() params): Promise<Park> {
     const id: number = params?.id;
-    const post: Trail = await this.trailServices.findById(id);
+    const post: Park = await this.parkservices.findById(id);
     if (id == null || post == null)
       throw new HttpException(
         {
           status: HttpStatus.NOT_FOUND,
-          error: 'Trail not found',
+          error: 'Park not found',
         },
         HttpStatus.NOT_FOUND
       );
@@ -32,8 +32,8 @@ export class TrailsController {
 
   @UseGuards(JwtAuthGuard)
   @Post()
-  async createNewTrail(@Body() trailData: CreateTrailDto): Promise<Trail> {
-    const t: Trail = CreateTrailDto.toTrail(trailData);
+  async createNewPark(@Body() trailData: CreateParkDto): Promise<Park> {
+    const t: Park = CreateParkDto.toPark(trailData);
 
     if (!t)
       throw new HttpException(
@@ -43,7 +43,7 @@ export class TrailsController {
         },
         HttpStatus.BAD_REQUEST
       );
-    return await this.trailServices.insert(t);
+    return await this.parkservices.insert(t);
   }
 
 }

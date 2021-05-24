@@ -1,7 +1,8 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Trail } from "src/trails/entities/trail.entity";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('parks')
-export class Trail extends BaseEntity {
+export class Park extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -34,4 +35,7 @@ export class Trail extends BaseEntity {
 
   @Column()
   location: string;
+
+  @OneToMany(() => Trail, trail => trail.park)
+  trails: Trail[];
 }
