@@ -1,4 +1,4 @@
-import { Trail } from "../trails.entity";
+import { Trail } from "../parks.entity";
 
 export class CreateTrailDto {
   name: string;

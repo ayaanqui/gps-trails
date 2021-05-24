@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TrailsController } from './trails/trails.controller';
+import { TrailsController } from './parks/parks.controller';
 import { User } from './users/users.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersService } from './users/users.service';
@@ -17,8 +17,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './auth/constants';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './auth/jwt.strategy';
-import { Trail } from './trails/trails.entity';
-import { TrailsService } from './trails/trails.service';
+import { Trail } from './parks/parks.entity';
+import { TrailsService } from './parks/parks.service';
 
 @Module({
   imports: [

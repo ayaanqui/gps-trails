@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { Trail as Trails } from './trails.entity';
+import { Trail as Trails } from './parks.entity';
 
 describe('Trails test', () => {
 

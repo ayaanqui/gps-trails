@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('trails')
+@Entity('parks')
 export class Trail extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
