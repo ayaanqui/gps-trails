@@ -21,11 +21,17 @@ import { Park } from './parks/parks.entity';
 import { ParksService } from './parks/parks.service';
 import { TrailsController } from './trails/trails.controller';
 import { TrailsService } from './trails/trails.service';
+import { Trail } from './trails/entities/trail.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    TypeOrmModule.forFeature([User, Park, AddTrails],),
+    TypeOrmModule.forFeature([
+      User,
+      Park,
+      AddTrails,
+      Trail,
+    ]),
 
     JwtModule.register({
       secret: jwtConstants.secret,
@@ -42,7 +48,7 @@ import { TrailsService } from './trails/trails.service';
     AuthService,
     TrailsService,
     LocalStrategy,
-    JwtStrategy
+    JwtStrategy,
   ],
   controllers: [
     AppController,
@@ -50,7 +56,7 @@ import { TrailsService } from './trails/trails.service';
     TrailsController,
     AddTrailsController,
     AuthController,
-    RegisterController
+    RegisterController,
   ],
 })
 export class AppModule { }
