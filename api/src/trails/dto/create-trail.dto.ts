@@ -1,7 +1,6 @@
 import { Park } from '../../parks/parks.entity';
 export class CreateTrailDto {
   name: string;
-  ratingsAvg: number;
   image: string;
   description: string;
   length: number;
@@ -10,5 +9,5 @@ export class CreateTrailDto {
   difficulty: number;
   routeType: string;
   elevationGain: number;
-  park: Park;
+  parkId: number;
 }

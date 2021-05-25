@@ -10,7 +10,7 @@ export class Trail extends BaseEntity {
   name: string;
 
   @Column()
-  ratingsAvg: number;
+  ratingsAvg: number = 0;
 
   @Column()
   image: string;
