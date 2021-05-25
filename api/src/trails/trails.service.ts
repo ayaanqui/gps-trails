@@ -1,3 +1,4 @@
+import { HttpException, HttpStatus } from '@nestjs/common';
 import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Park } from 'src/parks/parks.entity';
@@ -19,8 +20,7 @@ export class TrailsService {
 
   async create(createTrailDto: CreateTrailDto): Promise<Trail> {
     const t = await this.createTrailOb(createTrailDto);
-    console.log(t);
-    return await Trail.save(t);
+    return await this.trailRepository.save(t);
   }
 
   async findAll() {
