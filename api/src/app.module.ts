@@ -25,6 +25,7 @@ import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { MulterModule } from '@nestjs/platform-express';
 import { join } from 'path';
+import { imageFileFilter } from './util/multerConfig';
 
 @Module({
   imports: [
@@ -45,16 +46,7 @@ import { join } from 'path';
     MulterModule.registerAsync({
       useFactory: () => ({
         dest: './uploads',
-        fileFilter: (req, file, callback) => {
-          let valid = false;
-          for (let mimeType in ['image/jpeg', 'image/png', 'image/gif', 'image/webp']) {
-            if (file.mimetype === mimeType) {
-              valid = true;
-              break;
-            }
-          }
-          callback(null, valid);
-        }
+        fileFilter: imageFileFilter
       }),
     }),
 
