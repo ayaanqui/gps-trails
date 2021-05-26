@@ -22,6 +22,7 @@ import { ParksService } from './parks/parks.service';
 import { TrailsController } from './trails/trails.controller';
 import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
+import { MulterModule } from '@nestjs/platform-express';
 
 @Module({
   imports: [
@@ -36,6 +37,12 @@ import { Trail } from './trails/entities/trail.entity';
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60 days' },
+    }),
+
+    MulterModule.registerAsync({
+      useFactory: () => ({
+        dest: './uploads',
+      }),
     }),
 
     AddTrailsModule,
