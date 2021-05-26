@@ -41,12 +41,24 @@ import { join } from 'path';
       signOptions: { expiresIn: '60 days' },
     }),
 
+    // Multer image upload
     MulterModule.registerAsync({
       useFactory: () => ({
         dest: './uploads',
+        fileFilter: (req, file, callback) => {
+          let valid = false;
+          for (let mimeType in ['image/jpeg', 'image/png', 'image/gif', 'image/webp']) {
+            if (file.mimetype === mimeType) {
+              valid = true;
+              break;
+            }
+          }
+          callback(null, valid);
+        }
       }),
     }),
 
+    // Serving static files
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads'),
     }),
