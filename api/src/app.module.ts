@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersService } from './users/users.service';
 import { RegisterController } from './register/register.controller';
 import { AuthController } from './auth/auth.controller';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 import { AddTrailsController } from './addtrails/addtrails.controller';
 import { AddTrailsService } from './addtrails/addtrails.service';
@@ -23,6 +24,7 @@ import { TrailsController } from './trails/trails.controller';
 import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { MulterModule } from '@nestjs/platform-express';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -43,6 +45,10 @@ import { MulterModule } from '@nestjs/platform-express';
       useFactory: () => ({
         dest: './uploads',
       }),
+    }),
+
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'uploads'),
     }),
 
     AddTrailsModule,
