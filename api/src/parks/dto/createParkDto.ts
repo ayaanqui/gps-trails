@@ -7,8 +7,6 @@ export class CreateParkDto {
   lat: number;
   lon: number;
   parkArea: number;
-  views: number = 0.0;
-  ratingsAvg: number = 0.0;
   contact: string;
   location: string;
 
