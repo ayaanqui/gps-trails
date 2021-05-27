@@ -14,7 +14,7 @@ export const imageFileFilter = (req, file, callback) => {
 
 export const editFilename = (req, file, callback) => {
   const fileExtName: string = extname(file.originalname);
-  randomBytes(25, (err, buf) => {
+  randomBytes(25, (_, buf) => {
     const newFilename: string = buf.toString('hex');
     callback(null, `${newFilename}${fileExtName}`);
   });
