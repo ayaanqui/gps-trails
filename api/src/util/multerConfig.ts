@@ -1,4 +1,5 @@
 import { extname } from "path";
+import { randomBytes } from 'crypto';
 
 export const imageFileFilter = (req, file, callback) => {
   let valid = false;
@@ -11,14 +12,10 @@ export const imageFileFilter = (req, file, callback) => {
   callback(null, valid);
 };
 
-const genRandomString = (len: number) => Math.round(Math.random() * len).toString(len);
-
 export const editFilename = (req, file, callback) => {
-  const name: string = file.originalname.split('.')[0];
   const fileExtName: string = extname(file.originalname);
-  const randomName = Array(4)
-    .fill(null)
-    .map(() => genRandomString(16))
-    .join('');
-  callback(null, `${randomName}${fileExtName}`);
+  randomBytes(25, (err, buf) => {
+    const newFilename: string = buf.toString('hex');
+    callback(null, `${newFilename}${fileExtName}`);
+  });
 };

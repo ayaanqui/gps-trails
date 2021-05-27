@@ -25,7 +25,8 @@ import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { MulterModule } from '@nestjs/platform-express';
 import { join } from 'path';
-import { imageFileFilter } from './util/multerConfig';
+import { editFilename } from './util/multerConfig';
+import { diskStorage } from 'multer';
 
 @Module({
   imports: [
@@ -45,8 +46,10 @@ import { imageFileFilter } from './util/multerConfig';
     // Multer image upload
     MulterModule.registerAsync({
       useFactory: () => ({
-        dest: './uploads',
-        fileFilter: imageFileFilter
+        storage: diskStorage({
+          destination: './uploads',
+          filename: editFilename,
+        }),
       }),
     }),
 
