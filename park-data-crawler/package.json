@@ -1,0 +1,22 @@
+{
+  "name": "park-data-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayaanqui/gps-trails.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayaanqui/gps-trails/issues"
+  },
+  "homepage": "https://github.com/ayaanqui/gps-trails#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.9"
+  }
+}
