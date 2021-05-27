@@ -23,11 +23,7 @@ import { ParksService } from './parks/parks.service';
 import { TrailsController } from './trails/trails.controller';
 import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
-import { MulterModule } from '@nestjs/platform-express';
 import { join } from 'path';
-import { editFilename } from './util/multerConfig';
-import { diskStorage } from 'multer';
-import { StaticController } from './static/static.controller';
 
 @Module({
   imports: [
@@ -42,6 +38,12 @@ import { StaticController } from './static/static.controller';
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60 days' },
+    }),
+
+    // Serving static files
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'uploads'),
+      serveRoot: '/static',
     }),
 
     AddTrailsModule,
@@ -63,7 +65,6 @@ import { StaticController } from './static/static.controller';
     AddTrailsController,
     AuthController,
     RegisterController,
-    StaticController,
   ],
 })
 export class AppModule { }
