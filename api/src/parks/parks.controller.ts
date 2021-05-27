@@ -4,6 +4,7 @@ import { CreateParkDto } from './dto/createParkDto';
 import { ParksService } from "./parks.service";
 import { Park } from "./parks.entity";
 import { FileInterceptor } from "@nestjs/platform-express/multer";
+import { imageUploadConfig } from "src/util/multerConfig";
 
 @Controller('parks')
 export class ParksController {
@@ -32,13 +33,12 @@ export class ParksController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(FileInterceptor('file', imageUploadConfig()))
   @Post()
   async createNewPark(@Body() trailData: CreateParkDto, @UploadedFile() file: Express.Multer.File): Promise<Park> {
-    // TODO: Make sure to only allow image files
     const t: Park = CreateParkDto.toPark(trailData);
 
-    if (!t) {
+    if (!t || !file) {
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,

@@ -27,6 +27,7 @@ import { MulterModule } from '@nestjs/platform-express';
 import { join } from 'path';
 import { editFilename } from './util/multerConfig';
 import { diskStorage } from 'multer';
+import { StaticController } from './static/static.controller';
 
 @Module({
   imports: [
@@ -41,21 +42,6 @@ import { diskStorage } from 'multer';
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60 days' },
-    }),
-
-    // Multer image upload
-    MulterModule.registerAsync({
-      useFactory: () => ({
-        storage: diskStorage({
-          destination: './uploads',
-          filename: editFilename,
-        }),
-      }),
-    }),
-
-    // Serving static files
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'uploads'),
     }),
 
     AddTrailsModule,
@@ -77,6 +63,7 @@ import { diskStorage } from 'multer';
     AddTrailsController,
     AuthController,
     RegisterController,
+    StaticController,
   ],
 })
 export class AppModule { }

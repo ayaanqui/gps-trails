@@ -1,15 +1,16 @@
 import { extname } from "path";
 import { randomBytes } from 'crypto';
+import { diskStorage } from 'multer';
+import { MulterOptions } from "@nestjs/platform-express/multer/interfaces/multer-options.interface";
 
 export const imageFileFilter = (req, file, callback) => {
-  let valid = false;
   for (let mimeType in ['image/jpeg', 'image/png', 'image/gif', 'image/webp']) {
     if (file.mimetype === mimeType) {
-      valid = true;
-      break;
+      callback(null, true);
+      return;
     }
   }
-  callback(null, valid);
+  callback(null, false);
 };
 
 export const editFilename = (req, file, callback) => {
@@ -18,4 +19,14 @@ export const editFilename = (req, file, callback) => {
     const newFilename: string = buf.toString('hex');
     callback(null, `${newFilename}${fileExtName}`);
   });
+};
+
+export const imageUploadConfig = (): MulterOptions => {
+  return {
+    storage: diskStorage({
+      destination: './uploads',
+      filename: editFilename,
+    }),
+    // fileFilter: imageFileFilter
+  };
 };
