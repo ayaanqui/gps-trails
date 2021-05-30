@@ -6,6 +6,7 @@ const Park = require('./park');
 
 const url_base = 'https://en.wikipedia.org/wiki';
 const url = `${url_base}/List_of_national_parks_of_the_United_States`;
+const url_base_uploads = 'https://upload.wikimedia.org/wikipedia/commons/'
 
 const page = request(url, (err, res, body) => {
   const $ = cheerio.load(body);
@@ -27,15 +28,15 @@ const page = request(url, (err, res, body) => {
     const descriptionEl = tr.children[13];
 
     const name = nameEl.children[0].attribs.title;
-    const image = imageEl.children[0].attribs.href.substring(11);
-    const downloaded = util.downloadImage(`${url_base}/wiki/File:${image}`, image);
+    const { url_tag, filename } = util.getFileInfo(imageEl.children[0].children[0].attribs.src);
+    const downloaded = util.downloadImage(`${url_base_uploads}${url_tag}${filename}`, filename);
     const location = locationEl.children[0].attribs.title + ', USA';
     const lonLatEl = util.getSmallTag(locationEl.children, 1).children[1].children[0].children[2].children[0].children[0].children[0];
     const { lat, lon } = util.getLatLon(lonLatEl.data);
     const parkArea = util.parseAreaAcres(areaEl.children[1].data);
     const description = util.parseHtmlParagraph(descriptionEl.children);
 
-    parks.push(new Park(name, image, description, lat, lon, parkArea, '', location));
+    parks.push(new Park(name, filename, description, lat, lon, parkArea, '', location));
   }
 
   fs.writeFileSync('./data.json', JSON.stringify({ parks: parks }));

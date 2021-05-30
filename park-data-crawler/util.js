@@ -1,13 +1,16 @@
 const fs = require('fs');
+const imageDowloader = require('image-downloader');
 
 exports.downloadImage = (uri, filename) => {
   if (fs.existsSync(`./images/${filename}`))
     return false;
 
-  request.head(uri, (err, res, body) => {
-    request(uri)
-      .pipe(fs.createWriteStream(`./images/${filename}`));
-  });
+  imageDowloader.image({
+    url: uri,
+    dest: `./images/${filename}`
+  })
+    .then(null)
+    .catch(err => console.error(err));
   return true;
 };
 
@@ -60,4 +63,23 @@ exports.parseHtmlParagraph = paragraph => {
       return node.data === '\n' ? ' ' : node.data;
     })
     .join('');
+};
+
+/**
+ * 
+ * @param {string} url 
+ * @returns 
+ */
+exports.getFileInfo = url => {
+  const url_base = '//upload.wikimedia.org/wikipedia/commons/';
+  const url_front = `${url_base}thumb/`;
+  const tag = 'x/xx/';
+
+  const url_tag = url.substr(url_front.length, tag.length);
+
+  const filename = url
+    .substring(url_front.length + tag.length)
+    .split('/')[0];
+
+  return { url_tag, filename };
 };
