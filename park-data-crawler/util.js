@@ -1,5 +1,7 @@
 const fs = require('fs');
+const request = require('request');
 const imageDowloader = require('image-downloader');
+const Park = require('./park');
 
 exports.downloadImage = (uri, filename) => {
   if (fs.existsSync(`./images/${filename}`))
@@ -67,8 +69,8 @@ exports.parseHtmlParagraph = paragraph => {
 
 /**
  * 
- * @param {string} url 
- * @returns 
+ * @param {string} url
+ * @returns {string, string} Returns tag name: `x/xx/` and the file name with the extension
  */
 exports.getFileInfo = url => {
   const url_base = '//upload.wikimedia.org/wikipedia/commons/';
@@ -82,4 +84,36 @@ exports.getFileInfo = url => {
     .split('/')[0];
 
   return { url_tag, filename };
+};
+
+/**
+ * 
+ * @param {Park} data 
+ * @param {string} token 
+ */
+exports.sendMultipartFormData = (data, token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vYWFobW1lZGF5YWFuLmRldkBnbWFpbC5jb20iLCJzdWIiOjYsImlhdCI6MTYyMTg2Nzg2NCwiZXhwIjoxNjI3MDUxODY0fQ.mUwVnGozUvpXZFm_nKoYSBI8ASJN-nhhB3mG8zgZTlo') => {
+  const options = {
+    method: "POST",
+    url: "http://localhost:3000/parks",
+    headers: {
+      "Authorization": "Bearer " + token,
+      "Content-Type": "multipart/form-data"
+    },
+    formData: {
+      name: data.name,
+      image: data.image,
+      description: data.description,
+      lat: data.lat,
+      lon: data.lon,
+      location: data.location,
+      contact: data.contact,
+      parkArea: data.parkArea,
+      file: fs.createReadStream(`./images/${data.image}`)
+    }
+  };
+
+  request(options, function (err, res, body) {
+    if (err) console.log(err);
+    console.log(body);
+  });
 };

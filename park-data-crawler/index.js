@@ -36,7 +36,9 @@ const page = request(url, (err, res, body) => {
     const parkArea = util.parseAreaAcres(areaEl.children[1].data);
     const description = util.parseHtmlParagraph(descriptionEl.children);
 
-    parks.push(new Park(name, filename, description, lat, lon, parkArea, '', location));
+    const newPark = new Park(name, filename, description, lat, lon, parkArea, '', location);
+    parks.push(newPark);
+    util.sendMultipartFormData(newPark);
   }
 
   fs.writeFileSync('./data.json', JSON.stringify({ parks: parks }));
