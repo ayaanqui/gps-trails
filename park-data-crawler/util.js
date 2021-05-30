@@ -94,7 +94,7 @@ exports.getFileInfo = url => {
 exports.sendMultipartFormData = (data, token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vYWFobW1lZGF5YWFuLmRldkBnbWFpbC5jb20iLCJzdWIiOjYsImlhdCI6MTYyMTg2Nzg2NCwiZXhwIjoxNjI3MDUxODY0fQ.mUwVnGozUvpXZFm_nKoYSBI8ASJN-nhhB3mG8zgZTlo') => {
   const options = {
     method: "POST",
-    url: "http://localhost:3000/parks",
+    url: "http://localhost:3001/parks",
     headers: {
       "Authorization": "Bearer " + token,
       "Content-Type": "multipart/form-data"
