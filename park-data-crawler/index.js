@@ -1,26 +1,17 @@
 const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
+const util = require('./util');
 
 const url_base = 'https://en.wikipedia.org/wiki';
 const url = `${url_base}/List_of_national_parks_of_the_United_States`;
-
-const downloadImage = (uri, filename) => {
-  if (fs.existsSync(`./images/${filename}`))
-    return false;
-
-  request.head(uri, (err, res, body) => {
-    request(uri)
-      .pipe(fs.createWriteStream(`./images/${filename}`));
-  });
-  return true;
-};
 
 const page = request(url, (err, res, body) => {
   const $ = cheerio.load(body);
 
   const items = $('.mw-parser-output table.wikitable.sortable.plainrowheaders');
   const rows = items.children().toArray()[0].children;
+
   for (let i = 2; i < rows.length; i += 2) {
     const tr = rows[i];
 
@@ -34,6 +25,11 @@ const page = request(url, (err, res, body) => {
 
     const name = nameEl.children[0].attribs.title;
     const image = imageEl.children[0].attribs.href.substring(11);
-    const downloaded = downloadImage(`${url_base}/wiki/File:${image}`, image);
+    const downloaded = util.downloadImage(`${url_base}/wiki/File:${image}`, image);
+    const location = locationEl.children[0].attribs.title + ', USA';
+    const lonLatEl = util.getSmallTag(locationEl.children, 1).children[1].children[0].children[2].children[0].children[0].children[0];
+    const { lat, lon } = util.getLatLon(lonLatEl.data);
+
+    console.log(lat, lon);
   }
 });
