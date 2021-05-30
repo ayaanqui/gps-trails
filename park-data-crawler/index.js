@@ -29,7 +29,7 @@ const page = request(url, (err, res, body) => {
     const location = locationEl.children[0].attribs.title + ', USA';
     const lonLatEl = util.getSmallTag(locationEl.children, 1).children[1].children[0].children[2].children[0].children[0].children[0];
     const { lat, lon } = util.getLatLon(lonLatEl.data);
-
-    console.log(lat, lon);
+    const parkArea = util.parseAreaAcres(areaEl.children[1].data);
+    const description = util.parseHtmlParagraph(descriptionEl.children);
   }
 });
