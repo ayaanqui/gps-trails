@@ -1,4 +1,15 @@
 class Park {
+  /**
+   *
+   * @param {string} name
+   * @param {string} image
+   * @param {string} description
+   * @param {number} lat
+   * @param {number} lon
+   * @param {number} parkArea
+   * @param {string} contact
+   * @param {string} location
+   */
   constructor(name, image, description, lat, lon, parkArea, contact, location) {
     this.name = name;
     this.image = image;

@@ -2,6 +2,7 @@ const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
 const util = require('./util');
+const Park = require('./park');
 
 const url_base = 'https://en.wikipedia.org/wiki';
 const url = `${url_base}/List_of_national_parks_of_the_United_States`;
@@ -11,6 +12,8 @@ const page = request(url, (err, res, body) => {
 
   const items = $('.mw-parser-output table.wikitable.sortable.plainrowheaders');
   const rows = items.children().toArray()[0].children;
+
+  const parks = [];
 
   for (let i = 2; i < rows.length; i += 2) {
     const tr = rows[i];
@@ -31,5 +34,9 @@ const page = request(url, (err, res, body) => {
     const { lat, lon } = util.getLatLon(lonLatEl.data);
     const parkArea = util.parseAreaAcres(areaEl.children[1].data);
     const description = util.parseHtmlParagraph(descriptionEl.children);
+
+    parks.push(new Park(name, image, description, lat, lon, parkArea, '', location));
   }
+
+  fs.writeFileSync('./data.json', JSON.stringify({ parks: parks }));
 });
