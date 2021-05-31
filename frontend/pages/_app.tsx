@@ -7,11 +7,7 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <Navbar
-        shadowSize='lg'
-        navBg='transparent'
-        navShadow='none'
-      />
+      <Navbar />
 
       <Component {...pageProps} />
     </ChakraProvider>
