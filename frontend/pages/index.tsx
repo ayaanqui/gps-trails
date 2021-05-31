@@ -1,23 +1,52 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Container, Heading, Box, Text, Flex } from "@chakra-ui/react"
+import { Component } from 'react'
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
-export default function Home() {
-  return (
-    <Container maxW='3xl' padding='0'>
-      <Head>
-        <title>GPS Trails</title>
-      </Head>
+class Home extends Component {
+  state = {
+    lat: 41.9333071,
+    lon: -88.0900673,
+  }
 
-      <Flex padding='5'>
-        <Box padding="4" bg="gray.100" maxW="3xl" rounded='lg'>
-          <Heading size='xl'>GPS Trails Homepage</Heading>
-          <Text>
-            There are many benefits to a joint design and development system. Not only
-            does it bring benefits to the design team.
-          </Text>
-        </Box>
-      </Flex>
-    </Container>
-  )
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      this.setState({ lat: coords.latitude, lon: coords.longitude })
+      console.log(`(${this.state.lat}, ${this.state.lon})`);
+    });
+  }
+
+  render() {
+    const Map = ReactMapboxGl({
+      accessToken:
+        'pk.eyJ1IjoiYXlhYW5xdWkiLCJhIjoiY2tsNnRheWQ5MmVibzJvdWk3azJ0dm92ciJ9.Jt8MpRok1WY9aV3Yf26gRQ'
+    });
+
+    return (
+      <>
+        <Head>
+          <title>GPS Trails</title>
+        </Head>
+
+        <Container maxWidth='full' w='full' h='100vh' overflow='hidden' p='0'>
+          <Map
+            style="mapbox://styles/mapbox/streets-v9"
+            containerStyle={{
+              height: '100vh',
+              width: '100%'
+            }}
+            center={[this.state.lon, this.state.lat]}
+          >
+            <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+              <Feature coordinates={[this.state.lon, this.state.lat]} />
+            </Layer>
+          </Map>;
+        </Container>
+      </>
+    )
+  }
 }
+
+export default Home

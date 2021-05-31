@@ -1,14 +1,17 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, Container } from '@chakra-ui/react';
+import { ChakraProvider, Container } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
+
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <Container mb='10px' minHeight='50px' maxWidth='full'>
-        <Navbar />
-      </Container>
+      <Navbar
+        shadowSize='lg'
+        navBg='transparent'
+        navShadow='none'
+      />
 
       <Component {...pageProps} />
     </ChakraProvider>
