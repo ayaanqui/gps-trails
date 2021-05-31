@@ -2,47 +2,63 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Container, Heading, Box, Text, Flex } from "@chakra-ui/react"
 import { Component } from 'react'
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
+import styles from './home.module.css'
+import axios from 'axios'
+import api from '../util/api'
+import Park from '../types/Park'
+import ParkList from '../components/ParkList'
 
 class Home extends Component {
+
+
   state = {
     lat: 41.9333071,
     lon: -88.0900673,
+    parks: Array<Park>(),
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       this.setState({ lat: coords.latitude, lon: coords.longitude })
-      console.log(`(${this.state.lat}, ${this.state.lon})`);
     });
+
+    axios.get(api.parks)
+      .then(({ status, data }: { status: number, data: Array<Park> }) => {
+        this.setState({ parks: data })
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
-    const Map = ReactMapboxGl({
-      accessToken:
-        'pk.eyJ1IjoiYXlhYW5xdWkiLCJhIjoiY2tsNnRheWQ5MmVibzJvdWk3azJ0dm92ciJ9.Jt8MpRok1WY9aV3Yf26gRQ'
-    });
-
     return (
       <>
         <Head>
           <title>GPS Trails</title>
         </Head>
 
-        <Container maxWidth='full' w='full' h='100vh' overflow='hidden' p='0'>
-          <Map
-            style="mapbox://styles/mapbox/streets-v9"
-            containerStyle={{
-              height: '100vh',
-              width: '100%'
-            }}
-            center={[this.state.lon, this.state.lat]}
+        <Container maxWidth='full' w='full' p='0'>
+          <Flex
+            className={styles.findYourTrailHero}
+            maxW='full'
+            height='40vh'
+            alignItems='center'
+            justifyContent='center'
+            direction='column'
           >
-            <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-              <Feature coordinates={[this.state.lon, this.state.lat]} />
-            </Layer>
-          </Map>;
+            <Heading size='2xl'>Find Your Trail</Heading>
+          </Flex>
+
+          <Container
+            bg='white'
+            maxW='4xl'
+            mt='-7em'
+            borderRadius='lg'
+            minH='50vh'
+            shadow='md'
+            p='0'
+          >
+            <ParkList parks={this.state.parks} />
+          </Container>
         </Container>
       </>
     )

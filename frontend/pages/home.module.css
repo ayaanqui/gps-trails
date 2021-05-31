@@ -1,0 +1,12 @@
+.findYourTrailHero {
+    background: -webkit-linear-gradient(
+      rgba(0, 255, 170, 0.6),
+      rgba(0, 14, 141, 0.9)
+    ),
+    url("../public/img/mountains-green.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  padding: 5em 20px 10em 20px;
+}

@@ -7,7 +7,9 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <Navbar />
+      <Container h='50px' maxW='full'>
+        <Navbar />
+      </Container>
 
       <Component {...pageProps} />
     </ChakraProvider>

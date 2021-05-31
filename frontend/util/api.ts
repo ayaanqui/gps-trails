@@ -6,7 +6,8 @@ const api = {
   trails: `${base_url}parks/`, // GET, POST, UPDATE, DELETE
   login: `${base_url}auth/login/`, // POST
   verify: `${base_url}auth/verify/`, // GET
-  register: `${base_url}register/` // POST
+  register: `${base_url}register/`, // POST
+  static: `${base_url}static/`,
 }
 
 export default api
