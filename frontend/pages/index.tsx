@@ -10,7 +10,6 @@ import ParkList from '../components/ParkList'
 
 class Home extends Component {
 
-
   state = {
     lat: 41.9333071,
     lon: -88.0900673,
