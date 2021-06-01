@@ -6,6 +6,7 @@ const api = {
   trails: `${base_url}parks/`, // GET, POST, UPDATE, DELETE
   login: `${base_url}auth/login/`, // POST
   verify: `${base_url}auth/verify/`, // GET
+  checkEmail: `${base_url}auth/check-email`, // POST
   register: `${base_url}register/`, // POST
   static: `${base_url}static/`,
 }
