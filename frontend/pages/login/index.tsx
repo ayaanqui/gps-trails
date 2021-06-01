@@ -40,14 +40,22 @@ class Login extends Component {
       loggedIn: false,
     }
 
-  validateEmail(value: string): string {
-    let error: string = ''
-    if (!value) {
-      error = "Email is required"
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-      error = "Email is invalid"
+  validateEmail(email: string): string {
+    if (!email) {
+      return "Email is required"
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      return "Email is invalid"
     }
+
+    let error: string = ''
     return error
+  }
+
+  validatePassword(password: string): string {
+    if (!password) {
+      return "Password is required"
+    }
+    return ''
   }
 
   handleLogin({ email, password }: { email: string, password: string }) {
@@ -136,7 +144,7 @@ class Login extends Component {
                     )}
                   </Field>
 
-                  <Field name="password" validate={null}>
+                  <Field name="password" validate={this.validatePassword}>
                     {({ field, form }: any) => (
                       <FormControl isInvalid={form.touched.passowrd}>
                         <FormLabel htmlFor="passowrd">Password</FormLabel>
