@@ -17,9 +17,11 @@ import {
   Box
 } from '@chakra-ui/react'
 import { SearchIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/dist/client/router';
 
 export default function Navbar() {
   const h = '32px';
+  const router = useRouter();
 
   return (
     <Container
@@ -73,8 +75,24 @@ export default function Navbar() {
         </Flex>
 
         <Flex>
-          <Button size='sm' variant='outline' mr='2' h={h}>Login</Button>
-          <Button size='sm' h={h} colorScheme='blue' color='white'>Sign up</Button>
+          <Button
+            size='sm'
+            variant='outline'
+            mr='2'
+            h={h}
+            onClick={() => router.push('/login')}
+          >
+            Login
+          </Button>
+          <Button
+            size='sm'
+            h={h}
+            colorScheme='blue'
+            color='white'
+            onClick={() => router.push('/register')}
+          >
+            Sign up
+          </Button>
         </Flex>
       </Flex>
     </Container>
