@@ -13,6 +13,7 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "axios": "^0.21.1",
+    "formik": "^2.2.8",
     "framer-motion": "^4.1.17",
     "mapbox-gl": "^1.13.1",
     "next": "10.2.3",
