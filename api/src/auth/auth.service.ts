@@ -44,4 +44,8 @@ export class AuthService {
       },
     };
   }
+
+  async checkEmail(email: string): Promise<User> {
+    return await this.userServices.findOne(email);
+  }
 }

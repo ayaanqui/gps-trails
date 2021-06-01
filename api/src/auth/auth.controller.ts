@@ -11,12 +11,18 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async postLogin(@Request() req): Promise<any> {
-    return this.authServices.login(req.user);
+    return await this.authServices.login(req.user);
   }
 
   @UseGuards(JwtAuthGuard)
   @Get('verify')
   getMe(@Request() req): any {
     return req.user;
+  }
+
+  @Post('check-email')
+  async checkEmail(@Body() body: { email: string }): Promise<{ taken: boolean }> {
+    const user = await this.authServices.checkEmail(body.email);
+    return { taken: user ? true : false };
   }
 }
