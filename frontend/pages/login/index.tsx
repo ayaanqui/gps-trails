@@ -58,7 +58,6 @@ class Login extends Component {
       { email, password }
     )
       .then(({ status, data }) => {
-        console.log(data)
         this.setState({
           loading: false,
           loggedIn: true,
@@ -68,7 +67,6 @@ class Login extends Component {
         })
       })
       .catch(err => {
-        console.log(err);
         this.setState({ loading: false, loggedIn: false, errors: true })
       })
   }
