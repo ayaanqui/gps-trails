@@ -1,5 +1,4 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
-import User from '../types/User'
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -9,21 +8,21 @@ export const authSlice = createSlice({
     loggedIn: false
   },
   reducers: {
-    login: state => {
-      const accessToken = localStorage.getItem('access_token')
-      const userStr = localStorage.getItem('user')
-      if (!accessToken || !userStr)
+    login: (state, { payload }) => {
+      const aT = localStorage.getItem('access_token')
+      if (!aT || aT.trim() === '')
         return;
 
-      const user: User = userStr ? JSON.parse(userStr) : null
-
       state.loggedIn = true
-      state.accessToken = accessToken ? accessToken : ''
-      state.user = user
+      state.accessToken = payload.accessToken
+      state.user = {
+        id: payload.user.id,
+        name: payload.user.name,
+        email: payload.user.email
+      }
     },
     logout: state => {
       localStorage.removeItem('access_token')
-      localStorage.removeItem('user')
 
       state.loggedIn = false;
       state.user = { name: '', email: '', id: 0 }
