@@ -17,8 +17,9 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Get('verify')
-  async getMe(@Request() req): Promise<User> {
-    return await this.authServices.checkEmail(req.user.email);
+  async getMe(@Request() req): Promise<{ id: number, email: string, name: string }> {
+    const user = await this.authServices.checkEmail(req.user.email)
+    return { id: user.id, email: user.email, name: user.name };
   }
 
   @Post('check-email')
