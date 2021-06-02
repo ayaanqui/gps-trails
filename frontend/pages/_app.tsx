@@ -3,7 +3,7 @@ import { ChakraProvider, Container } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 
 import '../styles/globals.css'
-import { login, authStore } from '../store/authStore';
+import { login, authStore, logout } from '../store/authStore';
 import { useEffect } from 'react';
 import axios from 'axios';
 import api from '../util/api';
@@ -25,7 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         }))
       })
       .catch(err => {
-        throw err
+        authStore.dispatch(logout())
+        console.log('You were logged out!')
       })
   })
 
