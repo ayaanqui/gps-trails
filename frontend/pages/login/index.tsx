@@ -24,6 +24,7 @@ import axios from "axios";
 import api from "../../util/api";
 import { validateEmail } from "../../util/validations";
 import { authStore, login } from '../../store/authStore';
+import Router from 'next/router'
 
 class Login extends Component {
   state: {
@@ -41,6 +42,13 @@ class Login extends Component {
       errors: false,
       loggedIn: false,
     }
+
+  componentDidMount() {
+    const { loggedIn } = authStore.getState();
+    if (loggedIn) {
+      Router.push('/')
+    }
+  }
 
   async validateEmail(email: string): Promise<string> {
     return await validateEmail(email, true, 'The email you entered isn\'t connected to an account')
@@ -73,6 +81,8 @@ class Login extends Component {
         localStorage.setItem('user', JSON.stringify(data.user))
 
         authStore.dispatch(login())
+
+        Router.push('/')
       })
       .catch(err => {
         this.setState({ loading: false, loggedIn: false, errors: true })
