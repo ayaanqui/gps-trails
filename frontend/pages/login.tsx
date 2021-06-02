@@ -21,11 +21,11 @@ import {
 import { Field, Form, Formik } from "formik";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
-import api from "../../util/api";
-import { validateEmail } from "../../util/validations";
-import { authStore, login } from '../../store/authStore';
+import api from "../util/api";
+import { validateEmail } from "../util/validations";
+import { authStore, login } from '../store/authStore';
 import Router from 'next/router'
-import User from "../../types/User";
+import User from "../types/User";
 
 class Login extends Component {
   state: {

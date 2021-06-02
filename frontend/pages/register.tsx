@@ -21,8 +21,8 @@ import {
 import { Field, Form, Formik } from "formik";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
-import api from "../../util/api";
-import { validateEmail } from "../../util/validations";
+import api from "../util/api";
+import { validateEmail } from "../util/validations";
 
 class Register extends Component {
   state: {
