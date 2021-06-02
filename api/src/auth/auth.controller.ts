@@ -1,5 +1,6 @@
 import { Body, Post, HttpException, HttpStatus, UseGuards, Request } from '@nestjs/common';
 import { Controller, Get } from "@nestjs/common";
+import { User } from 'src/users/users.entity';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { LocalAuthGuard } from './local-auth.guard';
@@ -16,8 +17,8 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Get('verify')
-  getMe(@Request() req): any {
-    return req.user;
+  async getMe(@Request() req): Promise<User> {
+    return await this.authServices.checkEmail(req.user.email);
   }
 
   @Post('check-email')
