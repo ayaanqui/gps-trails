@@ -54,7 +54,7 @@ export default function ParkList({ parks }: { parks: Array<Park> }) {
     <>
       {parks.map(
         park => (
-          <Box p='5' mb='3'>
+          <Box p='5' mb='3' key={`park#${park.id}`}>
             <Flex
               direction='row'
               alignItems='start'
@@ -96,7 +96,11 @@ export default function ParkList({ parks }: { parks: Array<Park> }) {
                 </Flex>
 
                 <Flex mb='3'>
-                  {getStars(park.ratingsAvg).map(star => star)}
+                  {getStars(park.ratingsAvg).map((star, i) => (
+                    <span key={`park#${park.id}Rating#${i}`}>
+                      {star}
+                    </span>
+                  ))}
                   <Text color='gray.600'>
                     ({park.ratingsAvg})
                   </Text>
