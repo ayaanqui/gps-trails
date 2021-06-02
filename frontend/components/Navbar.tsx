@@ -45,6 +45,7 @@ class Navbar extends Component {
             as={Button}
             rightIcon={<ChevronDownIcon />}
             variant='outlined'
+            fontSize='sm'
           >
             {this.state.user?.name}
           </MenuButton>
@@ -107,8 +108,7 @@ class Navbar extends Component {
       shadow='sm'
     >
       <Flex direction='row' maxW='full' h='full' alignItems='center' justifyContent='space-between'>
-        <Flex direction='row' alignItems='center' justifyContent='start'>
-
+          <Flex direction='row' alignItems='center' justifyContent='start'>
           <NextLink href={'/'} passHref>
             <Link>
               <Image
@@ -120,18 +120,7 @@ class Navbar extends Component {
             </Link>
           </NextLink>
 
-          <InputGroup ml='7px'>
-              <InputLeftElement h={this.h} children={<SearchIcon color="gray.400" w='5' />} />
-            <Input
-              variant='filled'
-              placeholder="Search for trails"
-                h={this.h}
-              autoFocus
-            />
-              {/* <InputRightElement h={this.h} children={<Spinner color="gray.500" size="sm" />} /> */}
-          </InputGroup>
-
-          <Box ml='5'>
+            <Box ml='3'>
             <Menu>
               <MenuButton
                   h={this.h}
@@ -149,7 +138,21 @@ class Navbar extends Component {
           </Box>
         </Flex>
 
-        <Flex>
+          <Box ml='5' flex='1' maxW='500px'>
+            <InputGroup>
+              <InputLeftElement h={this.h} children={<SearchIcon color="gray.400" w='5' />} />
+              <Input
+                variant='filled'
+                placeholder="Search for trails"
+                h={this.h}
+                autoFocus
+                maxW='500px'
+              />
+              {/* <InputRightElement h={this.h} children={<Spinner color="gray.500" size="sm" />} /> */}
+            </InputGroup>
+          </Box>
+
+          <Flex ml='5'>
             {this.sideNav()}
         </Flex>
       </Flex>
