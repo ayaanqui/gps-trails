@@ -1,21 +1,18 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
+import User from '../types/User'
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     accessToken: '',
-    user: {},
+    user: { name: '', email: '', id: 0 },
     loggedIn: false
   },
   reducers: {
     login: state => {
       const accessToken = localStorage.getItem('access_token')
       const userStr = localStorage.getItem('user')
-      const user: {
-        id: number,
-        name: string,
-        email: string
-      } = userStr ? JSON.parse(userStr) : null
+      const user: User = userStr ? JSON.parse(userStr) : null
 
       state.loggedIn = true
       state.accessToken = accessToken ? accessToken : ''
@@ -26,7 +23,7 @@ export const authSlice = createSlice({
       localStorage.removeItem('user')
 
       state.loggedIn = false;
-      state.user = {}
+      state.user = { name: '', email: '', id: 0 }
       state.accessToken = ''
     }
   }
