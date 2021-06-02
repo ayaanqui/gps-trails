@@ -12,6 +12,9 @@ export const authSlice = createSlice({
     login: state => {
       const accessToken = localStorage.getItem('access_token')
       const userStr = localStorage.getItem('user')
+      if (!accessToken || !userStr)
+        return;
+
       const user: User = userStr ? JSON.parse(userStr) : null
 
       state.loggedIn = true

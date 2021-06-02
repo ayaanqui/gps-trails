@@ -2,13 +2,10 @@ import {
   Flex,
   Container,
   Image,
-  Text,
   Link,
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightElement,
-  Spinner,
   Menu,
   MenuButton,
   MenuItem,
@@ -17,14 +14,88 @@ import {
   Box
 } from '@chakra-ui/react'
 import { SearchIcon, ChevronDownIcon } from '@chakra-ui/icons'
-import { useRouter } from 'next/dist/client/router'
 import NextLink from 'next/link'
+import { authStore, login, logout } from '../store/authStore';
+import { Component } from 'react';
+import User from '../types/User';
 
-export default function Navbar() {
-  const h = '32px';
-  const router = useRouter();
+class Navbar extends Component {
+  h = '32px';
+  state: {
+    loggedIn: boolean,
+    user: User | undefined,
+  } = {
+      loggedIn: false,
+      user: undefined
+    }
 
-  return (
+  componentDidMount() {
+    authStore.subscribe(() => {
+      const { loggedIn, user } = authStore.getState()
+      this.setState({ loggedIn, user })
+    })
+  }
+
+  sideNav() {
+    if (this.state.loggedIn) {
+      return (
+        <Menu>
+          <MenuButton
+            h={this.h}
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+            variant='outlined'
+          >
+            {this.state.user?.name}
+          </MenuButton>
+          <MenuList>
+            <MenuItem>Profile</MenuItem>
+            <MenuItem>Settings</MenuItem>
+            <MenuItem
+              onClick={() => {
+                authStore.dispatch(logout())
+                this.setState({ loggedIn: false })
+              }}
+            >
+              Logout
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      )
+    }
+    return (
+      <>
+        <NextLink href='/login' passHref>
+          <Link>
+            <Button
+              size='sm'
+              variant='outline'
+              mr='2'
+              h={this.h}
+            >
+              Login
+            </Button>
+          </Link>
+        </NextLink>
+
+        <NextLink href='/register' passHref>
+          <Link>
+            <Button
+              size='sm'
+              h={this.h}
+              colorScheme='blue'
+              color='white'
+            >
+              Sign up
+            </Button>
+          </Link>
+        </NextLink>
+      </>
+    )
+  }
+
+  render() {
+    return (
     <Container
       maxW='full' height='50px'
       pos='fixed'
@@ -42,7 +113,7 @@ export default function Navbar() {
             <Link>
               <Image
                 src='/img/profile-square.png'
-                maxWidth={h}
+                  maxWidth={this.h}
                 alt='Logo'
                 borderRadius='lg'
               />
@@ -50,20 +121,20 @@ export default function Navbar() {
           </NextLink>
 
           <InputGroup ml='7px'>
-            <InputLeftElement h={h} children={<SearchIcon color="gray.400" w='5' />} />
+              <InputLeftElement h={this.h} children={<SearchIcon color="gray.400" w='5' />} />
             <Input
               variant='filled'
               placeholder="Search for trails"
-              h={h}
+                h={this.h}
               autoFocus
             />
-            {/* <InputRightElement h={h} children={<Spinner color="gray.500" size="sm" />} /> */}
+              {/* <InputRightElement h={this.h} children={<Spinner color="gray.500" size="sm" />} /> */}
           </InputGroup>
 
           <Box ml='5'>
             <Menu>
               <MenuButton
-                h={h}
+                  h={this.h}
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
               >
@@ -79,26 +150,12 @@ export default function Navbar() {
         </Flex>
 
         <Flex>
-          <Button
-            size='sm'
-            variant='outline'
-            mr='2'
-            h={h}
-            onClick={() => router.push('/login')}
-          >
-            Login
-          </Button>
-          <Button
-            size='sm'
-            h={h}
-            colorScheme='blue'
-            color='white'
-            onClick={() => router.push('/register')}
-          >
-            Sign up
-          </Button>
+            {this.sideNav()}
         </Flex>
       </Flex>
     </Container>
-  )
+    )
+  }
 }
+
+export default Navbar
