@@ -17,5 +17,6 @@ export async function validateEmail(email: string, takenExpected: boolean, messa
       if (taken != takenExpected)
         error = message
     })
+    .catch(_ => console.log('Unable to reach server'))
   return error
 }
