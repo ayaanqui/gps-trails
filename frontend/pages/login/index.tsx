@@ -22,6 +22,7 @@ import { Field, Form, Formik } from "formik";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
 import api from "../../util/api";
+import { validateEmail } from "../../util/validations";
 
 class Login extends Component {
   state: {
@@ -40,15 +41,8 @@ class Login extends Component {
       loggedIn: false,
     }
 
-  validateEmail(email: string): string {
-    if (!email) {
-      return "Email is required"
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-      return "Email is invalid"
-    }
-
-    let error: string = ''
-    return error
+  async validateEmail(email: string): Promise<string> {
+    return await validateEmail(email, true, 'The email you entered isn\'t connected to an account')
   }
 
   validatePassword(password: string): string {
