@@ -23,6 +23,7 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
 import api from "../../util/api";
 import { validateEmail } from "../../util/validations";
+import { authStore, login } from '../../store/authStore';
 
 class Login extends Component {
   state: {
@@ -59,7 +60,7 @@ class Login extends Component {
       api.login,
       { email, password }
     )
-      .then(({ status, data }) => {
+      .then(({ data }) => {
         this.setState({
           loading: false,
           loggedIn: true,
@@ -67,6 +68,11 @@ class Login extends Component {
           user: data.user,
           token: data.access_token
         })
+
+        localStorage.setItem('access_token', data.access_token)
+        localStorage.setItem('user', JSON.stringify(data.user))
+
+        authStore.dispatch(login())
       })
       .catch(err => {
         this.setState({ loading: false, loggedIn: false, errors: true })
