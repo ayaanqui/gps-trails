@@ -25,19 +25,20 @@ import api from "../../util/api";
 import { validateEmail } from "../../util/validations";
 import { authStore, login } from '../../store/authStore';
 import Router from 'next/router'
+import User from "../../types/User";
 
 class Login extends Component {
   state: {
     loading: boolean,
-    user: { name: string, email: string, id: number } | null,
-    token: string,
+    user: User | null,
+    accessToken: string,
     showPassword: boolean,
     errors: boolean,
     loggedIn: boolean
   } = {
       loading: false,
       user: null,
-      token: '',
+      accessToken: '',
       showPassword: false,
       errors: false,
       loggedIn: false,
@@ -74,13 +75,19 @@ class Login extends Component {
           loggedIn: true,
           errors: false,
           user: data.user,
-          token: data.access_token
+          accessToken: data.access_token
         })
 
-        localStorage.setItem('access_token', data.access_token)
-        localStorage.setItem('user', JSON.stringify(data.user))
+        if (this.state.user === null)
+          return
 
-        authStore.dispatch(login())
+        localStorage.setItem('access_token', data.access_token)
+
+        const { id, name, email } = this.state.user
+        authStore.dispatch(login({
+          accessToken: this.state.accessToken,
+          user: { id, email, name }
+        }))
 
         Router.push('/')
       })
