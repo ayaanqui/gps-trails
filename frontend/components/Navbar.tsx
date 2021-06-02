@@ -17,7 +17,8 @@ import {
   Box
 } from '@chakra-ui/react'
 import { SearchIcon, ChevronDownIcon } from '@chakra-ui/icons'
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/dist/client/router'
+import NextLink from 'next/link'
 
 export default function Navbar() {
   const h = '32px';
@@ -36,14 +37,17 @@ export default function Navbar() {
     >
       <Flex direction='row' maxW='full' h='full' alignItems='center' justifyContent='space-between'>
         <Flex direction='row' alignItems='center' justifyContent='start'>
-          <Link href='/'>
-            <Image
-              src='/img/profile-square.png'
-              maxWidth={h}
-              alt='Logo'
-              borderRadius='lg'
-            />
-          </Link>
+
+          <NextLink href={'/'} passHref>
+            <Link>
+              <Image
+                src='/img/profile-square.png'
+                maxWidth={h}
+                alt='Logo'
+                borderRadius='lg'
+              />
+            </Link>
+          </NextLink>
 
           <InputGroup ml='7px'>
             <InputLeftElement h={h} children={<SearchIcon color="gray.400" w='5' />} />
