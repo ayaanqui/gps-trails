@@ -27,7 +27,13 @@ exports.getSmallTag = (child, start) => {
 
 const parseDegree = str => {
   const degreeCharPos = str.indexOf('°');
-  return parseFloat(str.substring(0, degreeCharPos));
+  let val = parseFloat(str.substring(0, degreeCharPos));
+  const direction = str.substring(degreeCharPos + 1).toLowerCase();
+
+  if (direction === 'w' || direction === 's')
+    val *= -1;
+
+  return val;
 };
 
 /**
