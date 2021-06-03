@@ -38,7 +38,11 @@ export default function ParkDetailed({ park }: { park: Park }) {
           <Text>{numFormat(park.parkArea)} acres</Text>
         </Flex>
         <Box mb='7'>
-          {getStars(park.ratingsAvg, '6').map(star => star)}
+          {getStars(park.ratingsAvg, '6').map((star, i) => (
+            <span key={`star${i}`}>
+              {star}
+            </span>
+          ))}
         </Box>
         <Text>
           {park.description}
