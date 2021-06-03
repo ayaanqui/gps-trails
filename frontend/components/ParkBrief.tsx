@@ -10,6 +10,7 @@ import Park from '../types/Park';
 import api from '../util/api';
 import { numFormat } from '../util/formatters';
 import { getStars } from '../util/stars';
+import NextLink from 'next/link';
 
 export default function ParkBrief({ park }: { park: Park }) {
   return (
@@ -19,7 +20,8 @@ export default function ParkBrief({ park }: { park: Park }) {
       justifyContent='space-between'
     >
 
-      <Link href={`/park/${park.id}`} flex='1'>
+      <NextLink href={`/park/${park.id}`} passHref>
+        <Link flex='1'>
         <Image
           src={`${api.static}${park.image}`}
           borderRadius='lg'
@@ -29,6 +31,7 @@ export default function ParkBrief({ park }: { park: Park }) {
           loading='lazy'
         />
       </Link>
+      </NextLink>
 
       <Box
         flex='2'
@@ -36,9 +39,11 @@ export default function ParkBrief({ park }: { park: Park }) {
         pt='1' pb='1'
       >
         <Heading size='lg'>
-          <Link href={`/park/${park.id}`}>
-            {park.name}
-          </Link>
+          <NextLink href={`/park/${park.id}`} passHref>
+            <Link>
+              {park.name}
+            </Link>
+          </NextLink>
         </Heading>
 
         <Flex
