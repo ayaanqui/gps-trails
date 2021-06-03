@@ -31,7 +31,7 @@ class Park extends Component {
     }
 
   componentDidMount() {
-    const id = Router.query.id
+    const id = Router.query.parkId
 
     axios.get(`${api.parks}${id}`)
       .then(({ data }) => {
