@@ -21,4 +21,15 @@ export class ParksService {
   async findAll(): Promise<Park[]> {
     return await this.parkRepository.find();
   }
+
+  async searchByNameDescriptionLocation(q: string): Promise<Park[]> {
+    return await this.parkRepository
+      .createQueryBuilder('parks')
+      .where(
+        `name like :name or 
+          description like :name or 
+          location like :name`,
+        { name: `%${q}%` })
+      .getMany();
+  }
 }
