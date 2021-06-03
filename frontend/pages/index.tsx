@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Container, Heading, Box, Text, Flex } from "@chakra-ui/react"
+import { Container, Heading, Flex } from "@chakra-ui/react"
 import { Component } from 'react'
 import styles from './home.module.css'
 import axios from 'axios'
 import api from '../util/api'
 import Park from '../types/Park'
 import ParkList from '../components/ParkList'
+import { Spinner } from "@chakra-ui/react"
 
 class Home extends Component {
 
@@ -14,6 +15,7 @@ class Home extends Component {
     lat: 41.9333071,
     lon: -88.0900673,
     parks: Array<Park>(),
+    loading: true
   }
 
   componentDidMount() {
@@ -23,7 +25,7 @@ class Home extends Component {
 
     axios.get(api.parks)
       .then(({ status, data }: { status: number, data: Array<Park> }) => {
-        this.setState({ parks: data })
+        this.setState({ parks: data, loading: false })
       })
       .catch(err => console.log(err))
   }
@@ -56,7 +58,15 @@ class Home extends Component {
             shadow='md'
             p='0'
           >
-            <ParkList parks={this.state.parks} />
+            {
+              this.state.loading ? (
+                <Flex alignItems='center' justifyContent='center' maxW='inherit' minH='inherit'>
+                  <Spinner size='lg' />
+                </Flex>
+              ) : (
+                  <ParkList parks={this.state.parks} />
+              )
+            }
           </Container>
         </Container>
       </>
