@@ -17,6 +17,8 @@ import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import styles from '../../styles/ParkPage.module.css'
+import { getStars } from '../../util/stars';
+import { numFormat } from "../../util/formatters"
 
 class Park extends Component {
   state: {
@@ -28,8 +30,7 @@ class Park extends Component {
   componentDidMount() {
     const id = Router.query.id
 
-    if (!id)
-      return
+    console.log(id)
 
     axios.get(`${api.parks}${id}`)
       .then(({ data }) => {
@@ -48,6 +49,8 @@ class Park extends Component {
 
     const lat = this.state.park?.lat ? this.state.park.lat : 0
     const lon = this.state.park?.lon ? this.state.park.lon : 0
+    const ratingsAvg = this.state.park?.ratingsAvg ? this.state.park.ratingsAvg : 0
+    const parkArea = this.state.park?.parkArea ? this.state.park.parkArea : 0
 
     return (
       <>
@@ -61,14 +64,41 @@ class Park extends Component {
           m='0'
           className={styles.parkContainer}
         >
-          <Flex direction='row' justifyContent='space-between'>
-            <Container flex='1' maxW='full' p='0'>
+          <Flex direction='row' h='inherit' justifyContent='space-between'>
+            <Container flex='1' h='inherit' maxW='full' p='0' overflowY='auto'>
               <Image w='full' src={`${api.static}${this.state.park?.image}`} />
-              <Box p='2'>
-                <Heading mb='3'>{this.state.park?.name}</Heading>
+
+              <Box p='3' mb='7'>
+                <Heading mb='2'>{this.state.park?.name}</Heading>
+                <Flex
+                  size='xs'
+                  color='gray.500'
+                  mb='2'
+                  direction='row'
+                  justifyContent='space-between'
+                >
+                  <Text mr='4' display='flex' alignItems='center'>
+                    <Icon
+                      as={FaMapMarkerAlt}
+                      mr='1'
+                    />
+                    {this.state.park?.location}
+                  </Text>
+
+                  <Text>{numFormat(parkArea)} acres</Text>
+                </Flex>
+                <Box mb='7'>
+                  {getStars(ratingsAvg, '6').map(star => star)}
+                </Box>
                 <Text>
                   {this.state.park?.description}
                 </Text>
+              </Box>
+
+              <Box p='3' mb='7'>
+                <Heading size='md'>
+                  Reviews (11)
+                </Heading>
               </Box>
             </Container>
 
