@@ -24,6 +24,7 @@ import { TrailsController } from './trails/trails.controller';
 import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { join } from 'path';
+import { SearchController } from './search/search.controller';
 
 @Module({
   imports: [
@@ -65,6 +66,7 @@ import { join } from 'path';
     AddTrailsController,
     AuthController,
     RegisterController,
+    SearchController,
   ],
 })
 export class AppModule { }
