@@ -18,6 +18,7 @@ import NextLink from 'next/link'
 import { authStore, login, logout } from '../store/authStore';
 import { Component } from 'react';
 import User from '../types/User';
+import SearchBox from './SearchBox';
 
 class Navbar extends Component {
   h = '32px';
@@ -138,18 +139,10 @@ class Navbar extends Component {
           </Box>
         </Flex>
 
-          <Box ml='5' flex='1' maxW='500px'>
-            <InputGroup>
-              <InputLeftElement h={this.h} children={<SearchIcon color="gray.400" w='5' />} />
-              <Input
-                variant='filled'
-                placeholder="Search for trails"
-                h={this.h}
-                autoFocus
-                maxW='500px'
-              />
-              {/* <InputRightElement h={this.h} children={<Spinner color="gray.500" size="sm" />} /> */}
-            </InputGroup>
+          <Box ml='5' flex='1' maxW='500px' position='relative'>
+            <SearchBox
+              h={this.h}
+            />
           </Box>
 
           <Flex ml='5'>
