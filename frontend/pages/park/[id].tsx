@@ -16,6 +16,7 @@ import * as P from "../../types/Park"
 import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { FaMapMarkerAlt } from 'react-icons/fa'
+import styles from '../../styles/ParkPage.module.css'
 
 class Park extends Component {
   state: {
@@ -54,7 +55,12 @@ class Park extends Component {
           <title>{this.state.park?.name}</title>
         </Head>
 
-        <Container maxW='full' h='100vh' p='0' m='0'>
+        <Container
+          maxW='full'
+          p='0'
+          m='0'
+          className={styles.parkContainer}
+        >
           <Flex direction='row' justifyContent='space-between'>
             <Container flex='1' maxW='full' p='0'>
               <Image w='full' src={`${api.static}${this.state.park?.image}`} />
@@ -66,11 +72,17 @@ class Park extends Component {
               </Box>
             </Container>
 
-            <Container flex='2' p='0' maxW='full' h='100vh' bg='gray.400'>
+            <Container
+              flex='2'
+              p='0'
+              maxW='full'
+              bg='gray.400'
+              className={styles.parkContainer}
+            >
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
-                  height: '100vh',
+                  height: 'inherit',
                   width: '100%'
                 }}
                 center={[lon, lat]}
