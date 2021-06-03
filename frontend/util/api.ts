@@ -11,4 +11,6 @@ const api = {
   static: `${base_url}static/`,
 }
 
+export const mapboxApiKey = 'pk.eyJ1IjoiYXlhYW5xdWkiLCJhIjoiY2tsNnRheWQ5MmVibzJvdWk3azJ0dm92ciJ9.Jt8MpRok1WY9aV3Yf26gRQ'
+
 export default api
