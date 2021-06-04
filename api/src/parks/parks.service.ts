@@ -22,6 +22,15 @@ export class ParksService {
     return await this.parkRepository.find();
   }
 
+  async findAllWithLimit(limit: number, offset: number): Promise<Park[]> {
+    return await this.parkRepository
+      .createQueryBuilder('parks')
+      .select()
+      .limit(limit)
+      .offset(offset)
+      .getMany();
+  }
+
   async searchByNameDescriptionLocation(q: string): Promise<Park[]> {
     return await this.parkRepository
       .createQueryBuilder('parks')

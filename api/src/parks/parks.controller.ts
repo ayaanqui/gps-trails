@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, UploadedFile, UseGuards, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Query, UploadedFile, UseGuards, UseInterceptors } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
 import { CreateParkDto } from './dto/createParkDto';
 import { ParksService } from "./parks.service";
@@ -13,7 +13,21 @@ export class ParksController {
   }
 
   @Get()
-  async getAllParks(): Promise<Park[]> {
+  async getAllParks(
+    @Query('limit') limit: number,
+    @Query('page') page: number
+  ): Promise<Park[]> {
+    if (limit) {
+      if (page) {
+        const prevPage = page - 1;
+        try {
+          return await this.parkservices.findAllWithLimit(limit, prevPage * limit);
+        } catch (e) {
+          return e.toString();
+        }
+      }
+      return await this.parkservices.findAllWithLimit(limit, 0);
+    }
     return await this.parkservices.findAll();
   }
 
