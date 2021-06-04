@@ -3,12 +3,11 @@ const request = require('request');
 const cheerio = require('cheerio');
 const util = require('./util');
 const Park = require('./park');
+const { url_base, url_base_uploads } = require('./util')
 
-const url_base = 'https://en.wikipedia.org/wiki';
 const url = `${url_base}/List_of_national_parks_of_the_United_States`;
-const url_base_uploads = 'https://upload.wikimedia.org/wikipedia/commons/'
 
-const page = request(url, (err, res, body) => {
+request(url, (err, res, body) => {
   const $ = cheerio.load(body);
 
   const items = $('.mw-parser-output table.wikitable.sortable.plainrowheaders');
