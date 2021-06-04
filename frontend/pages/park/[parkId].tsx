@@ -1,4 +1,4 @@
-import { Component } from "react"
+import { Component, useEffect, useState } from "react"
 import {
   Container,
   Heading,
@@ -10,43 +10,51 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 import Head from "next/head"
-import Router from 'next/router'
+import router from 'next/router'
 import api, { mapboxApiKey } from "../../util/api"
 import axios from 'axios'
-import * as P from "../../types/Park"
-import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl'
+import Park from "../../types/Park"
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { FaMapMarkerAlt } from 'react-icons/fa'
 import styles from '../../styles/ParkPage.module.css'
 import ParkDetailed from "../../components/ParkDetailed"
 import { FcHighPriority } from 'react-icons/fc'
+import Map from "../../components/Map"
 
-class Park extends Component {
-  state: {
-    park: P.default | undefined,
-    loading: boolean
-  } = {
-      park: undefined,
-      loading: true
-    }
+class P implements Park {
+  id: number = 0
+  name: string = ''
+  image: string = ''
+  description: string = ''
+  lat: number = 0
+  lon: number = 0
+  parkArea: number = 0
+  views: number = 0
+  ratingsAvg: number = 0
+  contact: string = ''
+  location: string = ''
+}
 
-  componentDidMount() {
-    const id = Router.query.parkId
+export default function ParkPage() {
+  const [park, setPark] = useState(new P())
+  const [loading, setLoading] = useState(true)
 
-    axios.get(`${api.parks}${id}`)
+  useEffect(() => {
+    const parkId = router.query['parkId']
+    axios.get(`${api.parks}${parkId}`)
       .then(({ data }) => {
-        this.setState({ park: data, loading: false })
+        setPark(data)
+        setLoading(false)
       })
       .catch(err => {
-        this.setState({ loading: false })
+        setLoading(false)
         console.log(err)
       })
-  }
+  })
 
-  renderPark() {
+  const renderPark = () => {
     return (
-      this.state.park ? (
-        <ParkDetailed park={this.state.park} />
+      park ? (
+        <ParkDetailed park={park} />
       ) : (
         <Flex alignItems='center' justifyContent='center' direction='column' maxW='inherit' h='inherit'>
           <Icon as={FcHighPriority} boxSize='20' mb='7' />
@@ -56,72 +64,45 @@ class Park extends Component {
     )
   }
 
-  render() {
-    const Map = ReactMapboxGl({
-      accessToken: mapboxApiKey
-    });
+  const coords = [park.lon, park.lat]
 
-    const lat = this.state.park?.lat ? this.state.park.lat : 0
-    const lon = this.state.park?.lon ? this.state.park.lon : 0
+  return (
+    <>
+      <Head>
+        <title>{park?.name}</title>
+      </Head>
 
-    return (
-      <>
-        <Head>
-          <title>{this.state.park?.name}</title>
-        </Head>
+      <Container
+        maxW='full'
+        p='0'
+        m='0'
+        className={styles.parkContainer}
+      >
+        <Flex direction='row' h='inherit' justifyContent='space-between'>
+          <Container flex='1' h='inherit' maxW='full' p='0' overflowY='auto'>
+            {
+              loading ? (
+                <Flex alignItems='center' justifyContent='center' maxW='inherit' h='inherit'>
+                  <Spinner size='lg' />
+                </Flex>
+              ) : renderPark()
+            }
+          </Container>
 
-        <Container
-          maxW='full'
-          p='0'
-          m='0'
-          className={styles.parkContainer}
-        >
-          <Flex direction='row' h='inherit' justifyContent='space-between'>
-            <Container flex='1' h='inherit' maxW='full' p='0' overflowY='auto'>
-              {
-                this.state.loading ? (
-                  <Flex alignItems='center' justifyContent='center' maxW='inherit' h='inherit'>
-                    <Spinner size='lg' />
-                  </Flex>
-                ) : this.renderPark()
-              }
-            </Container>
-
-            <Container
-              flex='2'
-              p='0'
-              maxW='full'
-              bg='gray.400'
-              className={styles.parkContainer}
-            >
-              <Map
-                style="mapbox://styles/mapbox/streets-v9"
-                containerStyle={{
-                  height: 'inherit',
-                  width: '100%'
-                }}
-                center={[lon, lat]}
-              >
-                <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                  <Feature coordinates={[lon, lat]} />
-                </Layer>
-                <Marker
-                  anchor='center'
-                  coordinates={[lon, lat]}
-                >
-                  <Icon
-                    as={FaMapMarkerAlt}
-                    color='red.400'
-                    boxSize='12'
-                  />
-                </Marker>
-              </Map>
-            </Container>
-          </Flex>
-        </Container>
-      </>
-    )
-  }
+          <Container
+            flex='2'
+            p='0'
+            maxW='full'
+            bg='gray.400'
+            className={styles.parkContainer}
+          >
+            <Map
+              lat={park.lat}
+              lon={park.lon}
+            />
+          </Container>
+        </Flex>
+      </Container>
+    </>
+  )
 }
-
-export default Park
