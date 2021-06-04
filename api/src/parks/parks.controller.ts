@@ -17,15 +17,10 @@ export class ParksController {
     @Query('limit') limit: number,
     @Query('page') page: number
   ): Promise<Park[]> {
-    if (limit) {
-      if (page) {
-        const prevPage = page - 1;
-        try {
-          return await this.parkservices.findAllWithLimit(limit, prevPage * limit);
-        } catch (e) {
-          return e.toString();
-        }
-      }
+    if (limit && page) {
+      const prevPage = page - 1;
+      return await this.parkservices.findAllWithLimit(limit, prevPage * limit);
+    } else if (limit) {
       return await this.parkservices.findAllWithLimit(limit, 0);
     }
     return await this.parkservices.findAll();
