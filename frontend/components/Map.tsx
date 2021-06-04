@@ -3,6 +3,7 @@ import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl'
 import { mapboxApiKey } from '../util/api'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { Icon } from '@chakra-ui/react'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends Component<any, any> {
   render() {

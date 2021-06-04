@@ -1,20 +1,16 @@
-import { Component, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import {
   Container,
   Heading,
   Flex,
-  Image,
-  Text,
-  Box,
   Icon,
   Spinner,
 } from '@chakra-ui/react'
 import Head from "next/head"
 import router from 'next/router'
-import api, { mapboxApiKey } from "../../util/api"
+import api from "../../util/api"
 import axios from 'axios'
 import Park from "../../types/Park"
-import 'mapbox-gl/dist/mapbox-gl.css'
 import styles from '../../styles/ParkPage.module.css'
 import ParkDetailed from "../../components/ParkDetailed"
 import { FcHighPriority } from 'react-icons/fc'
@@ -50,7 +46,6 @@ export default function ParkPage() {
       .catch(err => {
         setError(true)
         setLoading(false)
-        console.log(err)
       })
   })
 
