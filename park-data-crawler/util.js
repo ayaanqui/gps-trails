@@ -3,6 +3,9 @@ const request = require('request');
 const imageDowloader = require('image-downloader');
 const Park = require('./park');
 
+exports.url_base = 'https://en.wikipedia.org/wiki';
+exports.url_base_uploads = 'https://upload.wikimedia.org/wikipedia/commons/';
+
 exports.downloadImage = (uri, filename) => {
   if (fs.existsSync(`./images/${filename}`))
     return false;
