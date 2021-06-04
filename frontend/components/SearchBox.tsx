@@ -17,7 +17,7 @@ import axios from 'axios';
 import api from '../util/api';
 import Park from '../types/Park';
 import NextLink from 'next/link';
-import { BsFillXCircleFill } from 'react-icons/bs';
+import { FcFilledFilter } from 'react-icons/fc';
 
 export default function SearchBox({ h }: any) {
   const [parks, setParks] = useState(Array<Park>())
@@ -49,7 +49,8 @@ export default function SearchBox({ h }: any) {
     if (parks.length === 0) {
       return (
         <Flex alignItems='center' direction='column' justifyContent='center' maxW='inherit' minH='inherit' p='10'>
-          <Heading>No results found</Heading>
+          <Icon as={FcFilledFilter} mb='5' boxSize='10' />
+          <Heading size='md' textAlign='center'>No results found</Heading>
         </Flex>
       )
     }
@@ -77,30 +78,34 @@ export default function SearchBox({ h }: any) {
           maxW='500px'
           onKeyUp={search}
         />
-        {/* <InputRightElement h={h} children={
-          <Icon as={BsFillXCircleFill} color="gray.400" />
-        } /> */}
+        <InputRightElement h={h} children={
+          loading ? (
+            <Spinner size='sm' color='gray.500' />
+          ) : (
+            <></>
+          )
+        } />
       </InputGroup>
 
-      <Box
-        position='absolute'
-        bg='white'
-        shadow='lg'
-        w='full'
-        maxH='80vh'
-        top='50px' left='0'
-        rounded='md'
-        zIndex={2}
-        overflowY='auto' overflowX='hidden'
-      >
-        {
-          loading ? (
-            <Flex alignItems='center' justifyContent='center' maxW='inherit' minH='inherit' p='10'>
-              <Spinner size='lg' />
-            </Flex>
-          ) : renderParks()
-        }
-      </Box>
+      {
+        loading ? (
+          <></>
+        ) : (
+            <Box
+              position='absolute'
+              bg='white'
+              shadow='lg'
+              w='full'
+              maxH='80vh'
+              top='50px' left='0'
+              rounded='md'
+              zIndex={2}
+              overflowY='auto' overflowX='hidden'
+            >
+              {renderParks()}
+            </Box>
+        )
+      }
     </>
   )
 }
