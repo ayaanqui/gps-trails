@@ -34,20 +34,28 @@ export default function ParkPage() {
   const [error, setError] = useState(false)
   const [park, setPark] = useState(new P())
   const [loading, setLoading] = useState(true)
+  const [tryAgain, setTryAgain] = useState(false)
 
   useEffect(() => {
     const parkId = router.query['parkId']
-    axios.get(`${api.parks}${parkId}`)
-      .then(({ data }) => {
-        setError(false)
-        setPark(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        setError(true)
-        setLoading(false)
-      })
-  })
+
+    if (parkId === undefined) {
+      setTimeout(() => {
+        setTryAgain(!tryAgain)
+      }, 500)
+    } else {
+      axios.get(`${api.parks}${parkId}`)
+        .then(({ data }) => {
+          setError(false)
+          setPark(data)
+          setLoading(false)
+        })
+        .catch(err => {
+          setError(true)
+          setLoading(false)
+        })
+    }
+  }, [tryAgain])
 
   const renderPark = () => {
     return (
