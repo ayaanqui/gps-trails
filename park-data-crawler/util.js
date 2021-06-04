@@ -126,3 +126,23 @@ exports.sendMultipartFormData = (data, token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX
     console.log(body);
   });
 };
+
+/**
+ * 
+ * @param {number} km 
+ * @returns number
+ */
+exports.kmToAcres = km => {
+  const acres = 247.105;
+  return km * acres;
+};
+
+/**
+ * 
+ * @param {string} str 
+ * @return number
+ */
+exports.parseArea = str => {
+  str = str.replace(',', '')
+  return parseFloat(str.split(' ')[0])
+}
