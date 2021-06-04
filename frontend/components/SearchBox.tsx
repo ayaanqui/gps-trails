@@ -18,6 +18,7 @@ import api from '../util/api';
 import Park from '../types/Park';
 import NextLink from 'next/link';
 import { FcFilledFilter } from 'react-icons/fc';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function SearchBox({ h }: any) {
   const [parks, setParks] = useState(Array<Park>())
@@ -59,9 +60,17 @@ export default function SearchBox({ h }: any) {
       <Box p='3' key={`searchPark#${i}`} borderBottomWidth='thin'>
         <NextLink href={`/park/${park.id}`} passHref>
           <Link onClick={() => setSearchBarClicked(false)}>
-            <Text size='sm'>{park?.name}</Text>
+            <Heading size='sm' color='gray.700'>{park?.name}</Heading>
           </Link>
         </NextLink>
+
+        <Text fontSize='sm' color='gray.500' mr='4' display='flex' alignItems='center'>
+          <Icon
+            as={FaMapMarkerAlt}
+            mr='1'
+          />
+          {park?.location}
+        </Text>
       </Box>
     ))
   }
