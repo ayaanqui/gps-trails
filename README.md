@@ -1,9 +1,9 @@
-<h1><img src="frontend/src/assets/img/GPS_Trails_Profile_Rounded.png" width=30 /> GPS Trails</h1>
+<h1><img src="frontend/public/img/profile-rounded.png" width=30 /> GPS Trails</h1>
 
 GPS  Trails  is  a  user-centralized web-application that  is  designed  to  foster  a  new community of nature enthusiasts. Some of its features include allowing users to input their own trial discoveries and reviewing previous trails already in the database.
 
 <p align="center">
-    <img src="frontend/src/assets/img/previews/homepage.png" />
+    <img src="frontend/public/img/previews/homepage.png" />
     <small><i>Homepage</i></small>
 </p>
 <br />
@@ -13,12 +13,12 @@ GPS Trails is implemented using 3 stand-alone  components: Angular for the clien
 
 ## Pages
 <p align="center">
-    <img src="frontend/src/assets/img/previews/explore_acadia.png" />
+    <img src="frontend/public/img/previews/explore_acadia.png" />
     <small><i>Emplore page on <a href="https://en.wikipedia.org/wiki/Acadia_National_Park">Acadia National Park</a></i></small>
 </p>
 <br />
 <p align="center">
-    <img src="frontend/src/assets/img/previews/park_page.png" />
+    <img src="frontend/public/img/previews/park_page.png" />
     <small><i>Detailed park page on <a href="https://en.wikipedia.org/wiki/Yosemite_National_Park">Yosemite National Park</a></i></small>
 </p>
 
