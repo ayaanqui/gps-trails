@@ -35,6 +35,7 @@ class P implements Park {
 }
 
 export default function ParkPage() {
+  const [error, setError] = useState(false)
   const [park, setPark] = useState(new P())
   const [loading, setLoading] = useState(true)
 
@@ -42,10 +43,12 @@ export default function ParkPage() {
     const parkId = router.query['parkId']
     axios.get(`${api.parks}${parkId}`)
       .then(({ data }) => {
+        setError(false)
         setPark(data)
         setLoading(false)
       })
       .catch(err => {
+        setError(true)
         setLoading(false)
         console.log(err)
       })
@@ -53,18 +56,16 @@ export default function ParkPage() {
 
   const renderPark = () => {
     return (
-      park ? (
-        <ParkDetailed park={park} />
-      ) : (
-        <Flex alignItems='center' justifyContent='center' direction='column' maxW='inherit' h='inherit'>
+      error ? (
+        <Flex p='3' alignItems='center' justifyContent='center' direction='column' maxW='inherit' h='inherit'>
           <Icon as={FcHighPriority} boxSize='20' mb='7' />
-          <Heading>Park not found</Heading>
+          <Heading textAlign='center'>Park not found</Heading>
         </Flex>
+      ) : (
+        <ParkDetailed park={park} />
       )
     )
   }
-
-  const coords = [park.lon, park.lat]
 
   return (
     <>
@@ -96,10 +97,16 @@ export default function ParkPage() {
             bg='gray.400'
             className={styles.parkContainer}
           >
-            <Map
-              lat={park.lat}
-              lon={park.lon}
-            />
+            {
+              error ? (
+                <></>
+              ) : (
+                  <Map
+                    lat={park.lat}
+                    lon={park.lon}
+                  />
+              )
+            }
           </Container>
         </Flex>
       </Container>
