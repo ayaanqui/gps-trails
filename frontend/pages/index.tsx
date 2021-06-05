@@ -1,13 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Container, Heading, Flex } from "@chakra-ui/react"
+import {
+  Container,
+  Heading,
+  Flex,
+  Spinner,
+  Button,
+  Icon
+} from "@chakra-ui/react"
 import { Component } from 'react'
 import styles from './home.module.css'
 import axios from 'axios'
 import api from '../util/api'
 import Park from '../types/Park'
 import ParkList from '../components/ParkList'
-import { Spinner } from "@chakra-ui/react"
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 class Home extends Component {
 
@@ -15,15 +22,22 @@ class Home extends Component {
     lat: 41.9333071,
     lon: -88.0900673,
     parks: Array<Park>(),
-    loading: true
+    loading: true,
+    page: 1,
+    limit: 20,
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       this.setState({ lat: coords.latitude, lon: coords.longitude })
-    });
+    })
 
-    axios.get(api.parks)
+    this.fetchParks()
+  }
+
+  fetchParks() {
+    this.setState({ loading: true })
+    axios.get(`${api.parks}?limit=${this.state.limit}&page=${this.state.page}`)
       .then(({ status, data }: { status: number, data: Array<Park> }) => {
         this.setState({ parks: data, loading: false })
       })
@@ -52,7 +66,7 @@ class Home extends Component {
           <Container
             bg='white'
             maxW='4xl'
-            mt='-7em'
+            mt='-7em' mb='32'
             borderRadius='lg'
             minH='50vh'
             shadow='md'
@@ -64,7 +78,31 @@ class Home extends Component {
                   <Spinner size='lg' />
                 </Flex>
               ) : (
-                  <ParkList parks={this.state.parks} />
+                  <>
+                    <ParkList parks={this.state.parks} />
+
+                    <Flex
+                      direction='row'
+                      mt='5'
+                      justifyContent='space-between'
+                      p='5'
+                    >
+                      <Button onClick={() => {
+                        this.setState({ page: this.state.page - 1 })
+                        this.fetchParks()
+                      }}>
+                        <Icon mr='2' as={BsArrowLeft} />
+                        Prev
+                      </Button>
+                      <Button onClick={() => {
+                        this.setState({ page: this.state.page + 1 })
+                        this.fetchParks()
+                      }}>
+                        Next
+                        <Icon ml='2' as={BsArrowRight} />
+                      </Button>
+                    </Flex>
+                  </>
               )
             }
           </Container>
