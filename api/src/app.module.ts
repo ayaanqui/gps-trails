@@ -8,10 +8,6 @@ import { RegisterController } from './register/register.controller';
 import { AuthController } from './auth/auth.controller';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
-import { AddTrailsController } from './addtrails/addtrails.controller';
-import { AddTrailsService } from './addtrails/addtrails.service';
-import { AddTrailsModule } from './addtrails/addtrails.module';
-import { AddTrails } from './addtrails/addtrails.entity';
 import { AuthService } from './auth/auth.service';
 import { LocalStrategy } from './auth/local.strategy';
 import { JwtModule } from '@nestjs/jwt';
@@ -33,7 +29,6 @@ import { ReviewsModule } from './reviews/reviews.module';
     TypeOrmModule.forFeature([
       User,
       Park,
-      AddTrails,
       Trail,
     ]),
 
@@ -48,14 +43,12 @@ import { ReviewsModule } from './reviews/reviews.module';
       serveRoot: '/static',
     }),
 
-    AddTrailsModule,
     PassportModule,
     ReviewsModule,
   ],
   providers: [
     UsersService,
     ParksService,
-    AddTrailsService,
     AuthService,
     TrailsService,
     LocalStrategy,
@@ -65,7 +58,6 @@ import { ReviewsModule } from './reviews/reviews.module';
     AppController,
     ParksController,
     TrailsController,
-    AddTrailsController,
     AuthController,
     RegisterController,
     SearchController,
