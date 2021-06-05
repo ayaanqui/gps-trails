@@ -21,7 +21,9 @@ import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { join } from 'path';
 import { SearchController } from './search/search.controller';
-import { ReviewsModule } from './reviews/reviews.module';
+import { Review } from './reviews/entities/review.entity';
+import { ReviewsService } from './reviews/reviews.service';
+import { ReviewsController } from './reviews/reviews.controller';
 
 @Module({
   imports: [
@@ -30,6 +32,7 @@ import { ReviewsModule } from './reviews/reviews.module';
       User,
       Park,
       Trail,
+      Review,
     ]),
 
     JwtModule.register({
@@ -44,13 +47,13 @@ import { ReviewsModule } from './reviews/reviews.module';
     }),
 
     PassportModule,
-    ReviewsModule,
   ],
   providers: [
     UsersService,
     ParksService,
     AuthService,
     TrailsService,
+    ReviewsService,
     LocalStrategy,
     JwtStrategy,
   ],
@@ -61,6 +64,7 @@ import { ReviewsModule } from './reviews/reviews.module';
     AuthController,
     RegisterController,
     SearchController,
+    ReviewsController,
   ],
 })
 export class AppModule { }
