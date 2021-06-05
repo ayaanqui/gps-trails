@@ -8,15 +8,17 @@ import {
   Button,
   Icon
 } from "@chakra-ui/react"
-import { Component } from 'react'
+import { Component, ReactEventHandler } from 'react'
 import styles from './home.module.css'
 import axios from 'axios'
 import api from '../util/api'
 import Park from '../types/Park'
 import ParkList from '../components/ParkList'
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 class Home extends Component {
+
+  limit = 20
 
   state = {
     lat: 41.9333071,
@@ -24,7 +26,7 @@ class Home extends Component {
     parks: Array<Park>(),
     loading: true,
     page: 1,
-    limit: 20,
+    hasMore: true,
   }
 
   componentDidMount() {
@@ -32,16 +34,20 @@ class Home extends Component {
       this.setState({ lat: coords.latitude, lon: coords.longitude })
     })
 
-    this.fetchParks()
+    this.fetchParks(1)
   }
 
-  fetchParks() {
-    this.setState({ loading: true })
-    axios.get(`${api.parks}?limit=${this.state.limit}&page=${this.state.page}`)
+  fetchParks(page: number) {
+    axios.get(`${api.parks}?limit=${this.limit}&page=${page}`)
       .then(({ status, data }: { status: number, data: Array<Park> }) => {
-        this.setState({ parks: data, loading: false })
+        if (data.length === 0) {
+          this.setState({ loading: false, hasMore: false })
+          return
+        }
+
+        this.setState({ parks: [...this.state.parks, ...data], loading: false })
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ loading: false, hasMore: false }))
   }
 
   render() {
@@ -78,31 +84,21 @@ class Home extends Component {
                   <Spinner size='lg' />
                 </Flex>
               ) : (
-                  <>
+                  <InfiniteScroll
+                    dataLength={this.state.parks.length}
+                    next={() => {
+                      this.setState({ page: this.state.page + 1 })
+                      this.fetchParks(this.state.page)
+                    }}
+                    hasMore={this.state.hasMore}
+                    loader={
+                      <Flex alignItems='center' p='10' justifyContent='center' maxW='inherit' minH='inherit'>
+                        <Spinner size='md' />
+                      </Flex>
+                    }
+                  >
                     <ParkList parks={this.state.parks} />
-
-                    <Flex
-                      direction='row'
-                      mt='5'
-                      justifyContent='space-between'
-                      p='5'
-                    >
-                      <Button onClick={() => {
-                        this.setState({ page: this.state.page - 1 })
-                        this.fetchParks()
-                      }}>
-                        <Icon mr='2' as={BsArrowLeft} />
-                        Prev
-                      </Button>
-                      <Button onClick={() => {
-                        this.setState({ page: this.state.page + 1 })
-                        this.fetchParks()
-                      }}>
-                        Next
-                        <Icon ml='2' as={BsArrowRight} />
-                      </Button>
-                    </Flex>
-                  </>
+                  </InfiniteScroll>
               )
             }
           </Container>
