@@ -25,6 +25,7 @@ import { TrailsService } from './trails/trails.service';
 import { Trail } from './trails/entities/trail.entity';
 import { join } from 'path';
 import { SearchController } from './search/search.controller';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { SearchController } from './search/search.controller';
 
     AddTrailsModule,
     PassportModule,
+    ReviewsModule,
   ],
   providers: [
     UsersService,
