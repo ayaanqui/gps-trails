@@ -29,6 +29,7 @@ export default function ParkBrief({ park }: { park: Park }) {
 
           overflow='hidden'
           loading='lazy'
+            fallbackSrc='https://via.placeholder.com/300'
         />
       </Link>
       </NextLink>
