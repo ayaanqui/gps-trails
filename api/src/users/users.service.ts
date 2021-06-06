@@ -25,12 +25,12 @@ export class UsersService {
   }
 
   async insert(user: CreateUserDto): Promise<any> {
-    const userEntity: User = User.create();
+    const userEntity = new User();
     userEntity.email = user.email;
     userEntity.name = user.name;
     userEntity.password = await this.hashPassword(user.password, 10);
 
-    await User.save(userEntity);
+    await userEntity.save();
     return {
       message: `${user.email} created!`
     };
@@ -41,7 +41,10 @@ export class UsersService {
   }
 
   async findOne(email: string): Promise<User> {
-    return await this.usersRepository.findOne({ email: email });
+    return await this.usersRepository.findOne({
+      select: ['id', 'name', 'email', 'password'],
+      where: { email: email }
+    });
   }
 
   async remove(email: string): Promise<any> {
