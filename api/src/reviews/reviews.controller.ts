@@ -4,20 +4,27 @@ import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Review } from 'src/reviews/entities/review.entity';
+import { UsersService } from 'src/users/users.service';
 
 @Controller('reviews')
 export class ReviewsController {
-  constructor(private readonly reviewsService: ReviewsService) {}
+  constructor(
+    private readonly reviewsService: ReviewsService,
+    private readonly usersService: UsersService
+  ) { }
 
   @UseGuards(JwtAuthGuard)
   @Post()
   async create(
     @Request() req,
     @Body() createReviewDto: CreateReviewDto
-  ) {
+  ): Promise<Review> {
     const user = req.user;
-    const newReview = await this.reviewsService.create(createReviewDto, user);
-    return newReview;
+    return await this.reviewsService
+      .create(
+        createReviewDto,
+        await this.usersService.findOne(user.email)
+      );
   }
 
   @Get()
