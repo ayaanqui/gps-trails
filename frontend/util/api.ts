@@ -9,7 +9,8 @@ const api = {
   checkEmail: `${base_url}auth/check-email`, // POST
   register: `${base_url}register/`, // POST
   static: `${base_url}static/`,
-  search: `${base_url}search` // GET
+  search: `${base_url}search`, // GET,
+  reviews: `${base_url}reviews/` // GET, POST, GET with park id
 }
 
 export const mapboxApiKey = 'pk.eyJ1IjoiYXlhYW5xdWkiLCJhIjoiY2tsNnRheWQ5MmVibzJvdWk3azJ0dm92ciJ9.Jt8MpRok1WY9aV3Yf26gRQ'
