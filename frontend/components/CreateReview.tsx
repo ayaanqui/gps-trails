@@ -1,9 +1,5 @@
 import { Review } from '../types/Review';
 import {
-  Heading,
-  Box,
-  Text,
-  Flex,
   Button,
   Modal,
   ModalOverlay,
@@ -12,12 +8,15 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure,
   FormControl,
   FormLabel,
-  Textarea
+  Textarea,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton
 } from '@chakra-ui/react';
-import { getStars, starElement } from '../util/stars';
+import { starElement } from '../util/stars';
 import React from 'react';
 import Park from '../types/Park';
 import { BsStar } from 'react-icons/bs';
@@ -34,6 +33,9 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
   isOpen: boolean
 }) {
   const [rating, setRating] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   const getReviewStars = () => {
     const stars: JSX.Element[] = []
@@ -45,15 +47,7 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
 
   const handleSubmit = (event: any) => {
     const { loggedIn, accessToken } = authStore.getState();
-
-    console.log({
-      parkId: park.id,
-      rating: rating,
-      review: event.target.review.value
-    })
-
-    if (!loggedIn)
-      console.log("Not logged in!")
+    setLoading(true)
 
     axios.post(
       `${api.reviews}`,
@@ -70,8 +64,15 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
       .then(({ data }: { data: Review }) => {
         addReview(data)
         onClose()
+        setLoading(false)
+        setError(false)
+        setSuccess(true)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        setLoading(false)
+        setError(true)
+        setSuccess(false)
+      })
 
     event.preventDefault()
   }
@@ -87,6 +88,20 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
           <ModalHeader>{park.name}</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
+            {
+              error ? (
+                <Alert status="error" mb='4'>
+                  <AlertIcon />
+                  <AlertTitle mr={2}>Something went wrong while submitting your review</AlertTitle>
+                  <CloseButton
+                    position="absolute"
+                    right="8px" top="8px"
+                    onClick={() => setError(false)}
+                  />
+                </Alert>
+              ) : <></>
+            }
+
             {
               getReviewStars().map((reviewStar, i) => (
                 <span
@@ -113,6 +128,7 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
               colorScheme="blue"
               mr={3}
               type="submit"
+              isLoading={loading}
             >
               Post Review
             </Button>
