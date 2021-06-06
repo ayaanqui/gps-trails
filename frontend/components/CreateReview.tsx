@@ -16,14 +16,13 @@ import {
   AlertTitle,
   CloseButton
 } from '@chakra-ui/react';
-import { starElement } from '../util/stars';
 import React from 'react';
 import Park from '../types/Park';
-import { BsStar } from 'react-icons/bs';
 import { useState } from 'react';
 import axios from 'axios';
 import api from '../util/api';
 import { authStore } from '../store/authStore';
+import StarRating from 'react-star-ratings'
 
 export default function CreateReview({ addReview, park, onOpen, onClose, isOpen }: {
   addReview: Function,
@@ -36,14 +35,6 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
-
-  const getReviewStars = () => {
-    const stars: JSX.Element[] = []
-    for (let i = 0; i < 5; i++) {
-      stars.push(starElement(BsStar, '10'))
-    }
-    return stars;
-  }
 
   const handleSubmit = (event: any) => {
     const { loggedIn, accessToken } = authStore.getState();
@@ -67,6 +58,7 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
         setLoading(false)
         setError(false)
         setSuccess(true)
+        setRating(0)
       })
       .catch(err => {
         setLoading(false)
@@ -102,17 +94,12 @@ export default function CreateReview({ addReview, park, onOpen, onClose, isOpen 
               ) : <></>
             }
 
-            {
-              getReviewStars().map((reviewStar, i) => (
-                <span
-                  style={{ marginRight: '5px' }}
-                  key={`parkReviewStar${i}`}
-                  onClick={() => setRating(i + 1)}
-                >
-                  {reviewStar}
-                </span>
-              ))
-            }
+            <StarRating
+              rating={rating}
+              changeRating={setRating}
+              starRatedColor='rgb(236,201,75)'
+              starHoverColor='rgb(236,201,75)'
+            />
 
             <FormControl mt={6}>
               <FormLabel>Review</FormLabel>
