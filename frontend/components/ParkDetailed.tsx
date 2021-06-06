@@ -5,6 +5,7 @@ import {
   Text,
   Box,
   Icon,
+  Spinner
 } from '@chakra-ui/react'
 import api from '../util/api'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -12,13 +13,30 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 import { getStars } from '../util/stars'
 import { numFormat } from '../util/formatters'
 import Park from '../types/Park'
+import { useEffect, useState } from 'react';
+import { Review } from '../types/Review';
+import axios from 'axios';
+import ReviewsList from './ReviewsList'
 
 export default function ParkDetailed({ park }: { park: Park }) {
+  const [reviews, setReviews] = useState(Array<Review>())
+  const [blank, setBlank] = useState(false)
+  const [reviewsLoading, setReviewsLoading] = useState(true)
+
+  useEffect(() => {
+    axios.get(`${api.reviews}${park.id}`)
+      .then(({ data }) => {
+        setReviews(data)
+        setReviewsLoading(false)
+      })
+      .catch(err => console.log(err))
+  }, [setBlank])
+
   return (
     <>
       <Image w='full' src={`${api.static}${park.image}`} />
 
-      <Box p='3' mb='7'>
+      <Box p='3' mb='8'>
         <Heading mb='2'>{park.name}</Heading>
         <Flex
           size='xs'
@@ -49,11 +67,17 @@ export default function ParkDetailed({ park }: { park: Park }) {
         </Text>
       </Box>
 
-      <Box p='3' mb='7'>
-        <Heading size='md'>
-          Reviews (11)
-        </Heading>
-      </Box>
+      {
+        reviewsLoading ? (
+          <Flex direction='row' alignItems='center' justifyContent='center' p='5'>
+            <Spinner />
+          </Flex>
+        ) : (
+            <Box p='3' mb='7'>
+              <ReviewsList reviews={reviews} />
+            </Box>
+        )
+      }
     </>
   )
 }
