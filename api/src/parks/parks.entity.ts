@@ -1,3 +1,4 @@
+import { Review } from "src/reviews/entities/review.entity";
 import { Trail } from "src/trails/entities/trail.entity";
 import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -38,4 +39,7 @@ export class Park extends BaseEntity {
 
   @OneToMany(() => Trail, trail => trail.park)
   trails: Trail[];
+
+  @OneToMany(() => Review, review => review.park)
+  reviews: Review[];
 }

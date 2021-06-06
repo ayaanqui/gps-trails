@@ -1,4 +1,5 @@
-import { Entity, BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Review } from 'src/reviews/entities/review.entity';
+import { Entity, BaseEntity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity("users")
 export class User extends BaseEntity {
@@ -13,4 +14,7 @@ export class User extends BaseEntity {
 
   @Column()
   name: string;
+
+  @OneToMany(() => Review, review => review.user)
+  reviews: Review[];
 }
