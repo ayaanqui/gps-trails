@@ -1,7 +1,24 @@
 import { Review } from '../types/Review';
-import { Heading, Box, Text, Flex, Button } from '@chakra-ui/react';
+import {
+  Heading,
+  Box,
+  Text,
+  Flex,
+  Button,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { getStars } from '../util/stars';
-export default function ({ reviews }: { reviews: Review[] }) {
+import React from 'react';
+import Park from '../types/Park';
+import CreateReview from './CreateReview';
+
+export default function ReviewsList({ reviews, addReview, park }: {
+  reviews: Review[],
+  addReview: Function,
+  park: Park
+}) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <>
       <Flex
@@ -15,7 +32,7 @@ export default function ({ reviews }: { reviews: Review[] }) {
           Reviews ({reviews.length})
         </Heading>
 
-        <Button colorScheme='blue' size='sm'>Write Review</Button>
+        <Button onClick={onOpen} colorScheme='blue' size='sm'>Write Review</Button>
       </Flex>
 
       {reviews.map((review, i) => (
@@ -27,6 +44,14 @@ export default function ({ reviews }: { reviews: Review[] }) {
           </Text>
         </Box>
       ))}
+
+      <CreateReview
+        addReview={addReview}
+        park={park}
+        onOpen={onOpen}
+        onClose={onClose}
+        isOpen={isOpen}
+      />
     </>
   )
 }

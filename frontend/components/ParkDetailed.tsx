@@ -32,6 +32,10 @@ export default function ParkDetailed({ park }: { park: Park }) {
       .catch(err => console.log(err))
   }, [setBlank])
 
+  const addReview = (review: Review) => {
+    setReviews([review, ...reviews])
+  }
+
   return (
     <>
       <Image w='full' src={`${api.static}${park.image}`} />
@@ -74,7 +78,11 @@ export default function ParkDetailed({ park }: { park: Park }) {
           </Flex>
         ) : (
             <Box p='3' mb='7'>
-              <ReviewsList reviews={reviews} />
+              <ReviewsList
+                reviews={reviews}
+                addReview={addReview}
+                park={park}
+              />
             </Box>
         )
       }
