@@ -8,9 +8,11 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { getStars } from '../util/stars';
-import React from 'react';
+import React, { useState } from 'react';
 import Park from '../types/Park';
 import CreateReview from './CreateReview';
+import { useEffect } from 'react';
+import { authStore } from '../store/authStore';
 
 export default function ReviewsList({ reviews, addReview, park }: {
   reviews: Review[],
@@ -18,6 +20,12 @@ export default function ReviewsList({ reviews, addReview, park }: {
   park: Park
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [val, setVal] = useState(false)
+
+  useEffect(() => {
+    setLoggedIn(authStore.getState().loggedIn)
+  }, [val])
 
   return (
     <>
@@ -32,18 +40,34 @@ export default function ReviewsList({ reviews, addReview, park }: {
           Reviews ({reviews.length})
         </Heading>
 
-        <Button onClick={onOpen} colorScheme='blue' size='sm'>Write Review</Button>
+        {
+          loggedIn ? (
+            <Button onClick={onOpen} colorScheme='blue' size='sm'>Write Review</Button>
+          ) : (
+            <></>
+          )
+        }
       </Flex>
 
-      {reviews.map((review, i) => (
-        <Box mb='5' key={`review${i}`}>
-          <Heading size='sm'>{review.user.name}</Heading>
-          {getStars(review.rating, '3')}
-          <Text fontSize='sm'>
-            {review.review}
-          </Text>
-        </Box>
-      ))}
+      {
+        reviews.length === 0 ? (
+          <Flex mb='5' alignItems='center' justifyContent='center'>
+            <Text color='gray.500'>
+              <i>Be the first to review this park</i>
+            </Text>
+          </Flex>
+        ) : (
+          reviews.map((review, i) => (
+            <Box mb='5' key={`review${i}`}>
+              <Heading size='sm'>{review.user.name}</Heading>
+              {getStars(review.rating, '3')}
+              <Text fontSize='sm'>
+                {review.review}
+              </Text>
+            </Box>
+          ))
+        )
+      }
 
       <CreateReview
         addReview={addReview}
