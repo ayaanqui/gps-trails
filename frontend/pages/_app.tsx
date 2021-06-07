@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import api from '../util/api';
 import User from '../types/User';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -32,6 +33,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider>
+      <Head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      </Head>
+
       <Container h='50px' maxW='full'>
         <Navbar />
       </Container>
