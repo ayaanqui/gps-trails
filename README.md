@@ -14,7 +14,7 @@ GPS Trails is implemented using 3 stand-alone  components: React with Next.js fo
 ## Pages
 <p align="center">
     <img src="frontend/public/img/previews/explore_park.png" />
-    <small><i>Emplore page on <a href="https://en.wikipedia.org/wiki/Glacier_National_Park_(U.S.)">Glacier National Park</a></i></small>
+    <small><i>Explore page on <a href="https://en.wikipedia.org/wiki/Glacier_National_Park_(U.S.)">Glacier National Park</a></i></small>
 </p>
 <br />
 <p align="center">
